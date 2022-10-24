@@ -3,7 +3,7 @@ import { signIn } from '../services/auth';
 
 type AuthContext = {
     token: {};
-    login: any;
+    login: Function;
     isLoggedIn: boolean;
     errMsg: string;
     loading: boolean;

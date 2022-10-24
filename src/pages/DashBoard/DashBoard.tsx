@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { useData } from '../../hooks/useData';
+import { useAuth } from '../../hooks/useAuth';
 
 export default function DashBoard() {
-    const { countedDays: data, isFetching } = useData();
+    const { isLoggedIn, token } = useAuth();
+    const { data, isFetching } = useData();
     return (
         <Container>
             {isFetching && <p>Carregando...</p>}
