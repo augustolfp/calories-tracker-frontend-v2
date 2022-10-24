@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import './assets/styles/reset.css';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { ChakraProvider } from '@chakra-ui/react';
+import { ColorModeScript } from '@chakra-ui/color-mode';
+import theme from './assets/styles/theme';
 
 const queryClient = new QueryClient();
 
@@ -13,7 +15,12 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <BrowserRouter>
             <AuthProvider>
                 <QueryClientProvider client={queryClient}>
-                    <App />
+                    <ChakraProvider theme={theme}>
+                        <ColorModeScript
+                            initialColorMode={theme.config.initialColorMode}
+                        />
+                        <App />
+                    </ChakraProvider>
                 </QueryClientProvider>
             </AuthProvider>
         </BrowserRouter>
