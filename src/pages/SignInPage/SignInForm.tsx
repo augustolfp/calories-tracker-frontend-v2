@@ -33,7 +33,9 @@ export default function SignInForm(props: Props) {
                 boxShadow="lg"
             >
                 <Box textAlign="center" m={4}>
-                    <Heading>Login</Heading>
+                    <Box as="h3" textStyle="h3">
+                        Login
+                    </Box>
                 </Box>
                 {props.children}
                 {props.isLoggedIn ? (

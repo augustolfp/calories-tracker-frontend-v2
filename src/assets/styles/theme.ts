@@ -14,6 +14,19 @@ const customTheme = {
             },
         }),
     },
+    textStyles: {
+        h1: {
+            fontSize: ['20px', '36px'],
+            fontStyle: 'italic',
+        },
+        h2: {
+            fontSize: ['12px', '20px'],
+        },
+        h3: {
+            fontSize: '28px',
+            fontWeight: 'bold',
+        },
+    },
 };
 
 const theme = extendTheme(customTheme);
