@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { ChakraProvider } from '@chakra-ui/react';
 import { ColorModeScript } from '@chakra-ui/color-mode';
 import theme from './assets/styles/theme';
+import NavBar from './components/Navbar';
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
                         <ColorModeScript
                             initialColorMode={theme.config.initialColorMode}
                         />
+                        <NavBar />
                         <App />
                     </ChakraProvider>
                 </QueryClientProvider>

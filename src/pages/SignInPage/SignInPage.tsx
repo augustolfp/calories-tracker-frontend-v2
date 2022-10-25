@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { useAuth } from '../../hooks/useAuth';
+import { Flex, Input, Button, Image, Heading } from '@chakra-ui/react';
+import bananaIcon from '../../../public/icon.svg';
 
 export default function SignInPage() {
     const { login, loading, isLoggedIn, errMsg } = useAuth();
@@ -14,40 +16,53 @@ export default function SignInPage() {
     }
 
     return (
-        <Container>
-            <h1>Sign-in Page!</h1>
-            {loading ? (
-                <h1>Loading...</h1>
-            ) : (
-                <form onSubmit={handleLogin}>
-                    <input
-                        type="email"
-                        name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="email"
-                        disabled={loading}
-                        required
-                    />
-                    <input
-                        type="password"
-                        name="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder="senha"
-                        disabled={loading}
-                        required
-                    />
-                    <button type="submit" disabled={loading}>
-                        ENTRAR
-                    </button>
-                </form>
-            )}
-            {errMsg && <ErrorContainer>Falha no login!</ErrorContainer>}
-            {isLoggedIn && (
-                <SuccessContainer>Você está logado!</SuccessContainer>
-            )}
-        </Container>
+        <Flex height="100vh" alignItems="center" justifyContent="center">
+            <Image boxSize="sm" src={bananaIcon} alt="banana logo" />
+            <Flex direction="column" p={12} rounded={6}>
+                {loading ? (
+                    <h1>Loading...</h1>
+                ) : (
+                    <form onSubmit={handleLogin}>
+                        <Input
+                            variant="filled"
+                            mb={3}
+                            type="email"
+                            name="email"
+                            focusBorderColor="purple.400"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="email"
+                            disabled={loading}
+                            required
+                        />
+                        <Input
+                            variant="filled"
+                            mb={3}
+                            type="password"
+                            name="password"
+                            focusBorderColor="purple.400"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            placeholder="senha"
+                            disabled={loading}
+                            required
+                        />
+                        <Button
+                            colorScheme="purple"
+                            mb={6}
+                            type="submit"
+                            disabled={loading}
+                        >
+                            ENTRAR
+                        </Button>
+                    </form>
+                )}
+                {errMsg && <ErrorContainer>Falha no login!</ErrorContainer>}
+                {isLoggedIn && (
+                    <SuccessContainer>Você está logado!</SuccessContainer>
+                )}
+            </Flex>
+        </Flex>
     );
 }
 

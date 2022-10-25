@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import ToggleThemeBtn from '../../components/ToggleThemeBtn';
 
 export default function HomePage() {
     return (
@@ -9,7 +8,6 @@ export default function HomePage() {
             <Link to="/dashboard">Dashboard</Link>
             <Link to="/sign-in">Sign-in</Link>
             <Link to="sign-up">Sign-up</Link>
-            <ToggleThemeBtn />
         </Container>
     );
 }
