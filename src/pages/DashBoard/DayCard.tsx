@@ -1,4 +1,6 @@
 import { Box } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
+import FormatDate from './FormatDate';
 
 type Props = {
     id: number;
@@ -14,19 +16,21 @@ type Props = {
 
 export default function DayCard(props: Props) {
     return (
-        <Box
-            as="ul"
-            p={8}
-            maxWidth="500px"
-            borderWidth={1}
-            borderRadius={8}
-            boxShadow="lg"
-        >
-            <Box as="li">Dia: {props.day}</Box>
-            <Box as="li">Gorduras: {props.fats}</Box>
-            <Box as="li">Carbos: {props.carbs}</Box>
-            <Box as="li">Proteinas: {props.proteins}</Box>
-            <Box as="li">kCals: {props.kcals}</Box>
-        </Box>
+        <Link to={`/day/${props.id}`}>
+            <Box
+                as="ul"
+                p={8}
+                maxWidth="500px"
+                borderWidth={1}
+                borderRadius={8}
+                boxShadow="lg"
+            >
+                <FormatDate day={props.day} />
+                <Box as="li">Gorduras: {props.fats}</Box>
+                <Box as="li">Carbos: {props.carbs}</Box>
+                <Box as="li">Proteinas: {props.proteins}</Box>
+                <Box as="li">kCals: {props.kcals}</Box>
+            </Box>
+        </Link>
     );
 }
