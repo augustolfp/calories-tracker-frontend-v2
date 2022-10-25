@@ -3,6 +3,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { Flex, Image, Box, Heading } from '@chakra-ui/react';
 import bananaIcon from '../../../public/icon.svg';
 import SignInForm from './SignInForm';
+import SignInStatus from './SignInStatus';
 
 export default function SignInPage() {
     const { login, loading, isLoggedIn } = useAuth();
@@ -32,33 +33,10 @@ export default function SignInPage() {
                     loading={loading}
                     handleLogin={handleLogin}
                     setErrMsg={setErrMsg}
-                />
-                {errMsg && (
-                    <Flex
-                        bg="tomato"
-                        p={2}
-                        borderRadius={8}
-                        w={60}
-                        justify="center"
-                    >
-                        <Heading as="h3" size="md" color="white">
-                            {errMsg}
-                        </Heading>
-                    </Flex>
-                )}
-                {isLoggedIn && (
-                    <Flex
-                        bg="green.400"
-                        p={2}
-                        borderRadius={8}
-                        w={60}
-                        justify="center"
-                    >
-                        <Heading as="h3" size="md" color="white">
-                            Você está logado!
-                        </Heading>
-                    </Flex>
-                )}
+                    isLoggedIn={isLoggedIn}
+                >
+                    <SignInStatus errMsg={errMsg} isLoggedIn={isLoggedIn} />
+                </SignInForm>
             </Flex>
         </Flex>
     );
