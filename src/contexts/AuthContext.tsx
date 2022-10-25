@@ -5,7 +5,6 @@ type AuthContext = {
     token: {};
     login: Function;
     isLoggedIn: boolean;
-    errMsg: string;
     loading: boolean;
 };
 
@@ -14,7 +13,6 @@ export const AuthContext = createContext({} as AuthContext);
 export function AuthProvider(props: any) {
     const [token, setToken] = useState({});
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [errMsg, setErrMsg] = useState('');
     const [loading, setLoading] = useState(false);
 
     async function login(email: string, password: string) {
@@ -27,18 +25,15 @@ export function AuthProvider(props: any) {
                 },
             });
             setIsLoggedIn(true);
-            setErrMsg('');
             setLoading(false);
         } catch (err) {
-            setErrMsg('Login falhou!');
             setLoading(false);
+            throw Error('Login failed');
         }
     }
 
     return (
-        <AuthContext.Provider
-            value={{ token, login, isLoggedIn, errMsg, loading }}
-        >
+        <AuthContext.Provider value={{ token, login, isLoggedIn, loading }}>
             {props.children}
         </AuthContext.Provider>
     );
