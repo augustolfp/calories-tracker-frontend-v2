@@ -10,6 +10,7 @@ const customTheme = {
         global: (props: StyleFunctionProps | Record<string, any>) => ({
             body: {
                 bg: mode('purple.50', 'purple.800')(props),
+                color: mode('purple.600', 'white')(props),
             },
         }),
     },
