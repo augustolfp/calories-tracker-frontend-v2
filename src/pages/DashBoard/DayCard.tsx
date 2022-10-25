@@ -14,7 +14,14 @@ type Props = {
 
 export default function DayCard(props: Props) {
     return (
-        <Box as="ul">
+        <Box
+            as="ul"
+            p={8}
+            maxWidth="500px"
+            borderWidth={1}
+            borderRadius={8}
+            boxShadow="lg"
+        >
             <Box as="li">Dia: {props.day}</Box>
             <Box as="li">Gorduras: {props.fats}</Box>
             <Box as="li">Carbos: {props.carbs}</Box>
