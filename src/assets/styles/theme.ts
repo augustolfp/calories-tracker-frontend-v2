@@ -34,6 +34,12 @@ const customTheme = {
             borderRadius: 8,
             boxShadow: 'lg',
         },
+        nutrient: {
+            p: 2,
+            borderWidth: 1,
+            borderRadius: 8,
+            boxShadow: 'Inner',
+        },
     },
 };
 
