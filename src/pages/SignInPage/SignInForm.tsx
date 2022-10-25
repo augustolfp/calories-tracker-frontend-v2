@@ -25,13 +25,7 @@ type Props = {
 export default function SignInForm(props: Props) {
     return (
         <Flex width="full" align="center" justifyContent="center">
-            <Box
-                p={8}
-                maxWidth="500px"
-                borderWidth={1}
-                borderRadius={8}
-                boxShadow="lg"
-            >
+            <Box maxWidth="500px" layerStyle="card">
                 <Box textAlign="center" m={4}>
                     <Box as="h3" textStyle="h3">
                         Login

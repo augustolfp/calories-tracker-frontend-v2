@@ -17,14 +17,7 @@ type Props = {
 export default function DayCard(props: Props) {
     return (
         <Link to={`/day/${props.id}`}>
-            <Box
-                as="ul"
-                p={8}
-                maxWidth="500px"
-                borderWidth={1}
-                borderRadius={8}
-                boxShadow="lg"
-            >
+            <Box as="ul" layerStyle="card">
                 <FormatDate day={props.day} />
                 <Box as="li">Gorduras: {props.fats}</Box>
                 <Box as="li">Carbos: {props.carbs}</Box>

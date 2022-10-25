@@ -27,6 +27,14 @@ const customTheme = {
             fontWeight: 'bold',
         },
     },
+    layerStyles: {
+        card: {
+            p: 8,
+            borderWidth: 1,
+            borderRadius: 8,
+            boxShadow: 'lg',
+        },
+    },
 };
 
 const theme = extendTheme(customTheme);
