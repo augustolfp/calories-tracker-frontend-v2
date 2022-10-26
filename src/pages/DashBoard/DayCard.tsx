@@ -46,7 +46,23 @@ export default function DayCard(props: Props) {
                             thickness="12px"
                             size="70px"
                         />
-                        <Box layerStyle="nutrientNumber">{props.kcals} g</Box>
+                        <Flex justify="center" align="center">
+                            <Box layerStyle="nutrientNumber">
+                                <Box layerStyle="fracNumerator">
+                                    {props.kcals}
+                                </Box>
+                                <Box layerStyle="fracDenominator">
+                                    {props.caloriesTarget}
+                                </Box>
+                            </Box>
+                            <Box
+                                fontSize="12px"
+                                fontWeight="bold"
+                                color="white"
+                            >
+                                g
+                            </Box>
+                        </Flex>
                     </GridItem>
                     <GridItem layerStyle="nutrient" bg="cyan.300" area={'fats'}>
                         <Flex direction="column" align="center">
@@ -93,9 +109,23 @@ export default function DayCard(props: Props) {
                             thickness="12px"
                             size="70px"
                         />
-                        <Box layerStyle="nutrientNumber">
-                            {props.proteins} g
-                        </Box>
+                        <Flex justify="center" align="center">
+                            <Box layerStyle="nutrientNumber">
+                                <Box layerStyle="fracNumerator">
+                                    {props.proteins}
+                                </Box>
+                                <Box layerStyle="fracDenominator">
+                                    {props.proteinsTarget}
+                                </Box>
+                            </Box>
+                            <Box
+                                fontSize="12px"
+                                fontWeight="bold"
+                                color="white"
+                            >
+                                g
+                            </Box>
+                        </Flex>
                     </GridItem>
                 </Grid>
             </Box>

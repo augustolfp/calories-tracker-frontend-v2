@@ -60,11 +60,22 @@ const customTheme = {
             color: 'white',
         },
         nutrientNumber: {
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
             py: 1,
-            px: 4,
+            px: 1,
             fontSize: '12px',
             fontWeight: 'bold',
             color: 'white',
+        },
+        fracNumerator: {
+            float: 'left',
+        },
+        fracDenominator: {
+            borderTop: 'solid',
+            clear: 'left',
+            float: 'left',
         },
     },
 };
