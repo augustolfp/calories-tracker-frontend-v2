@@ -3,7 +3,7 @@ import { Container, Box } from '@chakra-ui/react';
 import { useParams } from 'react-router-dom';
 import DayTable from './DayTable';
 import FormatDate from '../../components/FormatDate';
-import MealTable from './MealTable';
+import MealAccordion from './MealAccordion/MealAccordion';
 
 export default function DayPage() {
     const { data } = useData();
@@ -19,7 +19,11 @@ export default function DayPage() {
                         <FormatDate day={dayData.day} />
                     </Box>
                     <DayTable {...dayData} />
-                    <MealTable {...dayData.dayMeals[0]} />
+                    {dayData.dayMeals ? (
+                        <MealAccordion {...dayData.dayMeals} />
+                    ) : (
+                        <h5>Nenhuma refeição ainda!</h5>
+                    )}
                 </>
             )}
         </Container>

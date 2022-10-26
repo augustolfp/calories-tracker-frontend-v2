@@ -9,11 +9,11 @@ import {
     TableCaption,
     TableContainer,
 } from '@chakra-ui/react';
-import { DayMeal } from '../../hooks/useData';
+import { DayMeal } from '../../../hooks/useData';
 
 export default function MealTable(props: DayMeal) {
     return (
-        <TableContainer width="500px" pt={0} mt={8}>
+        <TableContainer pt={0}>
             <Table colorScheme="purple" size="sm" variant="striped">
                 <TableCaption fontSize="18px" fontWeight="bold" placement="top">
                     {props.mealName}
