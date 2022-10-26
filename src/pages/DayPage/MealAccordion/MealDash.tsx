@@ -9,9 +9,9 @@ import {
     GridItem,
 } from '@chakra-ui/react';
 import MealTable from './MealTable';
-import IngredientAccordion from '../IngredientAccordion/IngredientAccordion';
+import IngredientAccordion from '../IngredientAccordion';
 
-export default function AccordionMealItem(props: any) {
+export default function MealDash(props: any) {
     return (
         <AccordionItem>
             <h2>

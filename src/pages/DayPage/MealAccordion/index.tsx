@@ -1,12 +1,12 @@
 import { Accordion, Box } from '@chakra-ui/react';
-import AccordionMealItem from './AccordionMealItem';
+import MealDash from './MealDash';
 
 export default function MealAccordion(props: any) {
     return (
         <Accordion layerStyle="card" w="100%">
             {Object.keys(props).map((key) => {
                 const meal = props[key];
-                return <AccordionMealItem key={key} {...meal} />;
+                return <MealDash key={key} {...meal} />;
             })}
         </Accordion>
     );

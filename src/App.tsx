@@ -1,9 +1,9 @@
-import { Routes, Route } from 'react-router-dom'
-import DayPage from './pages/DayPage/DayPage'
-import DashBoard from './pages/DashBoard/DashBoard'
-import SignInPage from './pages/SignInPage/SignInPage'
-import SignUpPage from './pages/SignUpPage/SignUpPage'
-import HomePage from './pages/HomePage/HomePage'
+import { Routes, Route } from 'react-router-dom';
+import DayPage from './pages/DayPage';
+import DashBoard from './pages/DashBoard/DashBoard';
+import SignInPage from './pages/SignInPage';
+import SignUpPage from './pages/SignUpPage/SignUpPage';
+import HomePage from './pages/HomePage/HomePage';
 
 function App() {
     return (
@@ -14,7 +14,7 @@ function App() {
             <Route path="/sign-up" element={<SignUpPage />} />
             <Route path="/day/:id" element={<DayPage />} />
         </Routes>
-    )
+    );
 }
 
-export default App
+export default App;
