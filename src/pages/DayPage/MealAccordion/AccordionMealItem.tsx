@@ -9,6 +9,7 @@ import {
     GridItem,
 } from '@chakra-ui/react';
 import MealTable from './MealTable';
+import IngredientAccordion from '../IngredientAccordion/IngredientAccordion';
 
 export default function AccordionMealItem(props: any) {
     return (
@@ -36,7 +37,7 @@ export default function AccordionMealItem(props: any) {
                     gridTemplateRows={[
                         '300px 1fr 100px',
                         '300px 1fr 100px',
-                        '300px 100px',
+                        '1fr 120px',
                     ]}
                     gridTemplateColumns={['1fr', '1fr', '1fr 1fr']}
                     gridGap="3"
@@ -52,6 +53,7 @@ export default function AccordionMealItem(props: any) {
                     </GridItem>
                     <GridItem layerStyle="card" area={'ingredients'}>
                         Ingredientes:
+                        <IngredientAccordion {...props.ingredientList} />
                     </GridItem>
                 </Grid>
             </AccordionPanel>

@@ -2,7 +2,7 @@ import { useQuery } from 'react-query';
 import { fetchUserData } from '../services/fetch';
 import { useAuth } from './useAuth';
 
-type MealIngredient = {
+export type MealIngredient = {
     id: number;
     name: string;
     mealId: number;
