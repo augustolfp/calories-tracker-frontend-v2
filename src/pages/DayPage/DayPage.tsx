@@ -14,7 +14,7 @@ export default function DayPage() {
         <Container maxW="80vw" minW="400px" centerContent py="40px">
             {dayData && (
                 <>
-                    <Box as="h2" textStyle="h2">
+                    <Box textStyle="h2">
                         <FormatDate day={dayData.day} />
                     </Box>
                     <DayTable {...dayData} />
