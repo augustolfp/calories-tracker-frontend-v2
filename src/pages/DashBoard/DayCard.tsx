@@ -1,6 +1,6 @@
 import { Box, Grid, GridItem, Flex, CircularProgress } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-import FormatDate from './FormatDate';
+import FormatDate from '../../components/FormatDate';
 
 type Props = {
     id: number;

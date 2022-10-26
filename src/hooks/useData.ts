@@ -26,7 +26,7 @@ type DayMeal = {
     ingredientList: MealIngredient[];
 };
 
-type Day = {
+export type Day = {
     id: number;
     day: string;
     notes: string;

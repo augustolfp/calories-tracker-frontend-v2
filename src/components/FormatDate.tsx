@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import { weekDaysInPt } from '../../utils/weekDays';
+import { weekDaysInPt } from '../utils/weekDays';
 import weekday from 'dayjs/plugin/weekday';
 import { Center } from '@chakra-ui/react';
 
