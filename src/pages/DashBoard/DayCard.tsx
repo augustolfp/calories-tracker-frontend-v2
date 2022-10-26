@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, Flex } from '@chakra-ui/react';
+import { Box, Grid, GridItem, Flex, CircularProgress } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import FormatDate from './FormatDate';
 
@@ -40,6 +40,12 @@ export default function DayCard(props: Props) {
                         area={'calories'}
                     >
                         <Box layerStyle="nutrientTitle">kCals</Box>
+                        <CircularProgress
+                            value={(props.kcals / props.caloriesTarget) * 100}
+                            color="green.600"
+                            thickness="12px"
+                            size="70px"
+                        />
                         <Box layerStyle="nutrientNumber">{props.kcals} g</Box>
                     </GridItem>
                     <GridItem layerStyle="nutrient" bg="cyan.300" area={'fats'}>
@@ -75,10 +81,18 @@ export default function DayCard(props: Props) {
                     </GridItem>
                     <GridItem
                         layerStyle="nutrient"
-                        bg="red.500"
+                        bg="red.300"
                         area={'proteins'}
                     >
                         <Box layerStyle="nutrientTitle">Proteinas</Box>
+                        <CircularProgress
+                            value={
+                                (props.proteins / props.proteinsTarget) * 100
+                            }
+                            color="red.600"
+                            thickness="12px"
+                            size="70px"
+                        />
                         <Box layerStyle="nutrientNumber">
                             {props.proteins} g
                         </Box>

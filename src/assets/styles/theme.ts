@@ -43,6 +43,9 @@ const customTheme = {
             boxShadow: 'lg',
         },
         nutrient: {
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
             py: 2,
             borderRadius: 8,
             boxShadow: '2xl',
