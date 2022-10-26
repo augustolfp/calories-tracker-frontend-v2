@@ -13,7 +13,7 @@ type MealIngredient = {
     kcals: number;
 };
 
-type DayMeal = {
+export type DayMeal = {
     mealId: number;
     countedDayId: number;
     mealName: string;
