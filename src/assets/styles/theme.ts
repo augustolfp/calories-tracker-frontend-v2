@@ -26,6 +26,14 @@ const customTheme = {
             fontSize: '28px',
             fontWeight: 'bold',
         },
+        h4: {
+            fontSize: '20px',
+            fontWeight: 'bold',
+        },
+        h5: {
+            fontSize: '12px',
+            fontWeight: 'bold',
+        },
     },
     layerStyles: {
         card: {
@@ -35,10 +43,25 @@ const customTheme = {
             boxShadow: 'lg',
         },
         nutrient: {
-            p: 2,
-            borderWidth: 1,
+            py: 2,
             borderRadius: 8,
-            boxShadow: 'Inner',
+            boxShadow: '2xl',
+        },
+        nutrientTitle: {
+            py: 1,
+            px: 4,
+            borderRadius: 12,
+            fontSize: '12px',
+            fontWeight: 'bold',
+            mb: '4px',
+            color: 'white',
+        },
+        nutrientNumber: {
+            py: 1,
+            px: 4,
+            fontSize: '12px',
+            fontWeight: 'bold',
+            color: 'white',
         },
     },
 };

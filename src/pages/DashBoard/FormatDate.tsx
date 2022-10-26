@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import { weekDaysInPt } from '../../utils/weekDays';
 import weekday from 'dayjs/plugin/weekday';
-import { Box } from '@chakra-ui/react';
+import { Center } from '@chakra-ui/react';
 
 dayjs.extend(weekday);
 
@@ -14,8 +14,8 @@ export default function FormatDate(props: Props) {
     const weekDay = weekDaysInPt[dayjs(props.day).weekday()];
 
     return (
-        <Box as="h4">
+        <Center as="h4" h="100%" w="100%" textStyle="h4">
             {formattedDay}, {weekDay}
-        </Box>
+        </Center>
     );
 }

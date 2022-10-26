@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, Divider } from '@chakra-ui/react';
+import { Box, Grid, GridItem, Flex } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import FormatDate from './FormatDate';
 
@@ -22,28 +22,66 @@ export default function DayCard(props: Props) {
                     templateAreas={`"date date date" 
                             "calories proteins fats"
                             "calories proteins carbs"
-                            "calories notes notes"`}
-                    gridTemplateRows={'50px 50px 50px 80px'}
-                    gridTemplateColumns={'80px 80px 100px'}
+                            "notes notes notes"`}
+                    gridTemplateRows={'80px 80px 80px 100px'}
+                    gridTemplateColumns={'90px 90px 90px'}
                     gridGap="3"
                 >
-                    <GridItem layerStyle="nutrient" area={'date'}>
+                    <GridItem
+                        layerStyle="nutrient"
+                        bg="purple.300"
+                        area={'date'}
+                    >
                         <FormatDate day={props.day} />
                     </GridItem>
-                    <GridItem layerStyle="nutrient" area={'calories'}>
-                        kCals: {props.kcals}
+                    <GridItem
+                        layerStyle="nutrient"
+                        bg="green.300"
+                        area={'calories'}
+                    >
+                        <Box layerStyle="nutrientTitle">kCals</Box>
+                        <Box layerStyle="nutrientNumber">{props.kcals} g</Box>
                     </GridItem>
-                    <GridItem layerStyle="nutrient" area={'fats'}>
-                        Gorduras: {props.fats}
+                    <GridItem layerStyle="nutrient" bg="cyan.300" area={'fats'}>
+                        <Flex direction="column" align="center">
+                            <Box layerStyle="nutrientTitle">Gorduras</Box>
+                            <Box layerStyle="nutrientNumber">
+                                {props.fats} g
+                            </Box>
+                        </Flex>
                     </GridItem>
-                    <GridItem layerStyle="nutrient" area={'carbs'}>
-                        Carbos: {props.carbs}
+                    <GridItem
+                        layerStyle="nutrient"
+                        bg="pink.300"
+                        area={'carbs'}
+                    >
+                        <Flex direction="column" align="center">
+                            <Box layerStyle="nutrientTitle">Carbos</Box>
+                            <Box layerStyle="nutrientNumber">
+                                {props.carbs} g
+                            </Box>
+                        </Flex>
                     </GridItem>
-                    <GridItem layerStyle="nutrient" area={'notes'}>
-                        Notas: {props.notes}
+                    <GridItem
+                        as="div"
+                        layerStyle="nutrient"
+                        bg="orange.300"
+                        area={'notes'}
+                        boxShadow="2xl"
+                    >
+                        <Box as="h5" p={3} textStyle="h5">
+                            Notas: {props.notes}
+                        </Box>
                     </GridItem>
-                    <GridItem layerStyle="nutrient" area={'proteins'}>
-                        proteinas: {props.proteins}
+                    <GridItem
+                        layerStyle="nutrient"
+                        bg="red.500"
+                        area={'proteins'}
+                    >
+                        <Box layerStyle="nutrientTitle">Proteinas</Box>
+                        <Box layerStyle="nutrientNumber">
+                            {props.proteins} g
+                        </Box>
                     </GridItem>
                 </Grid>
             </Box>
