@@ -13,7 +13,7 @@ import { Day } from '../../hooks/useData';
 
 export default function DayTable(props: Day) {
     return (
-        <TableContainer width="500px" layerStyle="card" pt={0} mt={8}>
+        <TableContainer layerStyle="card" pt={0} my={8} w="100%">
             <Table colorScheme="purple" size="md" variant="striped">
                 <TableCaption fontSize="18px" fontWeight="bold" placement="top">
                     Resumo do dia

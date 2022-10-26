@@ -23,10 +23,22 @@ export default function AccordionMealItem(props: any) {
             </h2>
             <AccordionPanel pb={4}>
                 <Grid
-                    templateAreas={`"table table ingredients"
-                    "description description ingredients"`}
-                    gridTemplateRows={'300px 100px'}
-                    gridTemplateColumns={'200px 200px 200px'}
+                    templateAreas={[
+                        `"table"
+                    "ingredients"
+                    "description"`,
+                        `"table"
+                    "ingredients"
+                    "description"`,
+                        `"table ingredients"
+                    "description ingredients"`,
+                    ]}
+                    gridTemplateRows={[
+                        '300px 1fr 100px',
+                        '300px 1fr 100px',
+                        '300px 100px',
+                    ]}
+                    gridTemplateColumns={['1fr', '1fr', '1fr 1fr']}
                     gridGap="3"
                 >
                     <GridItem layerStyle="card" area={'description'}>

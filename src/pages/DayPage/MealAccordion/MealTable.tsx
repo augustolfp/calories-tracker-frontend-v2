@@ -13,7 +13,7 @@ import { DayMeal } from '../../../hooks/useData';
 
 export default function MealTable(props: DayMeal) {
     return (
-        <TableContainer pt={0}>
+        <TableContainer pt={0} w="100%">
             <Table colorScheme="purple" size="sm" variant="striped">
                 <TableCaption fontSize="18px" fontWeight="bold" placement="top">
                     {props.mealName}

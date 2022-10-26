@@ -12,7 +12,7 @@ export default function DayPage() {
     const dayData = data!.find((obj) => obj.id === Number(id));
 
     return (
-        <Container maxW="80vw" minW="400px" centerContent py="40px">
+        <Container maxW="700px" centerContent py="40px">
             {dayData && (
                 <>
                     <Box textStyle="h2">
