@@ -10,14 +10,13 @@ import {
     TableContainer,
 } from '@chakra-ui/react';
 import { Day } from '../../hooks/useData';
-import FormatDate from '../../components/FormatDate';
 
 export default function DayTable(props: Day) {
     return (
-        <TableContainer width="500px" layerStyle="card">
+        <TableContainer width="500px" layerStyle="card" pt={0} mt={8}>
             <Table colorScheme="purple" size="md" variant="striped">
-                <TableCaption>
-                    <FormatDate day={props.day} />
+                <TableCaption fontSize="18px" fontWeight="bold" placement="top">
+                    Resumo do dia
                 </TableCaption>
                 <Thead>
                     <Tr>
@@ -45,9 +44,13 @@ export default function DayTable(props: Day) {
                 </Tbody>
                 <Tfoot>
                     <Tr>
-                        <Th>Calorias</Th>
-                        <Th isNumeric>{props.kcals} kCal</Th>
-                        <Th isNumeric>{props.caloriesTarget} kCal</Th>
+                        <Th fontSize="14px">Calorias (kcal)</Th>
+                        <Th isNumeric fontSize="14px">
+                            {props.kcals}
+                        </Th>
+                        <Th isNumeric fontSize="14px">
+                            {props.caloriesTarget}
+                        </Th>
                     </Tr>
                 </Tfoot>
             </Table>
