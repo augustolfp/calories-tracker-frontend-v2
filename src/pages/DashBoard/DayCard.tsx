@@ -1,6 +1,7 @@
 import { Box, Grid, GridItem, Flex, CircularProgress } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import FormatDate from '../../components/FormatDate';
+import FractionDisplay from './FractionDisplay';
 
 type Props = {
     id: number;
@@ -46,23 +47,10 @@ export default function DayCard(props: Props) {
                             thickness="12px"
                             size="70px"
                         />
-                        <Flex justify="center" align="center">
-                            <Box layerStyle="nutrientNumber">
-                                <Box layerStyle="fracNumerator">
-                                    {props.kcals}
-                                </Box>
-                                <Box layerStyle="fracDenominator">
-                                    {props.caloriesTarget}
-                                </Box>
-                            </Box>
-                            <Box
-                                fontSize="12px"
-                                fontWeight="bold"
-                                color="white"
-                            >
-                                g
-                            </Box>
-                        </Flex>
+                        <FractionDisplay
+                            numerator={props.kcals}
+                            denominator={props.caloriesTarget}
+                        />
                     </GridItem>
                     <GridItem layerStyle="nutrient" bg="cyan.300" area={'fats'}>
                         <Flex direction="column" align="center">
@@ -109,23 +97,10 @@ export default function DayCard(props: Props) {
                             thickness="12px"
                             size="70px"
                         />
-                        <Flex justify="center" align="center">
-                            <Box layerStyle="nutrientNumber">
-                                <Box layerStyle="fracNumerator">
-                                    {props.proteins}
-                                </Box>
-                                <Box layerStyle="fracDenominator">
-                                    {props.proteinsTarget}
-                                </Box>
-                            </Box>
-                            <Box
-                                fontSize="12px"
-                                fontWeight="bold"
-                                color="white"
-                            >
-                                g
-                            </Box>
-                        </Flex>
+                        <FractionDisplay
+                            numerator={props.proteins}
+                            denominator={props.proteinsTarget}
+                        />
                     </GridItem>
                 </Grid>
             </Box>
