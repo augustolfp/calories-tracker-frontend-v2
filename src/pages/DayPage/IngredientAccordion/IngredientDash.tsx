@@ -15,7 +15,7 @@ export default function IngredientDash(props: MealIngredient) {
     return (
         <AccordionItem>
             <h2>
-                <AccordionButton>
+                <AccordionButton _expanded={{ bg: 'tomato', color: 'white' }}>
                     <Box flex="1" textAlign="left">
                         {props?.name ? props.name : 'Sem nome'}
                     </Box>

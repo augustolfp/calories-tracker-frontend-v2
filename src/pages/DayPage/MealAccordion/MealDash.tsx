@@ -15,7 +15,7 @@ export default function MealDash(props: any) {
     return (
         <AccordionItem>
             <h2>
-                <AccordionButton>
+                <AccordionButton _expanded={{ bg: 'tomato', color: 'white' }}>
                     <Box flex="1" textAlign="left">
                         {props?.mealName ? props.mealName : 'Sem nome'}
                     </Box>
