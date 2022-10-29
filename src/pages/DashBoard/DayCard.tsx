@@ -1,4 +1,5 @@
-import { Box, Grid, GridItem, Flex, CircularProgress } from '@chakra-ui/react';
+import { Box, Grid, GridItem, Flex } from '@chakra-ui/react';
+import CircularProgressBar from './CircularProgressBar';
 import { Link } from 'react-router-dom';
 import FormatDate from '../../components/FormatDate';
 import FractionDisplay from './FractionDisplay';
@@ -41,11 +42,10 @@ export default function DayCard(props: Props) {
                         area={'calories'}
                     >
                         <Box layerStyle="nutrientTitle">kCals</Box>
-                        <CircularProgress
-                            value={(props.kcals / props.caloriesTarget) * 100}
+                        <CircularProgressBar
+                            numerator={props.kcals}
+                            denominator={props.caloriesTarget}
                             color="green.600"
-                            thickness="12px"
-                            size="70px"
                         />
                         <FractionDisplay
                             numerator={props.kcals}
@@ -89,13 +89,10 @@ export default function DayCard(props: Props) {
                         area={'proteins'}
                     >
                         <Box layerStyle="nutrientTitle">Proteinas</Box>
-                        <CircularProgress
-                            value={
-                                (props.proteins / props.proteinsTarget) * 100
-                            }
+                        <CircularProgressBar
+                            numerator={props.proteins}
+                            denominator={props.proteinsTarget}
                             color="red.600"
-                            thickness="12px"
-                            size="70px"
                         />
                         <FractionDisplay
                             numerator={props.proteins}
