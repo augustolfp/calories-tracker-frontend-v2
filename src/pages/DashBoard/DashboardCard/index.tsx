@@ -1,7 +1,7 @@
 import { Box, Grid, GridItem, Flex } from '@chakra-ui/react';
 import CircularProgressBar from './CircularProgressBar';
 import { Link } from 'react-router-dom';
-import FormatDate from '../../components/FormatDate';
+import FormatDate from '../../../components/FormatDate';
 import FractionDisplay from './FractionDisplay';
 
 type Props = {
@@ -16,7 +16,7 @@ type Props = {
     kcals: number;
 };
 
-export default function DayCard(props: Props) {
+export default function DashboardCard(props: Props) {
     return (
         <Link to={`/day/${props.id}`}>
             <Box layerStyle="card">
