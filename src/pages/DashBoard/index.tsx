@@ -12,7 +12,7 @@ export default function DashBoard() {
                 <Wrap spacing="30px" justify="center">
                     {data?.map((day, index) => {
                         return (
-                            <WrapItem key={index}>
+                            <WrapItem layerStyle="card" key={index}>
                                 <DayResumeCard {...day} />
                             </WrapItem>
                         );
