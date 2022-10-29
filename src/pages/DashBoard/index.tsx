@@ -1,6 +1,6 @@
 import { useData } from '../../hooks/useData';
 import { Wrap, WrapItem, Container, CircularProgress } from '@chakra-ui/react';
-import DashboardCard from './DashboardCard';
+import DayResumeCard from '../../components/DayResumeCard';
 
 export default function DashBoard() {
     const { data, isFetching } = useData();
@@ -13,7 +13,7 @@ export default function DashBoard() {
                     {data?.map((day, index) => {
                         return (
                             <WrapItem key={index}>
-                                <DashboardCard {...day} />
+                                <DayResumeCard {...day} />
                             </WrapItem>
                         );
                     })}
