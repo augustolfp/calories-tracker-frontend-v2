@@ -1,5 +1,6 @@
 import MealDash from './MealDash';
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
+import MealForm from '../../../components/MealForm';
 
 export default function MealsTab(props: any) {
     return (
@@ -20,7 +21,9 @@ export default function MealsTab(props: any) {
                         <MealDash {...props[key]} />
                     </TabPanel>
                 ))}
-                <TabPanel>opa</TabPanel>
+                <TabPanel>
+                    <MealForm countedDayId={props.dayId} />
+                </TabPanel>
             </TabPanels>
         </Tabs>
     );

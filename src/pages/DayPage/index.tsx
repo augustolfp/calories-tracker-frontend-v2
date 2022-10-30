@@ -19,7 +19,7 @@ export default function DayPage() {
                     </Box>
                     {dayData.dayMeals ? (
                         <Box layerStyle="card">
-                            <MealsTab {...dayData.dayMeals} />
+                            <MealsTab {...dayData.dayMeals} dayId={id} />
                         </Box>
                     ) : (
                         <h5>Nenhuma refeição ainda!</h5>

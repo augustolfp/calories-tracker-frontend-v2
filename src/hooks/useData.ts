@@ -1,6 +1,13 @@
-import { useQuery } from 'react-query';
+import { useQuery, useMutation, useQueryClient } from 'react-query';
 import { fetchUserData } from '../services/fetch';
 import { useAuth } from './useAuth';
+import { api } from '../lib/axios';
+
+export type mealBody = {
+    name: string;
+    description: string;
+    countedDayId: number;
+};
 
 export type MealIngredient = {
     id: number;
@@ -55,4 +62,19 @@ export function useData() {
         }
     );
     return { data, isFetching };
+}
+
+export function useMealCreator() {
+    const { token } = useAuth();
+    const queryClient = useQueryClient();
+
+    const addMeal = (data: any) => {
+        return api.post('/add-meal', data, token);
+    };
+
+    return useMutation(addMeal, {
+        onSettled: () => {
+            queryClient.invalidateQueries('userData');
+        },
+    });
 }
