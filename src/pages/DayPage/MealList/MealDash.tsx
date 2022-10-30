@@ -5,8 +5,7 @@ import { Box } from '@chakra-ui/react';
 export default function MealDash(props: any) {
     return (
         <>
-            <Box>{props?.mealName ? props.mealName : 'Sem nome'}</Box>
-            Descrição:
+            {'Descrição: '}
             {props?.mealDescription ? props.mealDescription : 'Sem descrição'}
             <MealTable {...props} />
             Ingredientes:

@@ -15,9 +15,6 @@ export default function MealTable(props: DayMeal) {
     return (
         <TableContainer pt={0} w="100%">
             <Table colorScheme="purple" size="sm" variant="striped">
-                <TableCaption fontSize="18px" fontWeight="bold" placement="top">
-                    {props.mealName}
-                </TableCaption>
                 <Thead>
                     <Tr>
                         <Th>Nutriente</Th>
