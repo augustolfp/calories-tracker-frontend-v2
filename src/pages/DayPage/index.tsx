@@ -1,7 +1,7 @@
 import { useData } from '../../hooks/useData';
 import { Container, Box } from '@chakra-ui/react';
 import { useParams } from 'react-router-dom';
-import MealList from './MealList';
+import MealsTab from './MealsTab';
 import DayResumeCard from '../../components/DayResumeCard';
 
 export default function DayPage() {
@@ -19,7 +19,7 @@ export default function DayPage() {
                     </Box>
                     {dayData.dayMeals ? (
                         <Box layerStyle="card">
-                            <MealList {...dayData.dayMeals} />
+                            <MealsTab {...dayData.dayMeals} />
                         </Box>
                     ) : (
                         <h5>Nenhuma refeição ainda!</h5>

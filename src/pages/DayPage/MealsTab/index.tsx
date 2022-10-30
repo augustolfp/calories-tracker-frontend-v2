@@ -1,7 +1,7 @@
 import MealDash from './MealDash';
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
 
-export default function MealList(props: any) {
+export default function MealsTab(props: any) {
     return (
         <Tabs>
             <TabList>
@@ -12,6 +12,7 @@ export default function MealList(props: any) {
                             : 'Sem nome'}
                     </Tab>
                 ))}
+                <Tab>+</Tab>
             </TabList>
             <TabPanels>
                 {Object.keys(props).map((key) => (
@@ -19,6 +20,7 @@ export default function MealList(props: any) {
                         <MealDash {...props[key]} />
                     </TabPanel>
                 ))}
+                <TabPanel>opa</TabPanel>
             </TabPanels>
         </Tabs>
     );
