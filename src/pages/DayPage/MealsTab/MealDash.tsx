@@ -1,5 +1,5 @@
 import MealTable from './MealTable';
-import IngredientAccordion from '../IngredientAccordion';
+import IngredientsTab from '../IngredientsTab';
 import { Box } from '@chakra-ui/react';
 
 export default function MealDash(props: any) {
@@ -9,7 +9,7 @@ export default function MealDash(props: any) {
             {props?.mealDescription ? props.mealDescription : 'Sem descrição'}
             <MealTable {...props} />
             Ingredientes:
-            <IngredientAccordion {...props.ingredientList} />
+            <IngredientsTab {...props.ingredientList} />
         </>
     );
 }
