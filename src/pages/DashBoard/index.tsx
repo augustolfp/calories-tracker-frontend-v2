@@ -13,7 +13,7 @@ export default function DashBoard() {
                     {data?.map((day, index) => {
                         return (
                             <WrapItem layerStyle="card" key={index}>
-                                <DayResumeCard {...day} />
+                                <DayResumeCard {...day} type="vertical" />
                             </WrapItem>
                         );
                     })}

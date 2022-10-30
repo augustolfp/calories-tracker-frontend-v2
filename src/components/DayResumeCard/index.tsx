@@ -14,18 +14,32 @@ type Props = {
     fats: number;
     proteins: number;
     kcals: number;
+    type: 'vertical' | 'horizontal';
 };
 
 export default function DayResumeCard(props: Props) {
     return (
         <Link to={`/day/${props.id}`}>
             <Grid
-                templateAreas={`"date date date" 
-                            "calories proteins fats"
-                            "calories proteins carbs"
-                            "notes notes notes"`}
-                gridTemplateRows={'80px 80px 80px 100px'}
-                gridTemplateColumns={'90px 90px 90px'}
+                templateAreas={
+                    props.type === 'vertical'
+                        ? `"date date date" 
+                "calories proteins fats"
+                "calories proteins carbs"
+                "notes notes notes"`
+                        : `"date calories proteins fats" 
+                "notes calories proteins carbs"`
+                }
+                gridTemplateRows={
+                    props.type === 'vertical'
+                        ? '80px 80px 80px 100px'
+                        : '80px 80px'
+                }
+                gridTemplateColumns={
+                    props.type === 'vertical'
+                        ? '90px 90px 90px'
+                        : '250px 90px 90px 90px'
+                }
                 gridGap="3"
             >
                 <GridItem layerStyle="nutrient" bg="purple.300" area={'date'}>
