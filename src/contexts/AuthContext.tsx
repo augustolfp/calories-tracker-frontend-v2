@@ -3,6 +3,8 @@ import { api } from '../lib/axios';
 
 type AuthContext = {
     token: {};
+    userId: number;
+    userName: string;
     login: Function;
     isLoggedIn: boolean;
     loading: boolean;
@@ -12,6 +14,8 @@ export const AuthContext = createContext({} as AuthContext);
 
 export function AuthProvider(props: any) {
     const [token, setToken] = useState({});
+    const [userId, setUserId] = useState(-1);
+    const [userName, setUserName] = useState('');
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [loading, setLoading] = useState(false);
 
@@ -24,6 +28,8 @@ export function AuthProvider(props: any) {
                     Authorization: `Bearer ${response.data.token}`,
                 },
             });
+            setUserId(Number(response.data.id));
+            setUserName(response.data.name);
             setIsLoggedIn(true);
             setLoading(false);
         } catch (err) {
@@ -33,7 +39,9 @@ export function AuthProvider(props: any) {
     }
 
     return (
-        <AuthContext.Provider value={{ token, login, isLoggedIn, loading }}>
+        <AuthContext.Provider
+            value={{ token, userName, userId, login, isLoggedIn, loading }}
+        >
             {props.children}
         </AuthContext.Provider>
     );
