@@ -12,19 +12,27 @@ export default function MealsTab(props: Props) {
     return (
         <Tabs>
             <TabList>
-                {props.meals.map((meal, index) => (
-                    <Tab key={index}>
-                        {meal.mealName ? meal.mealName : 'Sem nome'}
-                    </Tab>
-                ))}
+                {props.meals[0] && (
+                    <>
+                        {props.meals.map((meal, index) => (
+                            <Tab key={index}>
+                                {meal.mealName ? meal.mealName : 'Sem nome'}
+                            </Tab>
+                        ))}
+                    </>
+                )}
                 <Tab>+</Tab>
             </TabList>
             <TabPanels>
-                {props.meals.map((meal, index) => (
-                    <TabPanel key={index}>
-                        <MealDash {...meal} />
-                    </TabPanel>
-                ))}
+                {props.meals[0] && (
+                    <>
+                        {props.meals.map((meal, index) => (
+                            <TabPanel key={index}>
+                                <MealDash {...meal} />
+                            </TabPanel>
+                        ))}
+                    </>
+                )}
                 <TabPanel>
                     <MealForm countedDayId={props.dayId} />
                 </TabPanel>
