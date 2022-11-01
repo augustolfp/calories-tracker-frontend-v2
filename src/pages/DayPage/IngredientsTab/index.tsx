@@ -12,27 +12,23 @@ export default function IngredientsTab(props: Props) {
     return (
         <Tabs orientation="vertical">
             <TabList>
-                {props.ingredients[0] && (
-                    <>
-                        {props.ingredients.map((ing, index) => (
-                            <Tab key={index}>
-                                {ing.name ? ing.name : 'Sem nome'}
-                            </Tab>
-                        ))}
-                    </>
-                )}
+                {props.ingredients[0] &&
+                    props.ingredients.map((ing, index) => (
+                        <Tab key={index}>
+                            {ing.name ? ing.name : 'Sem nome'}
+                        </Tab>
+                    ))}
+
                 <Tab>+</Tab>
             </TabList>
             <TabPanels>
-                {props.ingredients[0] && (
-                    <>
-                        {props.ingredients.map((ing, index) => (
-                            <TabPanel key={index}>
-                                <IngredientDash {...ing} />
-                            </TabPanel>
-                        ))}
-                    </>
-                )}
+                {props.ingredients[0] &&
+                    props.ingredients.map((ing, index) => (
+                        <TabPanel key={index}>
+                            <IngredientDash {...ing} />
+                        </TabPanel>
+                    ))}
+
                 <TabPanel>
                     <IngredientForm mealId={props.mealId} />
                 </TabPanel>
