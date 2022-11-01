@@ -4,9 +4,6 @@ import {
     FormControl,
     FormLabel,
     CircularProgress,
-    Box,
-    Flex,
-    Heading,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useMealCreator } from '../../hooks/useMealCreator';
@@ -16,11 +13,9 @@ type Props = {
 };
 
 export default function MealForm(props: Props) {
-    const { mutate: addMeal } = useMealCreator();
+    const { mutate: addMeal, isLoading, isError, error } = useMealCreator();
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
-    const [isLoading, setIsLoading] = useState(false);
-    const [errMsg, setErrMsg] = useState('');
 
     async function handleMealCreation(e: any) {
         e.preventDefault();
