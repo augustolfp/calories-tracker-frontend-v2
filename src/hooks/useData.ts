@@ -1,5 +1,4 @@
 import { useQuery, useMutation, useQueryClient } from 'react-query';
-import { fetchUserData } from '../services/fetch';
 import { useAuth } from './useAuth';
 import { api } from '../lib/axios';
 
@@ -52,8 +51,7 @@ export function useData() {
     const { data, isFetching } = useQuery<Day[]>(
         'userData',
         async () => {
-            const response = await fetchUserData(token);
-
+            const response = await api.get('/get-days-data', token);
             return response.data;
         },
         {

@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react';
-import { signIn } from '../services/auth';
+import { api } from '../lib/axios';
 
 type AuthContext = {
     token: {};
@@ -18,7 +18,7 @@ export function AuthProvider(props: any) {
     async function login(email: string, password: string) {
         setLoading(true);
         try {
-            const response = await signIn({ email, password });
+            const response = await api.post('/sign-in', { email, password });
             setToken({
                 headers: {
                     Authorization: `Bearer ${response.data.token}`,
