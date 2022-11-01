@@ -61,18 +61,3 @@ export function useData() {
     );
     return { data, isFetching };
 }
-
-export function useMealCreator() {
-    const { token } = useAuth();
-    const queryClient = useQueryClient();
-
-    const addMeal = (data: any) => {
-        return api.post('/add-meal', data, token);
-    };
-
-    return useMutation(addMeal, {
-        onSettled: () => {
-            queryClient.invalidateQueries('userData');
-        },
-    });
-}

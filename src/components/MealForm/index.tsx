@@ -9,7 +9,7 @@ import {
     Heading,
 } from '@chakra-ui/react';
 import { useState } from 'react';
-import { useMealCreator } from '../../hooks/useData';
+import { useMealCreator } from '../../hooks/useMealCreator';
 
 type Props = {
     countedDayId: number;
