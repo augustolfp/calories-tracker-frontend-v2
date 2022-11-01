@@ -1,6 +1,8 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
 import IngredientDash from './IngredientDash';
 import { MealIngredient } from '../../../hooks/useData';
+import IngredientForm from '../../../components/IngredientForm';
+
 type Props = {
     ingredients: MealIngredient[];
     mealId: number;
@@ -31,7 +33,9 @@ export default function IngredientsTab(props: Props) {
                         ))}
                     </>
                 )}
-                <TabPanel>Creator Here</TabPanel>
+                <TabPanel>
+                    <IngredientForm mealId={props.mealId} />
+                </TabPanel>
             </TabPanels>
         </Tabs>
     );

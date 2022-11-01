@@ -24,7 +24,6 @@ export default function MealForm(props: Props) {
             description,
             countedDayId: Number(props.countedDayId),
         };
-        console.log(body);
         addMeal(body);
     }
 
