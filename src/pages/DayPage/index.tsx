@@ -9,7 +9,6 @@ export default function DayPage() {
     const { id } = useParams();
 
     const dayData = data!.find((obj) => obj.id === Number(id));
-
     return (
         <Container maxW="900px" centerContent py="40px">
             {dayData && (
@@ -19,7 +18,10 @@ export default function DayPage() {
                     </Box>
                     {dayData.dayMeals ? (
                         <Box layerStyle="card">
-                            <MealsTab {...dayData.dayMeals} dayId={id} />
+                            <MealsTab
+                                meals={dayData.dayMeals}
+                                dayId={Number(id)}
+                            />
                         </Box>
                     ) : (
                         <h5>Nenhuma refeição ainda!</h5>

@@ -1,15 +1,19 @@
 import MealTable from './MealTable';
 import IngredientsTab from '../IngredientsTab';
 import { Box } from '@chakra-ui/react';
+import { DayMeal } from '../../../hooks/useData';
 
-export default function MealDash(props: any) {
+export default function MealDash(props: DayMeal) {
     return (
         <>
             {'Descrição: '}
-            {props?.mealDescription ? props.mealDescription : 'Sem descrição'}
+            {props.mealDescription ? props.mealDescription : 'Sem descrição'}
             <MealTable {...props} />
             Ingredientes:
-            <IngredientsTab {...props.ingredientList} />
+            <IngredientsTab
+                ingredients={props.ingredientList}
+                mealId={props.mealId}
+            />
         </>
     );
 }

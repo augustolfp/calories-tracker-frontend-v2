@@ -1,24 +1,28 @@
 import MealDash from './MealDash';
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
 import MealForm from '../../../components/MealForm';
+import { DayMeal } from '../../../hooks/useData';
 
-export default function MealsTab(props: any) {
+type Props = {
+    meals: DayMeal[];
+    dayId: number;
+};
+
+export default function MealsTab(props: Props) {
     return (
         <Tabs>
             <TabList>
-                {Object.keys(props).map((key) => (
-                    <Tab key={key}>
-                        {props[key]?.mealName
-                            ? props[key].mealName
-                            : 'Sem nome'}
+                {props.meals.map((meal, index) => (
+                    <Tab key={index}>
+                        {meal.mealName ? meal.mealName : 'Sem nome'}
                     </Tab>
                 ))}
                 <Tab>+</Tab>
             </TabList>
             <TabPanels>
-                {Object.keys(props).map((key) => (
-                    <TabPanel key={key}>
-                        <MealDash {...props[key]} />
+                {props.meals.map((meal, index) => (
+                    <TabPanel key={index}>
+                        <MealDash {...meal} />
                     </TabPanel>
                 ))}
                 <TabPanel>
