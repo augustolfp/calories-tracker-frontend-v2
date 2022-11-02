@@ -4,7 +4,7 @@ import MealForm from '../../../components/MealForm';
 import { DayMeal } from '../../../hooks/useData';
 
 type Props = {
-    meals: DayMeal[];
+    meals: DayMeal[] | undefined;
     dayId: number;
 };
 
@@ -12,7 +12,7 @@ export default function MealsTab(props: Props) {
     return (
         <Tabs>
             <TabList>
-                {props.meals[0] &&
+                {props.meals &&
                     props.meals.map((meal, index) => (
                         <Tab key={index}>
                             {meal.mealName ? meal.mealName : 'Sem nome'}
@@ -22,7 +22,7 @@ export default function MealsTab(props: Props) {
                 <Tab>+</Tab>
             </TabList>
             <TabPanels>
-                {props.meals[0] &&
+                {props.meals &&
                     props.meals.map((meal, index) => (
                         <TabPanel key={index}>
                             <MealDash {...meal} />

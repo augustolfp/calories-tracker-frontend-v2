@@ -16,16 +16,9 @@ export default function DayPage() {
                     <Box layerStyle="card">
                         <DayResumeCard {...dayData} type="horizontal" />
                     </Box>
-                    {dayData.dayMeals ? (
-                        <Box layerStyle="card">
-                            <MealsTab
-                                meals={dayData.dayMeals}
-                                dayId={Number(id)}
-                            />
-                        </Box>
-                    ) : (
-                        <h5>Nenhuma refeição ainda!</h5>
-                    )}
+                    <Box layerStyle="card">
+                        <MealsTab meals={dayData.dayMeals} dayId={Number(id)} />
+                    </Box>
                 </>
             )}
         </Container>
