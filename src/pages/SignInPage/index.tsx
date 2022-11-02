@@ -4,6 +4,7 @@ import { Flex, Image, Box, Heading } from '@chakra-ui/react';
 import bananaIcon from '../../../public/icon.svg';
 import SignInForm from './SignInForm';
 import SignInStatus from './SignInStatus';
+import CredentialsPageLayout from '../../components/CredentialsPageLayout';
 
 export default function SignInPage() {
     const { login, loading, isLoggedIn } = useAuth();
@@ -22,55 +23,19 @@ export default function SignInPage() {
     }
 
     return (
-        <Flex
-            height="100vh"
-            direction={['column', 'row']}
-            alignItems="center"
-            justifyContent="center"
-        >
-            <Flex
-                direction="column"
-                alignItems="center"
-                justifyContent="center"
+        <CredentialsPageLayout>
+            <SignInForm
+                email={email}
+                setEmail={setEmail}
+                password={password}
+                setPassword={setPassword}
+                loading={loading}
+                handleLogin={handleLogin}
+                setErrMsg={setErrMsg}
+                isLoggedIn={isLoggedIn}
             >
-                <Flex
-                    direction={['row', 'column']}
-                    alignItems="center"
-                    justifyContent="center"
-                >
-                    <Image
-                        boxSize={[50, 200]}
-                        src={bananaIcon}
-                        alt="banana logo"
-                    />
-                    <Flex
-                        direction="column"
-                        alignItems="center"
-                        justifyContent="center"
-                    >
-                        <Box as="h1" textStyle="h1">
-                            No-NonSense!
-                        </Box>
-                        <Box as="h2" textStyle="h2">
-                            Calories Tracker
-                        </Box>
-                    </Flex>
-                </Flex>
-            </Flex>
-            <Flex direction="column" p={12} rounded={6}>
-                <SignInForm
-                    email={email}
-                    setEmail={setEmail}
-                    password={password}
-                    setPassword={setPassword}
-                    loading={loading}
-                    handleLogin={handleLogin}
-                    setErrMsg={setErrMsg}
-                    isLoggedIn={isLoggedIn}
-                >
-                    <SignInStatus errMsg={errMsg} isLoggedIn={isLoggedIn} />
-                </SignInForm>
-            </Flex>
-        </Flex>
+                <SignInStatus errMsg={errMsg} isLoggedIn={isLoggedIn} />
+            </SignInForm>
+        </CredentialsPageLayout>
     );
 }
