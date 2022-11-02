@@ -1,39 +1,38 @@
-import { useState } from 'react';
-import { useAuth } from '../../hooks/useAuth';
-import SignInForm from './SignInForm';
-import SignInStatus from './SignInStatus';
 import CredentialsPageLayout from '../../components/CredentialsPageLayout';
+import { useAuth } from '../../hooks/useAuth';
+import { useState } from 'react';
+import SignUpForm from './SignUpForm';
 
-export default function SignInPage() {
-    const { login, loading, isLoggedIn } = useAuth();
+export default function SignUpPage() {
+    const { newUser, loading } = useAuth();
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errMsg, setErrMsg] = useState('');
 
-    async function handleLogin(e: any) {
+    async function handleNewUser(e: any) {
         e.preventDefault();
         try {
-            await login(email, password);
+            await newUser(name, email, password);
             setErrMsg('');
         } catch (err) {
-            setErrMsg('Login falhou!');
+            setErrMsg('Ocorreu um erro!');
         }
     }
 
     return (
         <CredentialsPageLayout>
-            <SignInForm
+            <SignUpForm
+                name={name}
+                setName={setName}
                 email={email}
                 setEmail={setEmail}
                 password={password}
                 setPassword={setPassword}
                 loading={loading}
-                handleLogin={handleLogin}
+                handleNewUser={handleNewUser}
                 setErrMsg={setErrMsg}
-                isLoggedIn={isLoggedIn}
-            >
-                <SignInStatus errMsg={errMsg} isLoggedIn={isLoggedIn} />
-            </SignInForm>
+            ></SignUpForm>
         </CredentialsPageLayout>
     );
 }

@@ -6,6 +6,7 @@ type AuthContext = {
     userId: number;
     userName: string;
     login: Function;
+    newUser: Function;
     isLoggedIn: boolean;
     loading: boolean;
 };
@@ -38,9 +39,32 @@ export function AuthProvider(props: any) {
         }
     }
 
+    async function newUser(name: string, email: string, password: string) {
+        setLoading(true);
+        try {
+            const response = await api.post('/sign-up', {
+                name,
+                email,
+                password,
+            });
+            setLoading(false);
+        } catch (err) {
+            setLoading(false);
+            throw Error('SignUp failed');
+        }
+    }
+
     return (
         <AuthContext.Provider
-            value={{ token, userName, userId, login, isLoggedIn, loading }}
+            value={{
+                token,
+                userName,
+                userId,
+                login,
+                newUser,
+                isLoggedIn,
+                loading,
+            }}
         >
             {props.children}
         </AuthContext.Provider>

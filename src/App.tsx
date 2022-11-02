@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import DayPage from './pages/DayPage';
 import DashBoard from './pages/DashBoard';
 import SignInPage from './pages/SignInPage';
-import SignUpPage from './pages/SignUpPage/SignUpPage';
+import SignUpPage from './pages/SignUpPage';
 import HomePage from './pages/HomePage/HomePage';
 
 function App() {
