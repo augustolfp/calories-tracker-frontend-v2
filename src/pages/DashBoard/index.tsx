@@ -7,6 +7,7 @@ import {
     Box,
 } from '@chakra-ui/react';
 import DayResumeCard from '../../components/DayResumeCard';
+import DayForm from '../../components/DayForm';
 
 export default function DashBoard() {
     const { isLoading, isFetching, isError, data, status } = useData();
@@ -26,6 +27,9 @@ export default function DashBoard() {
     return (
         <Container maxW="80vw" centerContent py="40px">
             <Wrap spacing="30px" justify="center">
+                <WrapItem layerStyle="card">
+                    <DayForm />
+                </WrapItem>
                 {data?.map((day, index) => {
                     return (
                         <WrapItem layerStyle="card" key={index}>
