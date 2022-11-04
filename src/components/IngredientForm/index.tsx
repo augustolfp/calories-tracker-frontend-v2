@@ -9,11 +9,23 @@ import { useState } from 'react';
 import { useIngredientCreator } from '../../hooks/useIngredientCreator';
 import SearchIngredients from '../SearchIngredients';
 
+import {
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    ModalBody,
+    ModalCloseButton,
+    useDisclosure,
+} from '@chakra-ui/react';
+
 type Props = {
     mealId: number;
 };
 
 export default function IngredientForm(props: Props) {
+    const { isOpen, onOpen, onClose } = useDisclosure();
     const {
         mutate: addIngredient,
         isLoading,
@@ -147,7 +159,22 @@ export default function IngredientForm(props: Props) {
                     )}
                 </Button>
             </form>
-            <SearchIngredients />
+            <Button onClick={onOpen}>Pesquisar</Button>
+            <Modal isOpen={isOpen} onClose={onClose} size="xl" isCentered>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>Pesquise ingredientes</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                        <SearchIngredients />
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button colorScheme="purple" mr={3} onClick={onClose}>
+                            Cancelar
+                        </Button>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
         </>
     );
 }

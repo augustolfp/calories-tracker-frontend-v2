@@ -77,6 +77,19 @@ const customTheme = {
             clear: 'left',
             float: 'left',
         },
+        searchResultContainer: {
+            p: 8,
+            borderWidth: 1,
+            borderRadius: 8,
+            boxShadow: 'lg',
+            overflow: 'auto',
+        },
+        searchResultCard: {
+            p: 2,
+            borderWidth: 1,
+            borderRadius: 8,
+            boxShadow: 'lg',
+        },
     },
 };
 
