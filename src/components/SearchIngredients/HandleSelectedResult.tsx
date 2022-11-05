@@ -17,14 +17,15 @@ type Props = {
 
 export default function HandleSelectedResult(props: Props) {
     const [amount, setAmount] = useState(props.selectedResult.baseQty);
-    let proteins =
-        (props.selectedResult.proteins * amount) / props.selectedResult.baseQty;
-    let carbs =
-        (props.selectedResult.carbs * amount) / props.selectedResult.baseQty;
-    let fats =
-        (props.selectedResult.fats * amount) / props.selectedResult.baseQty;
-    let kcals =
-        (props.selectedResult.kcals * amount) / props.selectedResult.baseQty;
+
+    function calcProportions(nutrient: number) {
+        const proportion = (nutrient * amount) / props.selectedResult.baseQty;
+        return Math.round((proportion * 10) / 10);
+    }
+    let proteins = calcProportions(props.selectedResult.proteins);
+    let carbs = calcProportions(props.selectedResult.carbs);
+    let fats = calcProportions(props.selectedResult.fats);
+    let kcals = calcProportions(props.selectedResult.kcals);
 
     const {
         mutate: addIngredient,
@@ -52,7 +53,7 @@ export default function HandleSelectedResult(props: Props) {
             <NumberInput
                 value={amount}
                 precision={2}
-                step={0.2}
+                step={50}
                 onChange={(value) => {
                     setAmount(Number(value));
                 }}
@@ -64,10 +65,10 @@ export default function HandleSelectedResult(props: Props) {
                 </NumberInputStepper>
             </NumberInput>
             <Box>{props.selectedResult.description}</Box>
-            <Box>Prot: {proteins.toFixed(1)}g</Box>
-            <Box>Carb: {carbs.toFixed(1)}g</Box>
-            <Box>Gord: {fats.toFixed(1)}g</Box>
-            <Box>kCal: {kcals.toFixed(1)}g</Box>
+            <Box>Prot: {proteins}g</Box>
+            <Box>Carb: {carbs}g</Box>
+            <Box>Gord: {fats}g</Box>
+            <Box>kCal: {kcals}g</Box>
             <Button onClick={handleIngredientCreation}>Adicionar</Button>
         </VStack>
     );
