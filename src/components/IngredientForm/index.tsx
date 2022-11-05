@@ -43,7 +43,7 @@ export default function IngredientForm(props: Props) {
                     <ModalHeader>Pesquise ingredientes</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
-                        <SearchIngredients />
+                        <SearchIngredients mealId={props.mealId} />
                     </ModalBody>
                     <ModalFooter>
                         <Button

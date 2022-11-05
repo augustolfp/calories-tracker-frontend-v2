@@ -4,6 +4,7 @@ import { Input, VStack, Box, Flex } from '@chakra-ui/react';
 import { useAuth } from '../../hooks/useAuth';
 import { api } from '../../lib/axios';
 import ResultCard from './ResultCard';
+import HandleSelectedResult from './HandleSelectedResult';
 
 export type SearchResult = {
     id: number;
@@ -19,7 +20,11 @@ export type SearchResult = {
     kcals: number;
 };
 
-export default function SearchIngredients() {
+type Props = {
+    mealId: number;
+};
+
+export default function SearchIngredients(props: Props) {
     const { token } = useAuth();
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
@@ -67,17 +72,10 @@ export default function SearchIngredients() {
                 <Box w="100%" layerStyle="card">
                     <Box>Info nutricional</Box>
                     {selectedResult && (
-                        <Box>
-                            Porção de {selectedResult.baseQty.toFixed(0)}
-                            {selectedResult.baseUnit} • Prot:{' '}
-                            {selectedResult.proteins.toFixed(1)}
-                            {selectedResult.proteinUnit} • Carb:{' '}
-                            {selectedResult.carbs.toFixed(1)}
-                            {selectedResult.carbUnit} • Gord:{' '}
-                            {selectedResult.fats.toFixed(1)}
-                            {selectedResult.fatUnit} • kCal:{' '}
-                            {selectedResult.kcals.toFixed(0)}
-                        </Box>
+                        <HandleSelectedResult
+                            selectedResult={selectedResult}
+                            mealId={props.mealId}
+                        />
                     )}
                 </Box>
             </Flex>
