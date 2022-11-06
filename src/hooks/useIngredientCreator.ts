@@ -11,11 +11,7 @@ export function useIngredientCreator() {
 
     return useMutation({
         mutationFn: (ingBody: IngBody) => {
-            return api.post(
-                '/add-ingredients',
-                { ingredients: [ingBody] },
-                token
-            );
+            return api.post('/add-ingredients', ingBody, token);
         },
         onSettled: () => {
             queryClient.invalidateQueries('userData');

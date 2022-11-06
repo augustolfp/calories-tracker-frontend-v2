@@ -32,10 +32,10 @@ export default function CreateCustomIngredient(props: Props) {
         const body = {
             name,
             mealId: props.mealId,
-            weightInGrams: weight,
-            carbsInGrams: carbs,
-            fatsInGrams: fats,
-            proteinsInGrams: proteins,
+            weight: weight,
+            carbs: carbs,
+            fats: fats,
+            proteins: proteins,
             kcals,
         };
         addIngredient(body);

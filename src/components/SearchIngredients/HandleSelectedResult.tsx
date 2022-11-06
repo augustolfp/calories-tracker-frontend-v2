@@ -39,10 +39,10 @@ export default function HandleSelectedResult(props: Props) {
         const body = {
             name: props.selectedResult.description,
             mealId: props.mealId,
-            weightInGrams: amount,
-            carbsInGrams: carbs,
-            fatsInGrams: fats,
-            proteinsInGrams: proteins,
+            weight: amount,
+            carbs: carbs,
+            fats: fats,
+            proteins: proteins,
             kcals,
         };
         addIngredient(body);

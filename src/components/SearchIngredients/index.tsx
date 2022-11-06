@@ -10,13 +10,9 @@ export type SearchResult = {
     id: number;
     description: string;
     baseQty: number;
-    baseUnit: string;
     proteins: number;
-    proteinUnit: string;
     carbs: number;
-    carbUnit: string;
     fats: number;
-    fatUnit: string;
     kcals: number;
 };
 

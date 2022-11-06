@@ -12,10 +12,10 @@ export type MealIngredient = {
     id: number;
     name: string;
     mealId: number;
-    weightInGrams: number;
-    carbsInGrams: number;
-    fatsInGrams: number;
-    proteinsInGrams: number;
+    weight: number;
+    carbs: number;
+    fats: number;
+    proteins: number;
     kcals: number;
 };
 
