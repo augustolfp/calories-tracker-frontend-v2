@@ -51,7 +51,7 @@ export default function DayForm() {
                     required
                 />
             </FormControl>
-            <FormControl isRequired>
+            <FormControl>
                 <FormLabel>Notas</FormLabel>
                 <Input
                     type="text"
@@ -62,7 +62,6 @@ export default function DayForm() {
                     }}
                     placeholder="Insira uma anotação"
                     disabled={isLoading}
-                    required
                 />
             </FormControl>
             <FormControl isRequired>

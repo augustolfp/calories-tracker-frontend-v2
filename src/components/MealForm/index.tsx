@@ -46,7 +46,7 @@ export default function MealForm(props: Props) {
                     required
                 />
             </FormControl>
-            <FormControl isRequired>
+            <FormControl>
                 <FormLabel>Descrição da refeição</FormLabel>
                 <Input
                     variant="filled"
@@ -60,7 +60,6 @@ export default function MealForm(props: Props) {
                     }}
                     placeholder="Descrição da refeição"
                     disabled={isLoading}
-                    required
                 />
             </FormControl>
             <Button
