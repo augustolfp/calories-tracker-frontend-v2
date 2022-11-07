@@ -1,4 +1,4 @@
-import { useQuery, useMutation, useQueryClient } from 'react-query';
+import { useQuery } from 'react-query';
 import { useAuth } from './useAuth';
 import { api } from '../lib/axios';
 import { Day } from '../types';
