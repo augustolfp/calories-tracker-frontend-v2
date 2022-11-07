@@ -1,7 +1,7 @@
-import { Box, Grid, GridItem, Flex } from '@chakra-ui/react';
+import { Box, Grid, GridItem, Flex, Center } from '@chakra-ui/react';
 import CircularProgressBar from './CircularProgressBar';
 import { Link } from 'react-router-dom';
-import FormatDate from '../FormatDate';
+import formatDate from '../../utils/formatDate';
 import FractionDisplay from './FractionDisplay';
 
 type Props = {
@@ -43,7 +43,7 @@ export default function DayResumeCard(props: Props) {
                 gridGap="3"
             >
                 <GridItem layerStyle="nutrient" bg="purple.300" area={'date'}>
-                    <FormatDate day={props.day} />
+                    <Center>{formatDate(props.day)}</Center>
                 </GridItem>
                 <GridItem
                     layerStyle="nutrient"
