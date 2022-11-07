@@ -7,6 +7,7 @@ import {
     CircularProgress,
     Box,
 } from '@chakra-ui/react';
+import { SingleDatepicker } from 'chakra-dayzed-datepicker';
 import {
     NumberInput,
     NumberInputField,
@@ -19,7 +20,7 @@ import { useDayCreator } from '../../hooks/useDayCreator';
 export default function DayForm() {
     const { mutate: newDay, isLoading, isError, error } = useDayCreator();
 
-    const [day, setDay] = useState('');
+    const [date, setDate] = useState(new Date());
     const [notes, setNotes] = useState('');
     const [caloriesTarget, setCaloriesTarget] = useState('');
     const [proteinsTarget, setProteinsTarget] = useState('');
@@ -27,11 +28,12 @@ export default function DayForm() {
     async function handleNewDay(e: any) {
         e.preventDefault();
         const body = {
-            day,
+            day: date.toISOString(),
             notes,
             caloriesTarget: Number(caloriesTarget),
             proteinsTarget: Number(proteinsTarget),
         };
+        console.log(body);
         newDay(body);
     }
 
@@ -39,16 +41,18 @@ export default function DayForm() {
         <form onSubmit={handleNewDay}>
             <FormControl isRequired>
                 <FormLabel>Data</FormLabel>
-                <Input
-                    type="text"
-                    name="day"
-                    value={day}
-                    onChange={(e) => {
-                        setDay(e.target.value);
+                <SingleDatepicker
+                    configs={{
+                        dayNames: 'Dom Seg Ter Qua Qui Sex Sab'.split(' '),
+                        monthNames:
+                            'Jan Fev Mar Abr Mai Jun Jul Ago Set Out Nov Dez'.split(
+                                ' '
+                            ),
+                        dateFormat: 'dd-MM-yyyy',
                     }}
-                    placeholder="Insira uma data"
-                    disabled={isLoading}
-                    required
+                    name="date-input"
+                    date={date}
+                    onDateChange={setDate}
                 />
             </FormControl>
             <FormControl>
