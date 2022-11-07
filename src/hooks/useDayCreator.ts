@@ -3,7 +3,7 @@ import { useAuth } from './useAuth';
 import { api } from '../lib/axios';
 import { DayBody } from '../types';
 
-export function useNewDay() {
+export function useDayCreator() {
     const { token } = useAuth();
     const queryClient = useQueryClient();
 

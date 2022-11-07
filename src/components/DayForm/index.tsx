@@ -14,10 +14,10 @@ import {
     NumberIncrementStepper,
     NumberDecrementStepper,
 } from '@chakra-ui/react';
-import { useNewDay } from '../../hooks/useNewDay';
+import { useDayCreator } from '../../hooks/useDayCreator';
 
 export default function DayForm() {
-    const { mutate: newDay, isLoading, isError, error } = useNewDay();
+    const { mutate: newDay, isLoading, isError, error } = useDayCreator();
 
     const [day, setDay] = useState('');
     const [notes, setNotes] = useState('');
