@@ -33,7 +33,6 @@ export default function DayForm() {
             caloriesTarget: Number(caloriesTarget),
             proteinsTarget: Number(proteinsTarget),
         };
-        console.log(body);
         newDay(body);
     }
 

@@ -1,11 +1,20 @@
-import dayjs from 'dayjs';
 import { weekDaysInPt } from './weekDays';
-import weekday from 'dayjs/plugin/weekday';
 
-dayjs.extend(weekday);
+function padTo2Digits(num: number) {
+    return num.toString().padStart(2, '0');
+}
 
 export default function formatDate(day: string) {
-    const formattedDay = dayjs(day).format('DD-MM-YYYY');
-    const weekDay = weekDaysInPt[dayjs(day).weekday()];
-    return `${formattedDay}, ${weekDay}`;
+    const date = new Date(day);
+    const weekDay = weekDaysInPt[date.getUTCDay()];
+
+    return (
+        [
+            padTo2Digits(date.getUTCDate()),
+            padTo2Digits(date.getUTCMonth() + 1),
+            date.getUTCFullYear(),
+        ].join('-') +
+        ', ' +
+        weekDay
+    );
 }
