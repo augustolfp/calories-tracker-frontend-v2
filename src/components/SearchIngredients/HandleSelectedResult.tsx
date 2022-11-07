@@ -1,5 +1,5 @@
 import { Box, VStack, Button } from '@chakra-ui/react';
-import { SearchResult } from '../SearchIngredients';
+import { SearchResult } from '../../types';
 import { useState } from 'react';
 import {
     NumberInput,

@@ -1,9 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 import { useAuth } from './useAuth';
 import { api } from '../lib/axios';
-import { MealIngredient } from './useData';
-
-type IngBody = Omit<MealIngredient, 'id'>;
+import { IngBody } from '../types';
 
 export function useIngredientCreator() {
     const { token } = useAuth();

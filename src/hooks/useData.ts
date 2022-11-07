@@ -1,50 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 import { useAuth } from './useAuth';
 import { api } from '../lib/axios';
-
-export type mealBody = {
-    name: string;
-    description: string;
-    countedDayId: number;
-};
-
-export type MealIngredient = {
-    id: number;
-    name: string;
-    mealId: number;
-    weight: number;
-    carbs: number;
-    fats: number;
-    proteins: number;
-    kcals: number;
-};
-
-export type DayMeal = {
-    mealId: number;
-    countedDayId: number;
-    mealName: string;
-    mealDescription: string;
-    mealCreationDate: string;
-    carbs: number;
-    fats: number;
-    proteins: number;
-    kcals: number;
-    ingredientList: MealIngredient[];
-};
-
-export type Day = {
-    id: number;
-    day: string;
-    notes: string;
-    userId: number;
-    caloriesTarget: number;
-    proteinsTarget: number;
-    carbs: number;
-    fats: number;
-    proteins: number;
-    kcals: number;
-    dayMeals: DayMeal[];
-};
+import { Day } from '../types';
 
 export function useData() {
     const { isLoggedIn, token } = useAuth();

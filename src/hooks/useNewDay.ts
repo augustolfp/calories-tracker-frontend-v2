@@ -1,13 +1,7 @@
 import { useMutation, useQueryClient } from 'react-query';
 import { useAuth } from './useAuth';
 import { api } from '../lib/axios';
-
-type DayBody = {
-    day: string;
-    notes: string;
-    caloriesTarget: number;
-    proteinsTarget: number;
-};
+import { DayBody } from '../types';
 
 export function useNewDay() {
     const { token } = useAuth();

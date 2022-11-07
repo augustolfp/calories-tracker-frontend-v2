@@ -1,6 +1,6 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
 import IngredientDash from './IngredientDash';
-import { MealIngredient } from '../../../hooks/useData';
+import { MealIngredient } from '../../../types';
 import IngredientForm from '../../../components/IngredientForm';
 
 type Props = {

@@ -1,12 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 import { useAuth } from './useAuth';
 import { api } from '../lib/axios';
-
-type MealBody = {
-    name: string;
-    description: string;
-    countedDayId: number;
-};
+import { MealBody } from '../types';
 
 export function useMealCreator() {
     const { token } = useAuth();

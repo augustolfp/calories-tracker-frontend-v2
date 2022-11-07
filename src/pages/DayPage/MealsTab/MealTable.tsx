@@ -9,7 +9,7 @@ import {
     TableCaption,
     TableContainer,
 } from '@chakra-ui/react';
-import { DayMeal } from '../../../hooks/useData';
+import { DayMeal } from '../../../types';
 
 export default function MealTable(props: DayMeal) {
     return (

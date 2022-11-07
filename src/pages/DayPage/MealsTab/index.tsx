@@ -1,7 +1,7 @@
 import MealDash from './MealDash';
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
 import MealForm from '../../../components/MealForm';
-import { DayMeal } from '../../../hooks/useData';
+import { DayMeal } from '../../../types';
 
 type Props = {
     meals: DayMeal[] | undefined;

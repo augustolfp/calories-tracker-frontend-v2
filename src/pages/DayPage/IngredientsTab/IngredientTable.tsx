@@ -9,7 +9,7 @@ import {
     TableCaption,
     TableContainer,
 } from '@chakra-ui/react';
-import { MealIngredient } from '../../../hooks/useData';
+import { MealIngredient } from '../../../types';
 
 export default function IngredientTable(props: MealIngredient) {
     return (

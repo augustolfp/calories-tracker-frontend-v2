@@ -5,16 +5,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { api } from '../../lib/axios';
 import ResultCard from './ResultCard';
 import HandleSelectedResult from './HandleSelectedResult';
-
-export type SearchResult = {
-    id: number;
-    description: string;
-    baseQty: number;
-    proteins: number;
-    carbs: number;
-    fats: number;
-    kcals: number;
-};
+import { SearchResult } from '../../types';
 
 type Props = {
     mealId: number;

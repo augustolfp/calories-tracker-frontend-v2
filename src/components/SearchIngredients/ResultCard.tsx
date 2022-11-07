@@ -1,5 +1,5 @@
 import { Box, VStack } from '@chakra-ui/react';
-import { SearchResult } from '.';
+import { SearchResult } from '../../types';
 
 type Props = {
     description: string;
