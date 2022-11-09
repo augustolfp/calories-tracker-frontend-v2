@@ -1,16 +1,19 @@
 import { useData } from '../../hooks/useData';
+import { useDelete } from '../../hooks/useDelete';
 import {
     Wrap,
     WrapItem,
     Container,
     CircularProgress,
     Box,
+    Button,
 } from '@chakra-ui/react';
 import DayResumeCard from '../../components/DayResumeCard';
 import DayForm from '../../components/DayForm';
 
 export default function DashBoard() {
     const { isLoading, isFetching, isError, data, status } = useData();
+    const { mutate: deleteDay } = useDelete();
 
     if (isLoading) {
         return (
@@ -33,6 +36,13 @@ export default function DashBoard() {
                 {data?.map((day, index) => {
                     return (
                         <WrapItem layerStyle="card" key={index}>
+                            <Button
+                                onClick={() =>
+                                    deleteDay({ type: 'day', id: day.id })
+                                }
+                            >
+                                x
+                            </Button>
                             <DayResumeCard {...day} type="vertical" />
                         </WrapItem>
                     );
