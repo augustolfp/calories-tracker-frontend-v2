@@ -1,7 +1,16 @@
 import MealDash from './MealDash';
-import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
+import {
+    Tabs,
+    TabList,
+    TabPanels,
+    Tab,
+    TabPanel,
+    Box,
+    Button,
+} from '@chakra-ui/react';
 import MealForm from '../../../components/MealForm';
 import { DayMeal } from '../../../types';
+import { useDelete } from '../../../hooks/useDelete';
 
 type Props = {
     meals: DayMeal[] | undefined;
@@ -9,6 +18,8 @@ type Props = {
 };
 
 export default function MealsTab(props: Props) {
+    const { mutate: deleteMeal } = useDelete();
+
     return (
         <Tabs>
             <TabList>
@@ -16,6 +27,16 @@ export default function MealsTab(props: Props) {
                     props.meals.map((meal, index) => (
                         <Tab key={index}>
                             {meal.mealName ? meal.mealName : 'Sem nome'}
+                            <Button
+                                onClick={() =>
+                                    deleteMeal({
+                                        type: 'meal',
+                                        id: meal.mealId,
+                                    })
+                                }
+                            >
+                                x
+                            </Button>
                         </Tab>
                     ))}
 
