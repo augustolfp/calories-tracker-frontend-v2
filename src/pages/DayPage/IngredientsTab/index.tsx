@@ -1,7 +1,16 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
+import {
+    Tabs,
+    TabList,
+    TabPanels,
+    Tab,
+    TabPanel,
+    Box,
+    Button,
+} from '@chakra-ui/react';
 import IngredientDash from './IngredientDash';
 import { MealIngredient } from '../../../types';
 import IngredientForm from '../../../components/IngredientForm';
+import { useDelete } from '../../../hooks/useDelete';
 
 type Props = {
     ingredients: MealIngredient[];
@@ -9,6 +18,8 @@ type Props = {
 };
 
 export default function IngredientsTab(props: Props) {
+    const { mutate: deleteIngredient } = useDelete();
+
     return (
         <Tabs orientation="vertical">
             <TabList>
@@ -16,6 +27,16 @@ export default function IngredientsTab(props: Props) {
                     props.ingredients.map((ing, index) => (
                         <Tab key={index}>
                             {ing.name ? ing.name : 'Sem nome'}
+                            <Button
+                                onClick={() =>
+                                    deleteIngredient({
+                                        type: 'ingredient',
+                                        id: ing.id,
+                                    })
+                                }
+                            >
+                                x
+                            </Button>
                         </Tab>
                     ))}
 
