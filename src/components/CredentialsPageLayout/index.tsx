@@ -22,6 +22,7 @@ export default function CredentialsPageLayout(props: Props) {
                     direction={['row', 'column']}
                     alignItems="center"
                     justifyContent="center"
+                    w={['235px', '200px']}
                 >
                     <Image
                         boxSize={[50, 200]}
@@ -33,11 +34,11 @@ export default function CredentialsPageLayout(props: Props) {
                         alignItems="center"
                         justifyContent="center"
                     >
-                        <Box as="h1" textStyle="h1">
-                            No-NonSense!
+                        <Box as="h1" textStyle="logoText" color="#00d666">
+                            DIETINHA
                         </Box>
-                        <Box as="h2" textStyle="h2">
-                            Calories Tracker
+                        <Box as="h2" textStyle="logoSubText" color="#83e05e">
+                            CONTADOR DE CALORIAS
                         </Box>
                     </Flex>
                 </Flex>

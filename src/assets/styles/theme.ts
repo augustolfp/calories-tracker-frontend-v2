@@ -10,17 +10,19 @@ const customTheme = {
         global: (props: StyleFunctionProps | Record<string, any>) => ({
             body: {
                 bg: mode('purple.50', 'purple.800')(props),
-                color: mode('purple.600', 'white')(props),
+                color: mode('#00d666', 'white')(props),
             },
         }),
     },
     textStyles: {
         h1: {
-            fontSize: ['20px', '36px'],
-            fontStyle: 'italic',
+            fontSize: ['20px', '42px'],
+            fontWeight: '900',
+            lineHeight: '30px',
         },
         h2: {
-            fontSize: ['12px', '20px'],
+            fontSize: ['12px', '16px'],
+            fontWeight: '400',
         },
         h3: {
             fontSize: '28px',
@@ -33,6 +35,16 @@ const customTheme = {
         h5: {
             fontSize: '12px',
             fontWeight: 'bold',
+        },
+        logoText: {
+            mt: '10px',
+            fontSize: ['40px', '42px'],
+            fontWeight: '900',
+            lineHeight: '30px',
+        },
+        logoSubText: {
+            fontSize: ['15px', '16px'],
+            fontWeight: '700',
         },
     },
     layerStyles: {
@@ -90,6 +102,10 @@ const customTheme = {
             borderRadius: 8,
             boxShadow: 'lg',
         },
+    },
+    fonts: {
+        heading: `'Open Sans', sans-serif`,
+        body: `'Raleway', sans-serif`,
     },
 };
 
