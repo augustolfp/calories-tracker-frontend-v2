@@ -1,12 +1,13 @@
 import { useAuth } from '../../hooks/useAuth';
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, Image } from '@chakra-ui/react';
+import titleIcon from '../../../public/titleIcon.svg';
 
 export default function NavBar() {
     const { isLoggedIn, userName } = useAuth();
 
     return (
-        <Flex as="nav" bg={'black'} padding="6px">
-            <Box>{userName ? userName : null}</Box>
+        <Flex as="nav" layerStyle="navBar">
+            <Image src={titleIcon} w="160px" />
         </Flex>
     );
 }

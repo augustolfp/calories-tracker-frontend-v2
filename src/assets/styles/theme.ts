@@ -91,6 +91,12 @@ const customTheme = {
             borderRadius: 8,
             boxShadow: 'lg',
         },
+        navBar: {
+            bg: '#3db9a2',
+            height: '84px',
+            padding: '0px 40px',
+            boxShadow: 'lg',
+        },
     },
     fonts: {},
 };
