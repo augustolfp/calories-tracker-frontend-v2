@@ -14,87 +14,78 @@ type Props = {
     fats: number;
     proteins: number;
     kcals: number;
-    type: 'vertical' | 'horizontal';
 };
 
 export default function DayResumeCard(props: Props) {
     return (
         <Link to={`/day/${props.id}`}>
+            <Box as="h1" textStyle="h1">
+                {formatDate(props.day)}
+            </Box>
             <Grid
-                templateAreas={
-                    props.type === 'vertical'
-                        ? `"date date date" 
-                "calories proteins fats"
-                "calories proteins carbs"
-                "notes notes notes"`
-                        : `"date calories proteins fats" 
-                "notes calories proteins carbs"`
-                }
-                gridTemplateRows={
-                    props.type === 'vertical'
-                        ? '80px 80px 80px 100px'
-                        : '80px 80px'
-                }
-                gridTemplateColumns={
-                    props.type === 'vertical'
-                        ? '90px 90px 90px'
-                        : '250px 90px 90px 90px'
-                }
-                gridGap="3"
+                templateAreas={`"calories proteins fats"
+                "calories proteins carbs"`}
+                gridTemplateRows={'112px 112px'}
+                gridTemplateColumns={'120px 120px 120px'}
+                gridGap="20px"
             >
-                <GridItem layerStyle="nutrient" bg="purple.300" area={'date'}>
-                    <Center>{formatDate(props.day)}</Center>
-                </GridItem>
                 <GridItem
+                    dir="column"
                     layerStyle="nutrient"
-                    bg="green.300"
+                    bg="#e07a60"
                     area={'calories'}
                 >
-                    <Box layerStyle="nutrientTitle">kCals</Box>
-                    <CircularProgressBar
-                        numerator={props.kcals}
-                        denominator={props.caloriesTarget}
-                        color="green.600"
-                    />
-                    <FractionDisplay
-                        numerator={props.kcals}
-                        denominator={props.caloriesTarget}
-                    />
-                </GridItem>
-                <GridItem layerStyle="nutrient" bg="cyan.300" area={'fats'}>
-                    <Flex direction="column" align="center">
-                        <Box layerStyle="nutrientTitle">Gorduras</Box>
-                        <Box layerStyle="nutrientNumber">{props.fats} g</Box>
-                    </Flex>
-                </GridItem>
-                <GridItem layerStyle="nutrient" bg="pink.300" area={'carbs'}>
-                    <Flex direction="column" align="center">
-                        <Box layerStyle="nutrientTitle">Carbos</Box>
-                        <Box layerStyle="nutrientNumber">{props.carbs} g</Box>
-                    </Flex>
+                    <Box>kCals</Box>
+                    <Center flexDirection="column" h="full">
+                        <CircularProgressBar
+                            numerator={props.kcals}
+                            denominator={props.caloriesTarget}
+                            color="green.600"
+                        />
+                        <FractionDisplay
+                            numerator={props.kcals}
+                            denominator={props.caloriesTarget}
+                        />
+                        <Box>kCal</Box>
+                    </Center>
                 </GridItem>
                 <GridItem
-                    as="div"
+                    dir="column"
                     layerStyle="nutrient"
-                    bg="orange.300"
-                    area={'notes'}
-                    boxShadow="2xl"
+                    bg="#e5ab7e"
+                    area={'fats'}
                 >
-                    <Box as="h5" p={3} textStyle="h5">
-                        Notas: {props.notes}
-                    </Box>
+                    <Box>Gorduras</Box>
+                    <Center h="full">{props.fats} g</Center>
                 </GridItem>
-                <GridItem layerStyle="nutrient" bg="red.300" area={'proteins'}>
-                    <Box layerStyle="nutrientTitle">Proteinas</Box>
-                    <CircularProgressBar
-                        numerator={props.proteins}
-                        denominator={props.proteinsTarget}
-                        color="red.600"
-                    />
-                    <FractionDisplay
-                        numerator={props.proteins}
-                        denominator={props.proteinsTarget}
-                    />
+                <GridItem
+                    dir="column"
+                    layerStyle="nutrient"
+                    bg="#f687b3"
+                    area={'carbs'}
+                >
+                    <Box>Carbos</Box>
+                    <Center h="full">{props.carbs} g</Center>
+                </GridItem>
+                <GridItem
+                    dir="column"
+                    layerStyle="nutrient"
+                    bg="#c4869d"
+                    area={'proteins'}
+                >
+                    <Box>Proteinas</Box>
+                    <Center flexDirection="column" h="full">
+                        <CircularProgressBar
+                            numerator={props.proteins}
+                            denominator={props.proteinsTarget}
+                            color="red.600"
+                        />
+                        <FractionDisplay
+                            numerator={props.proteins}
+                            denominator={props.proteinsTarget}
+                        />
+                        <Box>g</Box>
+                    </Center>
                 </GridItem>
             </Grid>
         </Link>

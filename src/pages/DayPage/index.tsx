@@ -14,7 +14,7 @@ export default function DayPage() {
             {dayData && (
                 <>
                     <Box layerStyle="card">
-                        <DayResumeCard {...dayData} type="horizontal" />
+                        <DayResumeCard {...dayData} />
                     </Box>
                     <Box layerStyle="card">
                         <MealsTab meals={dayData.dayMeals} dayId={Number(id)} />

@@ -43,7 +43,7 @@ export default function DashBoard() {
                             >
                                 x
                             </Button>
-                            <DayResumeCard {...day} type="vertical" />
+                            <DayResumeCard {...day} />
                         </WrapItem>
                     );
                 })}
