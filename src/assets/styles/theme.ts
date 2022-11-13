@@ -1,47 +1,114 @@
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme, defineStyleConfig } from '@chakra-ui/react';
+
+const Button = defineStyleConfig({
+    baseStyle: {
+        fontWeight: 'bold',
+        borderRadius: 4,
+    },
+
+    sizes: {
+        sm: {
+            fontSize: 'sm',
+            px: 4, // <-- px is short for paddingLeft and paddingRight
+            py: 3, // <-- py is short for paddingTop and paddingBottom
+        },
+        md: {
+            fontSize: 'md',
+            px: 6, // <-- these values are tokens from the design system
+            py: 4, // <-- these values are tokens from the design system
+        },
+    },
+
+    variants: {
+        solid: {
+            bg: '#3db9a2',
+            color: 'white',
+        },
+    },
+
+    defaultProps: {
+        size: 'md',
+        variant: 'solid',
+    },
+});
+
+const Input = defineStyleConfig({
+    baseStyle: {
+        borderRadius: 4,
+    },
+
+    sizes: {
+        sm: {
+            fontSize: 'sm',
+            px: 4, // <-- px is short for paddingLeft and paddingRight
+            py: 3, // <-- py is short for paddingTop and paddingBottom
+        },
+        md: {
+            fontSize: 'md',
+            px: 6, // <-- these values are tokens from the design system
+            py: 4, // <-- these values are tokens from the design system
+        },
+    },
+
+    variants: {
+        outline: {
+            bg: 'white',
+            color: '#3db9a2',
+        },
+    },
+
+    defaultProps: {
+        size: 'md',
+        variant: 'outline',
+    },
+});
 
 const customTheme = {
+    components: {
+        Button,
+        Input,
+    },
     config: {},
     styles: {},
     textStyles: {
         h1: {
             fontSize: ['20px', '42px'],
-            fontWeight: '900',
-            lineHeight: '30px',
+            color: '#3db9a2',
         },
         h2: {
-            fontSize: ['12px', '16px'],
-            fontWeight: '400',
+            fontSize: ['30px', '34px'],
+            color: '#3db9a2',
         },
         h3: {
-            fontSize: '28px',
-            fontWeight: 'bold',
+            fontSize: '29px',
+            color: '#3db9a2',
         },
         h4: {
-            fontSize: '20px',
-            fontWeight: 'bold',
+            fontSize: '26px',
+            color: '#3db9a2',
         },
         h5: {
-            fontSize: '12px',
-            fontWeight: 'bold',
+            fontSize: '20px',
+            color: '#3db9a2',
         },
-        logoText: {
-            mt: '10px',
-            fontSize: ['40px', '42px'],
-            fontWeight: '900',
-            lineHeight: '30px',
-        },
-        logoSubText: {
-            fontSize: ['15px', '16px'],
-            fontWeight: '700',
+        p: {
+            fontSize: '16px',
+            color: '#3db9a2',
         },
     },
     layerStyles: {
         card: {
             p: 8,
             borderWidth: 1,
-            borderRadius: 8,
+            borderRadius: 4,
             boxShadow: 'lg',
+        },
+        credentialsCard: {
+            p: 8,
+            borderWidth: 1,
+            borderRadius: 4,
+            boxShadow: 'lg',
+            width: ['274px', '360px'],
         },
         nutrient: {
             display: 'flex',
@@ -98,7 +165,10 @@ const customTheme = {
             boxShadow: 'lg',
         },
     },
-    fonts: {},
+    fonts: {
+        heading: `'Montserrat', sans-serif`,
+        body: `'Montserrat', sans-serif`,
+    },
 };
 
 const theme = extendTheme(customTheme);

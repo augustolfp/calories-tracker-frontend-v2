@@ -1,5 +1,5 @@
 import bananaIcon from '../../../public/icon.svg';
-import { Flex, Image, Box, Heading } from '@chakra-ui/react';
+import { Flex, Image, Container } from '@chakra-ui/react';
 
 type Props = {
     children: any;
@@ -7,38 +7,21 @@ type Props = {
 
 export default function CredentialsPageLayout(props: Props) {
     return (
-        <Flex
-            height="100vh"
-            direction={['column', 'row']}
-            alignItems="center"
-            justifyContent="center"
-        >
+        <Container maxW="container.xl">
             <Flex
-                direction="column"
+                height="100vh"
+                py={20}
+                direction={['column', 'row']}
                 alignItems="center"
                 justifyContent="center"
             >
-                <Flex
-                    direction={['row', 'column']}
-                    alignItems="center"
-                    justifyContent="center"
-                    w={['235px', '200px']}
-                >
-                    <Image
-                        boxSize={[50, 200]}
-                        src={bananaIcon}
-                        alt="banana logo"
-                    />
-                    <Flex
-                        direction="column"
-                        alignItems="center"
-                        justifyContent="center"
-                    ></Flex>
-                </Flex>
-            </Flex>
-            <Flex direction="column" p={12} rounded={6}>
+                <Image
+                    boxSize={[116, 400]}
+                    src={bananaIcon}
+                    alt="banana logo"
+                />
                 {props.children}
             </Flex>
-        </Flex>
+        </Container>
     );
 }
