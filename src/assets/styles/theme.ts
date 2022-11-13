@@ -1,19 +1,8 @@
 import { extendTheme } from '@chakra-ui/react';
-import { mode, StyleFunctionProps } from '@chakra-ui/theme-tools';
 
 const customTheme = {
-    config: {
-        initialColorMode: 'dark',
-        useSystemColorMode: true,
-    },
-    styles: {
-        global: (props: StyleFunctionProps | Record<string, any>) => ({
-            body: {
-                bg: mode('purple.50', 'purple.800')(props),
-                color: mode('#00d666', 'white')(props),
-            },
-        }),
-    },
+    config: {},
+    styles: {},
     textStyles: {
         h1: {
             fontSize: ['20px', '42px'],

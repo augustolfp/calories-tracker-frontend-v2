@@ -7,7 +7,6 @@ import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ChakraProvider } from '@chakra-ui/react';
-import { ColorModeScript } from '@chakra-ui/color-mode';
 import theme from './assets/styles/theme';
 import NavBar from './components/Navbar';
 
@@ -19,9 +18,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             <AuthProvider>
                 <QueryClientProvider client={queryClient}>
                     <ChakraProvider theme={theme}>
-                        <ColorModeScript
-                            initialColorMode={theme.config.initialColorMode}
-                        />
                         <NavBar />
                         <App />
                     </ChakraProvider>
