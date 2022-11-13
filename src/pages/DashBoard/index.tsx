@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react';
 import DayResumeCard from '../../components/DayResumeCard';
 import DayForm from '../../components/DayForm';
-import FormatDate from '../../utils/FormatDate';
+import formatDate from '../../utils/formatDate';
 
 export default function DashBoard() {
     const { isLoading, isFetching, isError, data, status } = useData();
@@ -36,11 +36,11 @@ export default function DashBoard() {
                     <DayForm />
                 </WrapItem>
                 {data?.map((day, index) => {
+                    const formattedDate = formatDate(day.day);
                     return (
                         <WrapItem
                             position="relative"
                             flexDirection="column"
-                            alignItems="center"
                             layerStyle="card"
                             key={index}
                         >
@@ -55,7 +55,12 @@ export default function DashBoard() {
                                 x
                             </Button>
                             <Box mb={6}>
-                                <FormatDate day={day.day} />
+                                <Box as="h1" textStyle="h1" fontWeight="600">
+                                    {formattedDate.weekDay}
+                                </Box>
+                                <Box as="h4" textStyle="h4" fontWeight="600">
+                                    {formattedDate.fullDate}
+                                </Box>
                             </Box>
                             <Link to={`/day/${day.id}`}>
                                 <DayResumeCard {...day} />

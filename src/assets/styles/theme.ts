@@ -110,6 +110,12 @@ const customTheme = {
             boxShadow: 'lg',
             width: ['274px', '360px'],
         },
+        tabBox: {
+            p: 8,
+            borderRadius: 4,
+            borderWidth: 3,
+            borderColor: '#3db9a2',
+        },
         nutrient: {
             display: 'flex',
             flexDirection: 'column',
