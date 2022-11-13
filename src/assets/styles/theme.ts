@@ -92,10 +92,7 @@ const customTheme = {
             boxShadow: 'lg',
         },
     },
-    fonts: {
-        heading: `'Open Sans', sans-serif`,
-        body: `'Raleway', sans-serif`,
-    },
+    fonts: {},
 };
 
 const theme = extendTheme(customTheme);
