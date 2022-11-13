@@ -3,13 +3,12 @@ import { CircularProgress, Box, Flex } from '@chakra-ui/react';
 type Props = {
     numerator: number;
     denominator: number;
-    color: string;
 };
 
 export default function CircularProgressBar(props: Props) {
     const percentage = (props.numerator / props.denominator) * 100;
     return (
-        <Box>
+        <Box position="relative">
             <CircularProgress
                 position="absolute"
                 capIsRound={true}

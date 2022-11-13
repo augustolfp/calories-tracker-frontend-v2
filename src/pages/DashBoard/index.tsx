@@ -1,5 +1,6 @@
 import { useData } from '../../hooks/useData';
 import { useDelete } from '../../hooks/useDelete';
+import { Link } from 'react-router-dom';
 import {
     Wrap,
     WrapItem,
@@ -10,6 +11,7 @@ import {
 } from '@chakra-ui/react';
 import DayResumeCard from '../../components/DayResumeCard';
 import DayForm from '../../components/DayForm';
+import FormatDate from '../../utils/FormatDate';
 
 export default function DashBoard() {
     const { isLoading, isFetching, isError, data, status } = useData();
@@ -35,15 +37,29 @@ export default function DashBoard() {
                 </WrapItem>
                 {data?.map((day, index) => {
                     return (
-                        <WrapItem layerStyle="card" key={index}>
+                        <WrapItem
+                            position="relative"
+                            flexDirection="column"
+                            alignItems="center"
+                            layerStyle="card"
+                            key={index}
+                        >
                             <Button
+                                position="absolute"
+                                right={8}
+                                top={8}
                                 onClick={() =>
                                     deleteDay({ type: 'day', id: day.id })
                                 }
                             >
                                 x
                             </Button>
-                            <DayResumeCard {...day} />
+                            <Box mb={6}>
+                                <FormatDate day={day.day} />
+                            </Box>
+                            <Link to={`/day/${day.id}`}>
+                                <DayResumeCard {...day} />
+                            </Link>
                         </WrapItem>
                     );
                 })}

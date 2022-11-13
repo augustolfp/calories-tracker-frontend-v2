@@ -72,7 +72,7 @@ const customTheme = {
     styles: {},
     textStyles: {
         h1: {
-            fontSize: ['20px', '42px'],
+            fontSize: '42px',
             color: '#3db9a2',
         },
         h2: {
