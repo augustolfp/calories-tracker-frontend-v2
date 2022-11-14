@@ -158,6 +158,13 @@ const customTheme = {
         heading: `'Montserrat', sans-serif`,
         body: `'Montserrat', sans-serif`,
     },
+    breakpoints: {
+        sm: '420px',
+        md: '768px',
+        lg: '960px',
+        xl: '1200px',
+        '2xl': '1536px',
+    },
 };
 
 const theme = extendTheme(customTheme);
