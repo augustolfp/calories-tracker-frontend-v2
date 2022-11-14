@@ -63,8 +63,16 @@ export default function MealsTab(props: Props) {
                         ))}
                 </Flex>
             </TabList>
-            <TabPanels>
+            <TabPanels m={[0, 4, 6, 8]}>
                 <TabPanel>
+                    <Box
+                        color="#3db9a2"
+                        fontSize={['20px', '20px', '35px', '50px']}
+                        fontWeight="700"
+                        textAlign="center"
+                    >
+                        Nova Refeição
+                    </Box>
                     <MealForm countedDayId={props.dayId} />
                 </TabPanel>
                 {props.meals &&

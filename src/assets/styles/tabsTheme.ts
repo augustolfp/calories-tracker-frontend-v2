@@ -24,28 +24,22 @@ const mealVariant = definePartsStyle({
         w: ['154px', '200px', '250px', '400px'],
         h: ['60px', '80px', '100px', '150px'],
         m: '0',
-        borderStyle: ['none', 'none'],
-        borderWidth: ['0', '0'],
-        borderColor: ['transparent', 'transparent'],
+        borderStyle: 'none',
         bg: '#f0f0f0',
         color: '#3db9a2',
         _selected: {
             bg: 'white',
             m: ['0', '0'],
-            borderStyle: ['solid', 'solid'],
-            borderWidth: ['3px', '3px'],
-            borderColor: ['#3db9a2', '#3db9a2'],
+            borderStyle: 'solid',
+            borderWidth: '3px',
+            borderColor: '#3db9a2',
         },
     },
     tablist: {
         borderStyle: 'none',
         bg: '#f0f0f0',
     },
-    tabpanel: {
-        borderStyle: ['none', 'none none none solid'],
-        borderWidth: '0 0 0 3px',
-        borderColor: '#3db9a2',
-    },
+    tabpanel: {},
 });
 
 const variants = {
