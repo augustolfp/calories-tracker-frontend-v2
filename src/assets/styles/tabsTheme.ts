@@ -18,24 +18,24 @@ const sizes = {};
 
 const mealVariant = definePartsStyle({
     tab: {
-        border: '2px solid',
-        borderColor: 'transparent',
+        border: 'none',
         bg: '#f0f0f0',
         color: '#3db9a2',
         _selected: {
             bg: 'white',
+            borderStyle: 'solid none solid none',
+            borderWidth: '3px 0 3px 0',
             borderColor: '#3db9a2',
         },
     },
     tablist: {
-        borderBottom: '2x solid',
-        borderColor: 'inherit',
+        borderStyle: 'none solid none none',
+        borderWidth: '0 3px 0 0',
+        borderColor: '#3db9a2',
+        bg: '#f0f0f0',
     },
     tabpanel: {
-        border: '2px solid',
-        borderColor: 'inherit',
-        borderBottomRadius: 'lg',
-        borderTopRightRadius: 'lg',
+        border: 'none',
     },
 });
 

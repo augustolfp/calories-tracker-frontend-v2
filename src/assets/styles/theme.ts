@@ -113,7 +113,7 @@ const customTheme = {
             width: ['274px', '360px'],
         },
         tabBox: {
-            p: 8,
+            p: 0,
             borderRadius: 4,
             borderWidth: 3,
             borderColor: '#3db9a2',

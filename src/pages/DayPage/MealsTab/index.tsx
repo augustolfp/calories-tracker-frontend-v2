@@ -28,6 +28,7 @@ export default function MealsTab(props: Props) {
             variant="mealVariant"
         >
             <TabList>
+                <Tab>Nova Refeição</Tab>
                 {props.meals &&
                     props.meals.map((meal, index) => (
                         <Tab key={index}>
@@ -44,20 +45,17 @@ export default function MealsTab(props: Props) {
                             </Button>
                         </Tab>
                     ))}
-
-                <Tab>Nova Refeição</Tab>
             </TabList>
             <TabPanels>
+                <TabPanel>
+                    <MealForm countedDayId={props.dayId} />
+                </TabPanel>
                 {props.meals &&
                     props.meals.map((meal, index) => (
                         <TabPanel key={index}>
                             <MealDash {...meal} />
                         </TabPanel>
                     ))}
-
-                <TabPanel>
-                    <MealForm countedDayId={props.dayId} />
-                </TabPanel>
             </TabPanels>
         </Tabs>
     );
