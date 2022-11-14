@@ -12,7 +12,7 @@ import {
 import MealForm from '../../../components/MealForm';
 import { DayMeal } from '../../../types';
 import { useDelete } from '../../../hooks/useDelete';
-import { useMediaQuery } from '@chakra-ui/react';
+import { useMediaQuery, VStack } from '@chakra-ui/react';
 
 type Props = {
     meals: DayMeal[] | undefined;
@@ -33,9 +33,21 @@ export default function MealsTab(props: Props) {
                     <Tab>Nova Refeição</Tab>
                     {props.meals &&
                         props.meals.map((meal, index) => (
-                            <Tab key={index}>
-                                {meal.mealName ? meal.mealName : 'Sem nome'}
+                            <Tab key={index} sx={{ position: 'relative' }}>
+                                <Box textAlign="left">
+                                    {meal.mealName ? meal.mealName : 'Sem nome'}
+                                    <Box as="p" textStyle="p">
+                                        {meal.mealDescription
+                                            ? meal.mealDescription
+                                            : null}
+                                    </Box>
+                                </Box>
                                 <Button
+                                    sx={{
+                                        position: 'absolute',
+                                        top: '8px',
+                                        right: '8px',
+                                    }}
                                     size="xs"
                                     borderRadius={12}
                                     onClick={() =>

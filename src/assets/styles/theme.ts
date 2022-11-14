@@ -95,7 +95,7 @@ const customTheme = {
         },
         p: {
             fontSize: '16px',
-            color: '#3db9a2',
+            color: 'black',
         },
     },
     layerStyles: {
