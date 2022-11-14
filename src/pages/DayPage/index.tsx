@@ -34,7 +34,10 @@ export default function DayPage() {
                         </Box>
                         <DayResumeCard {...dayData} />
                     </Flex>
-                    <Box layerStyle="tabBox">
+                    <Box
+                        layerStyle="tabBox"
+                        w={['308px', '400px', '768px', '960px']}
+                    >
                         <MealsTab meals={dayData.dayMeals} dayId={Number(id)} />
                     </Box>
                 </>
