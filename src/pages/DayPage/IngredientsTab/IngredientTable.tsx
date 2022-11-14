@@ -16,7 +16,7 @@ export default function IngredientTable(props: MealIngredient) {
         <TableContainer pt={0} w="100%">
             <Table colorScheme="purple" size="sm" variant="striped">
                 <TableCaption fontSize="18px" fontWeight="bold" placement="top">
-                    {props.name}, {props.weightInGrams}g
+                    {props.name}, {props.weight}g
                 </TableCaption>
                 <Thead>
                     <Tr>
@@ -27,15 +27,15 @@ export default function IngredientTable(props: MealIngredient) {
                 <Tbody>
                     <Tr>
                         <Td>Carboidratos</Td>
-                        <Td isNumeric>{props.carbsInGrams} g</Td>
+                        <Td isNumeric>{props.carbs} g</Td>
                     </Tr>
                     <Tr>
                         <Td>Proteinas</Td>
-                        <Td isNumeric>{props.proteinsInGrams} g</Td>
+                        <Td isNumeric>{props.proteins} g</Td>
                     </Tr>
                     <Tr>
                         <Td>Gorduras</Td>
-                        <Td isNumeric>{props.fatsInGrams} g</Td>
+                        <Td isNumeric>{props.fats} g</Td>
                     </Tr>
                 </Tbody>
                 <Tfoot>

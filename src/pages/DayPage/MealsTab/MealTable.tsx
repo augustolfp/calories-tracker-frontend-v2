@@ -13,8 +13,8 @@ import { DayMeal } from '../../../types';
 
 export default function MealTable(props: DayMeal) {
     return (
-        <TableContainer pt={0} w="100%">
-            <Table colorScheme="purple" size="sm" variant="striped">
+        <TableContainer>
+            <Table>
                 <Thead>
                     <Tr>
                         <Th>Nutriente</Th>
@@ -37,10 +37,8 @@ export default function MealTable(props: DayMeal) {
                 </Tbody>
                 <Tfoot>
                     <Tr>
-                        <Th fontSize="14px">Calorias (kcal)</Th>
-                        <Th isNumeric fontSize="14px">
-                            {props.kcals}
-                        </Th>
+                        <Th>Calorias (kcal)</Th>
+                        <Th isNumeric>{props.kcals}</Th>
                     </Tr>
                 </Tfoot>
             </Table>

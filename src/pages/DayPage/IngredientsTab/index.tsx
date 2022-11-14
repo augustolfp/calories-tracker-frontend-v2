@@ -21,7 +21,7 @@ export default function IngredientsTab(props: Props) {
     const { mutate: deleteIngredient } = useDelete();
 
     return (
-        <Tabs orientation="vertical">
+        <Tabs orientation="horizontal">
             <TabList>
                 {props.ingredients[0] &&
                     props.ingredients.map((ing, index) => (

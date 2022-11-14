@@ -11,6 +11,7 @@ import {
 import MealForm from '../../../components/MealForm';
 import { DayMeal } from '../../../types';
 import { useDelete } from '../../../hooks/useDelete';
+import { useMediaQuery } from '@chakra-ui/react';
 
 type Props = {
     meals: DayMeal[] | undefined;
@@ -18,10 +19,14 @@ type Props = {
 };
 
 export default function MealsTab(props: Props) {
+    const [isLargerThan420] = useMediaQuery('(min-width: 420px)');
     const { mutate: deleteMeal } = useDelete();
 
     return (
-        <Tabs>
+        <Tabs
+            orientation={isLargerThan420 ? 'vertical' : 'horizontal'}
+            variant="mealVariant"
+        >
             <TabList>
                 {props.meals &&
                     props.meals.map((meal, index) => (
@@ -40,7 +45,7 @@ export default function MealsTab(props: Props) {
                         </Tab>
                     ))}
 
-                <Tab>+</Tab>
+                <Tab>Nova Refeição</Tab>
             </TabList>
             <TabPanels>
                 {props.meals &&

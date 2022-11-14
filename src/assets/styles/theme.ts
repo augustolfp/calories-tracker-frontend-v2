@@ -1,4 +1,5 @@
 import { extendTheme, defineStyleConfig } from '@chakra-ui/react';
+import { tabsTheme } from './tabsTheme';
 
 const Button = defineStyleConfig({
     baseStyle: {
@@ -67,6 +68,7 @@ const customTheme = {
     components: {
         Button,
         Input,
+        Tabs: tabsTheme,
     },
     config: {},
     styles: {},
