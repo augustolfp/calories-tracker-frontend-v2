@@ -13,9 +13,9 @@ import { MealIngredient } from '../../../types';
 
 export default function IngredientTable(props: MealIngredient) {
     return (
-        <TableContainer pt={0} w="100%">
-            <Table colorScheme="purple" size="sm" variant="striped">
-                <TableCaption fontSize="18px" fontWeight="bold" placement="top">
+        <TableContainer>
+            <Table>
+                <TableCaption>
                     {props.name}, {props.weight}g
                 </TableCaption>
                 <Thead>
@@ -40,10 +40,8 @@ export default function IngredientTable(props: MealIngredient) {
                 </Tbody>
                 <Tfoot>
                     <Tr>
-                        <Th fontSize="14px">Calorias (kcal)</Th>
-                        <Th isNumeric fontSize="14px">
-                            {props.kcals}
-                        </Th>
+                        <Th>Calorias (kcal)</Th>
+                        <Th isNumeric>{props.kcals}</Th>
                     </Tr>
                 </Tfoot>
             </Table>
