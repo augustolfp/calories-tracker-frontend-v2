@@ -13,7 +13,7 @@ export default function DayPage() {
     const formattedDate = formatDate(dayData!.day);
 
     return (
-        <Container maxW="1200px" centerContent py="40px">
+        <Container maxW="1200px" h="100vh" centerContent py="40px">
             {dayData && (
                 <>
                     <Flex
@@ -56,6 +56,7 @@ export default function DayPage() {
                     <Box
                         layerStyle="tabBox"
                         w={['308px', '400px', '768px', '960px']}
+                        h="full"
                     >
                         <MealsTab meals={dayData.dayMeals} dayId={Number(id)} />
                     </Box>

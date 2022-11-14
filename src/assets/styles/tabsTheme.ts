@@ -17,20 +17,24 @@ const baseStyle = definePartsStyle({
 const sizes = {};
 
 const mealVariant = definePartsStyle({
+    root: {
+        m: '-3px',
+    },
     tab: {
-        mr: '-3px',
-        borderStyle: 'none solid none none',
-        borderWidth: '0 3px 0 0',
-        borderColor: 'transparent #3db9a2 transparent transparent',
+        w: ['154px', '200px', '250px', '400px'],
+        h: ['60px', '80px', '100px', '150px'],
+        m: '0',
+        borderStyle: ['none', 'none'],
+        borderWidth: ['0', '0'],
+        borderColor: ['transparent', 'transparent'],
         bg: '#f0f0f0',
         color: '#3db9a2',
         _selected: {
             bg: 'white',
-            mt: '-3px',
-            mr: '-4px',
-            borderStyle: 'solid solid solid none',
-            borderWidth: '3px 4px 3px 0',
-            borderColor: '#3db9a2 white #3db9a2 transparent',
+            m: ['0', '0'],
+            borderStyle: ['solid', 'solid'],
+            borderWidth: ['3px', '3px'],
+            borderColor: ['#3db9a2', '#3db9a2'],
         },
     },
     tablist: {
@@ -38,7 +42,7 @@ const mealVariant = definePartsStyle({
         bg: '#f0f0f0',
     },
     tabpanel: {
-        borderStyle: 'none none none solid',
+        borderStyle: ['none', 'none none none solid'],
         borderWidth: '0 0 0 3px',
         borderColor: '#3db9a2',
     },

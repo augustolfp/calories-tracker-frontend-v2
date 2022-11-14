@@ -7,6 +7,7 @@ import {
     TabPanel,
     Box,
     Button,
+    Flex,
 } from '@chakra-ui/react';
 import MealForm from '../../../components/MealForm';
 import { DayMeal } from '../../../types';
@@ -27,24 +28,28 @@ export default function MealsTab(props: Props) {
             orientation={isLargerThan420 ? 'vertical' : 'horizontal'}
             variant="mealVariant"
         >
-            <TabList sx={{ 'z-index': '2' }}>
-                <Tab>Nova Refeição</Tab>
-                {props.meals &&
-                    props.meals.map((meal, index) => (
-                        <Tab key={index}>
-                            {meal.mealName ? meal.mealName : 'Sem nome'}
-                            <Button
-                                onClick={() =>
-                                    deleteMeal({
-                                        type: 'meal',
-                                        id: meal.mealId,
-                                    })
-                                }
-                            >
-                                x
-                            </Button>
-                        </Tab>
-                    ))}
+            <TabList>
+                <Flex direction={['row', 'column']} wrap={['wrap', 'nowrap']}>
+                    <Tab>Nova Refeição</Tab>
+                    {props.meals &&
+                        props.meals.map((meal, index) => (
+                            <Tab key={index}>
+                                {meal.mealName ? meal.mealName : 'Sem nome'}
+                                <Button
+                                    size="xs"
+                                    borderRadius={12}
+                                    onClick={() =>
+                                        deleteMeal({
+                                            type: 'meal',
+                                            id: meal.mealId,
+                                        })
+                                    }
+                                >
+                                    x
+                                </Button>
+                            </Tab>
+                        ))}
+                </Flex>
             </TabList>
             <TabPanels>
                 <TabPanel>
