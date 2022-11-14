@@ -27,7 +27,7 @@ export default function MealsTab(props: Props) {
             orientation={isLargerThan420 ? 'vertical' : 'horizontal'}
             variant="mealVariant"
         >
-            <TabList>
+            <TabList sx={{ 'z-index': '2' }}>
                 <Tab>Nova Refeição</Tab>
                 {props.meals &&
                     props.meals.map((meal, index) => (
