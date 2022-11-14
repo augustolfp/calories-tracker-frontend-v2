@@ -19,9 +19,9 @@ export default function DayResumeCard(props: Props) {
         <Grid
             templateAreas={`"calories proteins fats"
         "calories proteins carbs"`}
-            gridTemplateRows={'112px 112px'}
-            gridTemplateColumns={'120px 120px 120px'}
-            gridGap="20px"
+            gridTemplateRows={['90px 90px', '112px 112px']}
+            gridTemplateColumns={['96px 96px 96px', '120px 120px 120px']}
+            gridGap={['10px', '20px']}
         >
             <GridItem
                 dir="column"
