@@ -11,7 +11,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ChakraProvider } from '@chakra-ui/react';
-import theme from './assets/styles/theme';
+import theme from './assets/themes';
 import NavBar from './components/Navbar';
 
 const queryClient = new QueryClient();

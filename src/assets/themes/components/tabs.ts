@@ -47,7 +47,7 @@ const variants = {
 };
 
 // export the component theme
-export const tabsTheme = defineMultiStyleConfig({
+export const Tabs = defineMultiStyleConfig({
     baseStyle,
     sizes,
     variants,
