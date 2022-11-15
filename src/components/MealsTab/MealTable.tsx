@@ -1,47 +1,47 @@
-import {
-    Table,
-    Thead,
-    Tbody,
-    Tfoot,
-    Tr,
-    Th,
-    Td,
-    TableCaption,
-    TableContainer,
-} from '@chakra-ui/react';
+import { Grid, GridItem } from '@chakra-ui/react';
 import { DayMeal } from '../../types';
 
 export default function MealTable(props: DayMeal) {
     return (
-        <TableContainer>
-            <Table>
-                <Thead>
-                    <Tr>
-                        <Th>Nutriente</Th>
-                        <Th isNumeric>Consumido</Th>
-                    </Tr>
-                </Thead>
-                <Tbody>
-                    <Tr>
-                        <Td>Carboidratos</Td>
-                        <Td isNumeric>{props.carbs} g</Td>
-                    </Tr>
-                    <Tr>
-                        <Td>Proteinas</Td>
-                        <Td isNumeric>{props.proteins} g</Td>
-                    </Tr>
-                    <Tr>
-                        <Td>Gorduras</Td>
-                        <Td isNumeric>{props.fats} g</Td>
-                    </Tr>
-                </Tbody>
-                <Tfoot>
-                    <Tr>
-                        <Th>Calorias (kcal)</Th>
-                        <Th isNumeric>{props.kcals}</Th>
-                    </Tr>
-                </Tfoot>
-            </Table>
-        </TableContainer>
+        <Grid
+            templateAreas={`"calories proteins"
+    "carbs fats"`}
+            gridTemplateRows={['40px 40px', '60px 60px']}
+            gridTemplateColumns={['96px 96px', '180px 180px']}
+            gridGap={['4px', '8px']}
+        >
+            <GridItem
+                dir="column"
+                layerStyle="colorfulCard"
+                bg="kcalsColor.500"
+                area={'calories'}
+            >
+                Calorias: {props.kcals} kCal
+            </GridItem>
+            <GridItem
+                dir="column"
+                layerStyle="colorfulCard"
+                bg="proteinsColor.500"
+                area={'proteins'}
+            >
+                Proteinas: {props.proteins} g
+            </GridItem>
+            <GridItem
+                dir="column"
+                layerStyle="colorfulCard"
+                bg="fatsColor.500"
+                area={'fats'}
+            >
+                Gorduras: {props.fats} g
+            </GridItem>
+            <GridItem
+                dir="column"
+                layerStyle="colorfulCard"
+                bg="carbsColor.500"
+                area={'carbs'}
+            >
+                Carboidratos: {props.carbs} g
+            </GridItem>
+        </Grid>
     );
 }

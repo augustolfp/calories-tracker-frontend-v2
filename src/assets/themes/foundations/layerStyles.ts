@@ -22,6 +22,15 @@ export const layerStyles = {
         fontWeight: '900',
         color: 'white',
     },
+    colorfulCard: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 4,
+        boxShadow: 'lg',
+        fontWeight: '900',
+        color: 'white',
+    },
     fracNumerator: {
         float: 'left',
     },
