@@ -6,8 +6,9 @@ import { DayMeal } from '../../types';
 export default function MealDash(props: DayMeal) {
     return (
         <>
-            {'Descrição: '}
-            {props.mealDescription ? props.mealDescription : 'Sem descrição'}
+            <Box layerStyle="tabContentSubTitle">
+                {props.mealDescription ? props.mealDescription : null}
+            </Box>
             <MealTable {...props} />
             Ingredientes:
             <IngredientsTab

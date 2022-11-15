@@ -49,4 +49,16 @@ export const layerStyles = {
         padding: '0px 40px',
         boxShadow: 'lg',
     },
+    tabContentTitle: {
+        color: 'pageGreen.500',
+        fontSize: ['20px', '20px', '35px', '50px'],
+        fontWeight: '700',
+        textAlign: 'center',
+    },
+    tabContentSubTitle: {
+        color: 'pageGreen.400',
+        fontSize: ['10px', '10px', '18px', '25px'],
+        fontWeight: '700',
+        textAlign: 'center',
+    },
 };

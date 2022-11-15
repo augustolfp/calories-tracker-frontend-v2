@@ -28,21 +28,21 @@ export default function DayPage() {
                             mr={['0', '0', '20px']}
                         >
                             <Box
-                                color="#3db9a2"
+                                color="pageGreen.500"
                                 fontSize={['40px', '50px', '44px', '72px']}
                                 fontWeight="700"
                             >
                                 {formattedDate.weekDay}
                             </Box>
                             <Box
-                                color="#85d0ca"
+                                color="pageGreen.400"
                                 fontSize={['40px', '50px', '44px', '72px']}
                                 fontWeight="700"
                             >
                                 {formattedDate.fullDate}
                             </Box>
                             <Box
-                                color="#85d0ca"
+                                color="pageGreen.400"
                                 fontSize={['12px', '16px', '20px']}
                                 fontWeight="600"
                             >
