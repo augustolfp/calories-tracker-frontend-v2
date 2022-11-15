@@ -1,7 +1,7 @@
 import { useData } from '../../hooks/useData';
 import { Container, Box, Flex } from '@chakra-ui/react';
 import { useParams } from 'react-router-dom';
-import MealsTab from './MealsTab';
+import MealsTab from '../../components/MealsTab';
 import DayResumeCard from '../../components/DayResumeCard';
 import formatDate from '../../utils/formatDate';
 
@@ -53,13 +53,7 @@ export default function DayPage() {
                         </Box>
                         <DayResumeCard {...dayData} />
                     </Flex>
-                    <Box
-                        layerStyle="tabBox"
-                        w={['308px', '400px', '768px', '960px']}
-                        h="full"
-                    >
-                        <MealsTab meals={dayData.dayMeals} dayId={Number(id)} />
-                    </Box>
+                    <MealsTab meals={dayData.dayMeals} dayId={Number(id)} />
                 </>
             )}
         </Container>

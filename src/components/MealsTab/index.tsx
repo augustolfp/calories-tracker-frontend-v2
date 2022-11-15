@@ -9,9 +9,9 @@ import {
     Button,
     Flex,
 } from '@chakra-ui/react';
-import MealForm from '../../../components/MealForm';
-import { DayMeal } from '../../../types';
-import { useDelete } from '../../../hooks/useDelete';
+import MealForm from '../MealForm';
+import { DayMeal } from '../../types';
+import { useDelete } from './../../hooks/useDelete';
 import { useMediaQuery, VStack } from '@chakra-ui/react';
 
 type Props = {

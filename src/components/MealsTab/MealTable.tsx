@@ -9,15 +9,12 @@ import {
     TableCaption,
     TableContainer,
 } from '@chakra-ui/react';
-import { MealIngredient } from '../../../types';
+import { DayMeal } from '../../types';
 
-export default function IngredientTable(props: MealIngredient) {
+export default function MealTable(props: DayMeal) {
     return (
         <TableContainer>
             <Table>
-                <TableCaption>
-                    {props.name}, {props.weight}g
-                </TableCaption>
                 <Thead>
                     <Tr>
                         <Th>Nutriente</Th>

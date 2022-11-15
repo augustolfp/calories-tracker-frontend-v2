@@ -8,9 +8,9 @@ import {
     Button,
 } from '@chakra-ui/react';
 import IngredientDash from './IngredientDash';
-import { MealIngredient } from '../../../types';
-import IngredientForm from '../../../components/IngredientForm';
-import { useDelete } from '../../../hooks/useDelete';
+import { MealIngredient } from '../../types';
+import IngredientForm from '../IngredientForm';
+import { useDelete } from '../../hooks/useDelete';
 
 type Props = {
     ingredients: MealIngredient[];
