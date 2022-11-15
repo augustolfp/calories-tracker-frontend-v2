@@ -7,6 +7,7 @@ import { layerStyles } from './foundations/layerStyles';
 import { fonts } from './foundations/fonts';
 import { breakpoints } from './foundations/breakpoints';
 import { styles } from './styles';
+import { colors } from './foundations/colors';
 
 const customTheme = {
     components: {
@@ -20,6 +21,7 @@ const customTheme = {
     layerStyles,
     fonts,
     breakpoints,
+    colors,
 };
 
 const theme = extendTheme(customTheme);
