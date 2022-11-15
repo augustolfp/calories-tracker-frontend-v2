@@ -1,4 +1,4 @@
-import { Tab, Box, Button } from '@chakra-ui/react';
+import { Tab, Box, Button, VStack } from '@chakra-ui/react';
 import { DayMeal } from '../../types';
 import { useDelete } from './../../hooks/useDelete';
 
@@ -10,15 +10,17 @@ export default function MealTab(props: Props) {
     const { mutate: deleteMeal } = useDelete();
     return (
         <Tab>
-            <Box textAlign="left">
+            <Box layerStyle="mealTabSummaryTitle">
                 {props.meal.mealName ? props.meal.mealName : 'Sem nome'}
-                <Box as="p" textStyle="p">
-                    {props.meal.mealDescription
-                        ? props.meal.mealDescription
-                        : null}
-                </Box>
+            </Box>
+            <Box layerStyle="mealTabSummarySubTitle">
+                {props.meal.mealDescription ? props.meal.mealDescription : null}
             </Box>
             <Button
+                size="xs"
+                position="absolute"
+                top="8px"
+                right="8px"
                 onClick={() =>
                     deleteMeal({
                         type: 'meal',

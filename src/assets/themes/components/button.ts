@@ -7,6 +7,11 @@ export const Button = defineStyleConfig({
     },
 
     sizes: {
+        xs: {
+            fontSize: 'xs',
+            p: 1,
+            borderRadius: '100%',
+        },
         sm: {
             fontSize: 'sm',
             px: 4, // <-- px is short for paddingLeft and paddingRight

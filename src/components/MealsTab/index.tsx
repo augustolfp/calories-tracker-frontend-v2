@@ -20,16 +20,23 @@ type Props = {
 };
 
 export default function MealsTab(props: Props) {
-    const [isLargerThan420] = useMediaQuery('(min-width: 420px)');
+    const [isLargerThan768] = useMediaQuery('(min-width: 768px)');
 
     return (
         <Tabs
-            orientation={isLargerThan420 ? 'vertical' : 'horizontal'}
+            orientation={isLargerThan768 ? 'vertical' : 'horizontal'}
             variant="mealVariant"
         >
             <TabList>
-                <Flex direction={['row', 'column']} wrap={['wrap', 'nowrap']}>
-                    <Tab>Nova Refeição</Tab>
+                <Flex
+                    direction={['row', 'row', 'column']}
+                    wrap={['wrap-reverse', 'wrap-reverse', 'nowrap']}
+                >
+                    <Tab>
+                        <Box layerStyle="mealTabSummaryTitle">
+                            Nova Refeição
+                        </Box>
+                    </Tab>
                     {props.meals &&
                         props.meals.map((meal, index) => (
                             <MealTab meal={meal} />

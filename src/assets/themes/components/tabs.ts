@@ -21,6 +21,8 @@ const mealVariant = definePartsStyle({
         m: '-3px',
     },
     tab: {
+        flexDirection: 'column',
+        position: 'relative',
         w: ['154px', '200px', '250px', '400px'],
         h: ['60px', '80px', '100px', '150px'],
         m: '0',
