@@ -17,7 +17,10 @@ const baseStyle = definePartsStyle({
 const sizes = {};
 
 const mealVariant = definePartsStyle({
-    root: {},
+    root: {
+        w: 'full',
+        bg: 'cyan',
+    },
     tab: {
         flexDirection: 'column',
         position: 'relative',
@@ -39,7 +42,9 @@ const mealVariant = definePartsStyle({
         borderStyle: 'none',
         bg: '#f0f0f0',
     },
-    tabpanel: {},
+    tabpanel: {
+        bg: 'tomato',
+    },
 });
 
 const variants = {

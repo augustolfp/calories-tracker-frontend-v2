@@ -6,7 +6,6 @@ import {
     Tab,
     TabPanel,
     Box,
-    Button,
     Flex,
     useMediaQuery,
 } from '@chakra-ui/react';
@@ -43,7 +42,7 @@ export default function MealsTab(props: Props) {
                         ))}
                 </Flex>
             </TabList>
-            <TabPanels m={[0, 4, 6, 8]}>
+            <TabPanels>
                 <TabPanel>
                     <Box layerStyle="tabContentTitle">Nova Refeição</Box>
                     <MealForm countedDayId={props.dayId} />

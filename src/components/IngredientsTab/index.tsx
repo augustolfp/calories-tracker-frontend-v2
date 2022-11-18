@@ -1,4 +1,12 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
+import {
+    Tabs,
+    TabList,
+    TabPanels,
+    Tab,
+    TabPanel,
+    Box,
+    Flex,
+} from '@chakra-ui/react';
 import IngredientDash from './IngredientDash';
 import { MealIngredient } from '../../types';
 import IngredientForm from '../IngredientForm';
@@ -15,10 +23,24 @@ export default function IngredientsTab(props: Props) {
     return (
         <Tabs orientation="horizontal">
             <TabList>
+                <Flex wrap="wrap-reverse">
+                    <Tab>Novo ingrediente</Tab>
+                    {props.ingredients[0] &&
+                        props.ingredients.map((ing, index) => (
+                            <Tab key={index}>
+                                {ing.name ? ing.name : 'Sem nome'}
+                            </Tab>
+                        ))}
+                </Flex>
+            </TabList>
+            <TabPanels>
+                <TabPanel>
+                    <IngredientForm mealId={props.mealId} />
+                </TabPanel>
                 {props.ingredients[0] &&
                     props.ingredients.map((ing, index) => (
-                        <Tab key={index}>
-                            {ing.name ? ing.name : 'Sem nome'}
+                        <TabPanel key={index}>
+                            <IngredientDash {...ing} />
                             <Box
                                 onClick={() =>
                                     deleteIngredient({
@@ -29,22 +51,8 @@ export default function IngredientsTab(props: Props) {
                             >
                                 x
                             </Box>
-                        </Tab>
-                    ))}
-
-                <Tab>+</Tab>
-            </TabList>
-            <TabPanels>
-                {props.ingredients[0] &&
-                    props.ingredients.map((ing, index) => (
-                        <TabPanel key={index}>
-                            <IngredientDash {...ing} />
                         </TabPanel>
                     ))}
-
-                <TabPanel>
-                    <IngredientForm mealId={props.mealId} />
-                </TabPanel>
             </TabPanels>
         </Tabs>
     );
