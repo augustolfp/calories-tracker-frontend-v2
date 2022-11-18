@@ -1,4 +1,4 @@
-import { Tab, Box, Button, VStack } from '@chakra-ui/react';
+import { Tab, Box } from '@chakra-ui/react';
 import { DayMeal } from '../../types';
 import { useDelete } from './../../hooks/useDelete';
 
@@ -16,8 +16,7 @@ export default function MealTab(props: Props) {
             <Box layerStyle="mealTabSummarySubTitle">
                 {props.meal.mealDescription ? props.meal.mealDescription : null}
             </Box>
-            <Button
-                size="xs"
+            <Box
                 position="absolute"
                 top="8px"
                 right="8px"
@@ -29,7 +28,7 @@ export default function MealTab(props: Props) {
                 }
             >
                 x
-            </Button>
+            </Box>
         </Tab>
     );
 }

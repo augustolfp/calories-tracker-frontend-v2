@@ -1,12 +1,4 @@
-import {
-    Tabs,
-    TabList,
-    TabPanels,
-    Tab,
-    TabPanel,
-    Box,
-    Button,
-} from '@chakra-ui/react';
+import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
 import IngredientDash from './IngredientDash';
 import { MealIngredient } from '../../types';
 import IngredientForm from '../IngredientForm';
@@ -27,7 +19,7 @@ export default function IngredientsTab(props: Props) {
                     props.ingredients.map((ing, index) => (
                         <Tab key={index}>
                             {ing.name ? ing.name : 'Sem nome'}
-                            <Button
+                            <Box
                                 onClick={() =>
                                     deleteIngredient({
                                         type: 'ingredient',
@@ -36,7 +28,7 @@ export default function IngredientsTab(props: Props) {
                                 }
                             >
                                 x
-                            </Button>
+                            </Box>
                         </Tab>
                     ))}
 
