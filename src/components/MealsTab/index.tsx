@@ -39,7 +39,7 @@ export default function MealsTab(props: Props) {
                     </Tab>
                     {props.meals &&
                         props.meals.map((meal, index) => (
-                            <MealTab meal={meal} />
+                            <MealTab meal={meal} key={index} />
                         ))}
                 </Flex>
             </TabList>
