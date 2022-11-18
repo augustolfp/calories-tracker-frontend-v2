@@ -21,7 +21,7 @@ export default function IngredientsTab(props: Props) {
     const { mutate: deleteIngredient } = useDelete();
 
     return (
-        <Tabs orientation="horizontal">
+        <Tabs variant="ingredientVariant">
             <TabList>
                 <Flex wrap="wrap-reverse">
                     <Tab>Novo ingrediente</Tab>
@@ -42,6 +42,9 @@ export default function IngredientsTab(props: Props) {
                         <TabPanel key={index}>
                             <IngredientDash {...ing} />
                             <Box
+                                position="absolute"
+                                top="4px"
+                                right="4px"
                                 onClick={() =>
                                     deleteIngredient({
                                         type: 'ingredient',

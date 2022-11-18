@@ -19,7 +19,6 @@ const sizes = {};
 const mealVariant = definePartsStyle({
     root: {
         w: 'full',
-        bg: 'cyan',
     },
     tab: {
         flexDirection: 'column',
@@ -42,13 +41,38 @@ const mealVariant = definePartsStyle({
         borderStyle: 'none',
         bg: '#f0f0f0',
     },
+    tabpanel: {},
+});
+
+const ingredientVariant = definePartsStyle({
+    root: {
+        w: 'full',
+    },
+    tabs: {
+        size: 'sm',
+    },
+    tab: {
+        w: ['140px', '50%', '33%'],
+        m: '0',
+        color: 'pageGreen.500',
+        fontWeight: '400',
+        display: 'inline-block',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        _selected: {
+            fontWeight: '900',
+        },
+    },
+    tablist: {},
     tabpanel: {
-        bg: 'tomato',
+        position: 'relative',
     },
 });
 
 const variants = {
-    mealVariant: mealVariant,
+    mealVariant,
+    ingredientVariant,
 };
 
 // export the component theme

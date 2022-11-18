@@ -10,7 +10,9 @@ export default function MealDash(props: DayMeal) {
                 {props.mealDescription ? props.mealDescription : null}
             </Box>
             <MealTable {...props} />
-            Ingredientes:
+            <Box color="pageGreen.400" fontSize="3xl">
+                Ingredientes:
+            </Box>
             <IngredientsTab
                 ingredients={props.ingredientList}
                 mealId={props.mealId}
