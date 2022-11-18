@@ -30,7 +30,10 @@ export default function SearchIngredients(props: Props) {
     }, [searchTerm]);
 
     return (
-        <>
+        <Box layerStyle="card">
+            <Box as="h3" textStyle="h3" fontWeight="600">
+                Pesquise na tabela
+            </Box>
             <DebounceInput
                 minLength={3}
                 debounceTimeout={300}
@@ -66,6 +69,6 @@ export default function SearchIngredients(props: Props) {
                     )}
                 </Box>
             </Flex>
-        </>
+        </Box>
     );
 }
