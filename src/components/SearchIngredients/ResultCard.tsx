@@ -1,4 +1,4 @@
-import { Box, VStack } from '@chakra-ui/react';
+import { ListItem } from '@chakra-ui/react';
 import { SearchResult } from '../../types';
 
 type Props = {
@@ -9,14 +9,13 @@ type Props = {
 
 export default function ResultCard(props: Props) {
     return (
-        <Box
+        <ListItem
             fontSize="14px"
             borderColor={
                 props.id === props.selectedResult?.id ? 'purple' : 'none'
             }
-            layerStyle="searchResultCard"
         >
             {props.description}
-        </Box>
+        </ListItem>
     );
 }

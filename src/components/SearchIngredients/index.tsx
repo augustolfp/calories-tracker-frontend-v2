@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
-import { DebounceInput } from 'react-debounce-input';
-import { Input, VStack, Box, Flex } from '@chakra-ui/react';
+import { Box, Grid, GridItem } from '@chakra-ui/react';
 import { useAuth } from '../../hooks/useAuth';
 import { api } from '../../lib/axios';
-import ResultCard from './ResultCard';
 import HandleSelectedResult from './HandleSelectedResult';
 import { SearchResult } from '../../types';
+import SearchInterface from './SearchInterface';
 
 type Props = {
     mealId: number;
@@ -34,41 +33,33 @@ export default function SearchIngredients(props: Props) {
             <Box as="h3" textStyle="h3" fontWeight="600">
                 Pesquise na tabela
             </Box>
-            <DebounceInput
-                minLength={3}
-                debounceTimeout={300}
-                value={searchTerm}
-                placeholder="Pesquisar alimento..."
-                onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <Flex h="30vh">
-                <Box w="300px" h="100%" layerStyle="searchResultContainer">
-                    {searchResults &&
-                        searchResults.map((result, index) => {
-                            return (
-                                <Box
-                                    key={index}
-                                    onClick={() => setSelectedResult(result)}
-                                >
-                                    <ResultCard
-                                        id={result.id}
-                                        description={result.description}
-                                        selectedResult={selectedResult}
-                                    />
-                                </Box>
-                            );
-                        })}
-                </Box>
-                <Box w="100%" layerStyle="card">
-                    <Box>Info nutricional</Box>
-                    {selectedResult && (
-                        <HandleSelectedResult
-                            selectedResult={selectedResult}
-                            mealId={props.mealId}
-                        />
-                    )}
-                </Box>
-            </Flex>
+            <Grid
+                templateAreas={`"searchInterface dataPanel"`}
+                gridTemplateRows="400px"
+                gridTemplateColumns="2fr 1fr"
+                gridGap="10px"
+            >
+                <GridItem area={'searchInterface'}>
+                    <SearchInterface
+                        searchTerm={searchTerm}
+                        setSearchTerm={setSearchTerm}
+                        searchResults={searchResults}
+                        setSearchResults={setSearchResults}
+                        selectedResult={selectedResult}
+                        setSelectedResult={setSelectedResult}
+                    />
+                </GridItem>
+                <GridItem area={'dataPanel'}>
+                    <Box>
+                        {selectedResult && (
+                            <HandleSelectedResult
+                                selectedResult={selectedResult}
+                                mealId={props.mealId}
+                            />
+                        )}
+                    </Box>
+                </GridItem>
+            </Grid>
         </Box>
     );
 }

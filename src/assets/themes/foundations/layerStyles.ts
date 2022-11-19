@@ -39,19 +39,6 @@ export const layerStyles = {
         clear: 'left',
         float: 'left',
     },
-    searchResultContainer: {
-        p: 8,
-        borderWidth: 1,
-        borderRadius: 8,
-        boxShadow: 'lg',
-        overflow: 'auto',
-    },
-    searchResultCard: {
-        p: 2,
-        borderWidth: 1,
-        borderRadius: 8,
-        boxShadow: 'lg',
-    },
     navBar: {
         bg: '#3db9a2',
         height: '84px',
@@ -83,5 +70,16 @@ export const layerStyles = {
         fontWeight: '700',
         textAlign: 'left',
         w: 'full',
+    },
+    searchInterface: {
+        position: 'relative',
+        overflow: 'scroll',
+        h: '300px',
+        borderStyle: 'solid',
+        borderWidth: '3px',
+        borderColor: 'pageGreen.500',
+    },
+    searchResultList: {
+        mt: '20px',
     },
 };
