@@ -61,14 +61,12 @@ export const layerStyles = {
         fontSize: ['14px', '16px', '20px', '25px'],
         fontWeight: '700',
         textAlign: 'left',
-        w: 'full',
     },
     mealTabSummarySubTitle: {
         color: 'gray.500',
         fontSize: ['10px', '12px', '16px', '20px'],
         fontWeight: '700',
         textAlign: 'left',
-        w: 'full',
     },
     searchInterface: {
         position: 'relative',
