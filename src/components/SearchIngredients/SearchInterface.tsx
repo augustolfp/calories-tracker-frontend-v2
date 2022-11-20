@@ -16,7 +16,7 @@ type Props = {
 
 export default function SearchInterface(props: Props) {
     return (
-        <Box layerStyle="searchInterface">
+        <Box layerStyle="searchInterface" position="relative" overflow="auto">
             <DebouncedInput
                 searchTerm={props.searchTerm}
                 setSearchTerm={props.setSearchTerm}

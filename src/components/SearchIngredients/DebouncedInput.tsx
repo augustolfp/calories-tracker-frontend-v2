@@ -32,8 +32,8 @@ const Container = styled.div`
         width: 100%;
         background-color: white;
         box-sizing: border-box;
-        border: 1px solid #3db9a2;
-        border-radius: 4px;
+        border-top: 3px solid #3db9a2;
+        border-bottom: 3px solid #3db9a2;
         padding: 4px 8px;
 
         ::placeholder {
@@ -42,6 +42,5 @@ const Container = styled.div`
     }
 
     input:focus {
-        border: 2px solid #3db9a2;
     }
 `;

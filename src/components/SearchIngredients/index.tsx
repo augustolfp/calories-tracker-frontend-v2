@@ -30,12 +30,12 @@ export default function SearchIngredients(props: Props) {
 
     return (
         <Box layerStyle="card">
-            <Box as="h3" textStyle="h3" fontWeight="600">
+            <Box as="h3" textStyle="h3" fontWeight="600" w="full">
                 Pesquise na tabela
             </Box>
             <Grid
                 templateAreas={`"searchInterface dataPanel"`}
-                gridTemplateRows="400px"
+                gridTemplateRows="296px"
                 gridTemplateColumns="2fr 1fr"
                 gridGap="10px"
             >
@@ -51,12 +51,12 @@ export default function SearchIngredients(props: Props) {
                 </GridItem>
                 <GridItem area={'dataPanel'}>
                     <Box>
-                        {selectedResult && (
-                            <HandleSelectedResult
-                                selectedResult={selectedResult}
-                                mealId={props.mealId}
-                            />
-                        )}
+                        <HandleSelectedResult
+                            selectedResult={
+                                selectedResult ? selectedResult : null
+                            }
+                            mealId={props.mealId}
+                        />
                     </Box>
                 </GridItem>
             </Grid>

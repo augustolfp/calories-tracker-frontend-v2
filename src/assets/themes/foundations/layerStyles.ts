@@ -70,13 +70,12 @@ export const layerStyles = {
     },
     searchInterface: {
         position: 'relative',
-        overflow: 'scroll',
-        h: '300px',
-        borderStyle: 'solid',
+        h: 'full',
+        borderStyle: 'none solid solid solid',
         borderWidth: '3px',
         borderColor: 'pageGreen.500',
     },
     searchResultList: {
-        mt: '20px',
+        m: '20px 5px 5px 5px',
     },
 };

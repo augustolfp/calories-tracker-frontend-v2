@@ -11,9 +11,12 @@ export default function ResultCard(props: Props) {
     return (
         <ListItem
             fontSize="14px"
-            borderColor={
-                props.id === props.selectedResult?.id ? 'purple' : 'none'
-            }
+            fontWeight={props.id === props.selectedResult?.id ? '700' : '400'}
+            w="90%"
+            borderStyle="none none solid none"
+            borderWidth="1px"
+            borderColor="pageGreen.400"
+            color="pageGreen.500"
         >
             {props.description}
         </ListItem>
