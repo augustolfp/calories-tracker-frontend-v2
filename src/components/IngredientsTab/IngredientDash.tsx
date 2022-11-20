@@ -10,6 +10,7 @@ export default function IngredientDash(props: MealIngredient) {
                             "quantity resumeCard"`}
                 gridTemplateColumns="1fr 2fr"
                 w="full"
+                gridGap="16px"
             >
                 <GridItem
                     area="title"
@@ -17,7 +18,6 @@ export default function IngredientDash(props: MealIngredient) {
                     fontSize={['28px', '30px', '36px', '40px']}
                     fontWeight="400"
                     lineHeight={1}
-                    textAlign="center"
                 >
                     {props.name}
                 </GridItem>
@@ -29,7 +29,9 @@ export default function IngredientDash(props: MealIngredient) {
                     lineHeight={1}
                     textAlign="center"
                 >
-                    Quant. <br /> {props.weight}g
+                    <Center h="full" w="full">
+                        Quant. <br /> {props.weight}g
+                    </Center>
                 </GridItem>
                 <GridItem area="resumeCard">
                     <IngredientResumeCard

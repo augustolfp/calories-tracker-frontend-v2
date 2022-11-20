@@ -22,6 +22,7 @@ export default function IngredientResumeCard(props: Props) {
                 bg="kcalsColor.500"
                 area={'calories'}
                 fontSize="2xs"
+                p="12px 0"
             >
                 <Box>Calorias:</Box>
                 <Box>{props.kcals} kCal</Box>

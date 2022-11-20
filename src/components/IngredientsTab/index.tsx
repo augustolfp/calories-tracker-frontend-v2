@@ -11,6 +11,7 @@ import IngredientDash from './IngredientDash';
 import { MealIngredient } from '../../types';
 import IngredientForm from '../IngredientForm';
 import { useDelete } from '../../hooks/useDelete';
+import ClampLines from 'react-clamp-lines';
 
 type Props = {
     ingredients: MealIngredient[];
@@ -28,7 +29,12 @@ export default function IngredientsTab(props: Props) {
                     {props.ingredients[0] &&
                         props.ingredients.map((ing, index) => (
                             <Tab key={index}>
-                                {ing.name ? ing.name : 'Sem nome'}
+                                <ClampLines
+                                    text={ing.name}
+                                    id="1"
+                                    lines={1}
+                                    buttons={false}
+                                />
                             </Tab>
                         ))}
                 </Flex>

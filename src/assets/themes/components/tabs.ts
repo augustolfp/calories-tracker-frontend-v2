@@ -55,19 +55,19 @@ const ingredientVariant = definePartsStyle({
         size: 'sm',
     },
     tab: {
-        w: ['140px', '50%', '33%'],
+        borderBottom: 'solid 3px #3db9a2',
+        w: ['50%', '50%', '33%'],
         m: '0',
         color: 'pageGreen.500',
-        fontWeight: '400',
-        display: 'inline-block',
-        whiteSpace: 'nowrap',
-        overflow: 'hidden',
-        textOverflow: 'ellipsis',
         _selected: {
             fontWeight: '900',
+            borderBottom: 'solid 6px #3db9a2',
         },
     },
     tablist: {},
+    tabpanels: {
+        p: '0',
+    },
     tabpanel: {
         position: 'relative',
     },
