@@ -47,15 +47,14 @@ export const layerStyles = {
     },
     tabContentTitle: {
         color: 'pageGreen.500',
-        fontSize: ['20px', '20px', '35px', '50px'],
+        fontSize: ['28px', '28px', '35px', '50px'],
         fontWeight: '700',
-        textAlign: 'center',
     },
     tabContentSubTitle: {
         color: 'pageGreen.400',
-        fontSize: ['10px', '10px', '18px', '25px'],
+        fontSize: ['14px', '14px', '18px', '25px'],
         fontWeight: '700',
-        textAlign: 'center',
+        mb: '20px',
     },
     mealTabSummaryTitle: {
         color: 'pageGreen.500',

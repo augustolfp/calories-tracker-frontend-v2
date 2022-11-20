@@ -1,18 +1,16 @@
-import MealTable from './MealTable';
+import MealResumeGrid from './MealResumeGrid';
 import IngredientsTab from '../IngredientsTab';
 import { Box, Flex } from '@chakra-ui/react';
 import { DayMeal } from '../../types';
 
 export default function MealDash(props: DayMeal) {
     return (
-        <Flex direction="column" align="center">
+        <Flex direction="column">
             <Box layerStyle="tabContentSubTitle">
                 {props.mealDescription ? props.mealDescription : null}
             </Box>
-            <MealTable {...props} />
-            <Box color="pageGreen.400" fontSize="3xl">
-                Ingredientes:
-            </Box>
+            <MealResumeGrid {...props} />
+            <Box layerStyle="tabContentSubTitle">Ingredientes</Box>
             <IngredientsTab
                 ingredients={props.ingredientList}
                 mealId={props.mealId}

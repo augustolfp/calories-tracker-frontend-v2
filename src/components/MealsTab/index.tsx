@@ -50,8 +50,11 @@ export default function MealsTab(props: Props) {
                 {props.meals &&
                     props.meals.map((meal, index) => (
                         <TabPanel key={index}>
-                            <Box layerStyle="tabContentTitle">
+                            <Box layerStyle="tabContentTitle" lineHeight="70%">
                                 {meal.mealName}
+                            </Box>
+                            <Box layerStyle="tabContentSubTitle">
+                                Resumo da refeição
                             </Box>
                             <MealDash {...meal} />
                         </TabPanel>

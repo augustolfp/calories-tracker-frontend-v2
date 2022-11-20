@@ -12,11 +12,12 @@ export default function Header(props: Props) {
     return (
         <Flex
             direction={['column', 'column', 'row']}
-            h={['auto', 'auto', '244px']}
-            w={['308px', '400px', '768px', '960px']}
-            mb={['10px', '20px']}
+            w="full"
+            justify="center"
+            align="center"
+            gap="20px"
         >
-            <Box w="full" mb={['10px', '20px', '0']} mr={['0', '0', '20px']}>
+            <Box>
                 <Box
                     color="pageGreen.500"
                     fontSize={['40px', '50px', '44px', '72px']}

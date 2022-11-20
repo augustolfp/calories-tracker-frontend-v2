@@ -1,14 +1,16 @@
 import { Grid, GridItem } from '@chakra-ui/react';
 import { DayMeal } from '../../types';
 
-export default function MealTable(props: DayMeal) {
+export default function MealResumeGrid(props: DayMeal) {
     return (
         <Grid
+            mb="12px"
+            w="full"
             templateAreas={`"calories proteins"
     "carbs fats"`}
-            gridTemplateRows={['40px 40px', '60px 60px']}
-            gridTemplateColumns={['96px 96px', '180px 180px']}
-            gridGap={['4px', '8px']}
+            gridTemplateRows={['60px 60px', '80px 80px']}
+            gridTemplateColumns="1fr 1fr"
+            gridGap={['8px', '16px']}
         >
             <GridItem
                 dir="column"

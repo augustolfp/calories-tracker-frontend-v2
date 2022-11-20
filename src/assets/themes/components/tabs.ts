@@ -41,6 +41,9 @@ const mealVariant = definePartsStyle({
         borderStyle: 'none',
         bg: '#f0f0f0',
     },
+    tabpanels: {
+        p: ['4px', '6px', '8px', '12px'],
+    },
     tabpanel: {},
 });
 

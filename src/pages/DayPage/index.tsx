@@ -13,7 +13,7 @@ export default function DayPage() {
     const formattedDate = formatDate(dayData!.day);
 
     return (
-        <Container maxW="1200px" h="100vh" centerContent py="40px">
+        <Container maxW="1200px" h="100vh" centerContent py="40px" gap="40px">
             {dayData && (
                 <>
                     <Header
