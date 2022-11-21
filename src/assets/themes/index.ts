@@ -8,12 +8,14 @@ import { fonts } from './foundations/fonts';
 import { breakpoints } from './foundations/breakpoints';
 import { styles } from './styles';
 import { colors } from './foundations/colors';
+import { NumberInput } from './components/numberInput';
 
 const customTheme = {
     components: {
         Button,
         Input,
         Tabs,
+        NumberInput,
     },
     config: {},
     styles,
