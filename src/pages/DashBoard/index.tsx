@@ -32,7 +32,14 @@ export default function DashBoard() {
     return (
         <Container maxW="80vw" centerContent py="40px">
             <Wrap spacing="30px" justify="center">
-                <WrapItem layerStyle="card">
+                <WrapItem
+                    layerStyle="card"
+                    flexDirection="column"
+                    w={['374px', '466px']}
+                >
+                    <Box as="h1" textStyle="h1" fontWeight="600" mb={6}>
+                        Novo dia
+                    </Box>
                     <DayForm />
                 </WrapItem>
                 {data?.map((day, index) => {

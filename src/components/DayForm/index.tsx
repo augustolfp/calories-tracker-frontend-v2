@@ -62,6 +62,7 @@ export default function DayForm() {
                             Anotações
                         </FormLabel>
                         <Input
+                            variant="unstyled"
                             type="text"
                             name="notes"
                             value={notes}
@@ -77,6 +78,7 @@ export default function DayForm() {
                     area="date"
                     layerStyle="colorfulCard"
                     bg="pageGreen.500"
+                    py="10px"
                     px="20px"
                 >
                     <FormControl isRequired>
@@ -104,7 +106,6 @@ export default function DayForm() {
                     area="kcals"
                     layerStyle="colorfulCard"
                     bg="kcalsColor.500"
-                    py="10px"
                     px="20px"
                 >
                     <FormControl isRequired>
@@ -127,7 +128,11 @@ export default function DayForm() {
                                     <SliderThumb />
                                 </Slider>
                             </Box>
-                            <Flex direction="column">
+                            <Flex
+                                direction="column"
+                                align="center"
+                                justify="center"
+                            >
                                 <Box>{caloriesTarget}</Box>
                                 <Box>kCal</Box>
                             </Flex>
@@ -144,7 +149,7 @@ export default function DayForm() {
                         <Flex justifyContent="space-between" gap="20px">
                             <Box w="full">
                                 <FormLabel color="white" fontWeight="700">
-                                    Proteinas
+                                    Alvo de proteinas
                                 </FormLabel>
                                 <Slider
                                     aria-label="Definir alvo de proteinas"
@@ -160,7 +165,11 @@ export default function DayForm() {
                                     <SliderThumb />
                                 </Slider>
                             </Box>
-                            <Flex direction="column">
+                            <Flex
+                                direction="column"
+                                align="center"
+                                justify="center"
+                            >
                                 <Box>{proteinsTarget}</Box>
                                 <Box>g</Box>
                             </Flex>
