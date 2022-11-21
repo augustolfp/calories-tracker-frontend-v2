@@ -21,7 +21,9 @@ export default function DayPage() {
                         fullDate={formattedDate.fullDate}
                         weekDay={formattedDate.weekDay}
                     />
-                    <MealsTab meals={dayData.dayMeals} dayId={Number(id)} />
+                    <Box w="full">
+                        <MealsTab meals={dayData.dayMeals} dayId={Number(id)} />
+                    </Box>
                 </>
             )}
         </Container>

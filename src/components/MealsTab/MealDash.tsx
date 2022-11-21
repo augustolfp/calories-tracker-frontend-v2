@@ -6,9 +6,6 @@ import { DayMeal } from '../../types';
 export default function MealDash(props: DayMeal) {
     return (
         <Flex direction="column">
-            <Box layerStyle="tabContentSubTitle">
-                {props.mealDescription ? props.mealDescription : null}
-            </Box>
             <MealResumeGrid {...props} />
             <Box layerStyle="tabContentSubTitle">Ingredientes</Box>
             <IngredientsTab
