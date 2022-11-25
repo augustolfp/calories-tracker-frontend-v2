@@ -41,7 +41,7 @@ export const layerStyles = {
     },
     navBar: {
         bg: '#3db9a2',
-        height: '84px',
+        height: ['42px', '64px', '84px'],
         padding: '0px 40px',
         boxShadow: 'lg',
     },
