@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 
 type AuthContextType = {
-    token: {};
+    authHeader: {};
     userId: number;
     userName: string;
     signIn: Function;

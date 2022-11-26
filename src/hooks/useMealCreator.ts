@@ -6,17 +6,17 @@ import { useToast } from '@chakra-ui/react';
 import { AxiosError } from 'axios';
 
 export function useMealCreator() {
-    const { token } = useAuth();
+    const { authHeader } = useAuth();
     const queryClient = useQueryClient();
     const toast = useToast();
 
     const addMeal = async (data: any) => {
-        return await api.post('/add-meal', data, token);
+        return await api.post('/add-meal', data, authHeader);
     };
 
     return useMutation({
         mutationFn: (mealBody: MealBody) => {
-            return api.post('/add-meal', mealBody, token);
+            return api.post('/add-meal', mealBody, authHeader);
         },
         onSuccess: () => {
             toast({

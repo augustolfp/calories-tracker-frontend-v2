@@ -4,11 +4,11 @@ import { api } from '../lib/axios';
 import { Day } from '../types';
 
 export function useData() {
-    const { isLoggedIn, token } = useAuth();
+    const { isLoggedIn, authHeader } = useAuth();
     const { isLoading, isFetching, isError, data, status } = useQuery<Day[]>(
         'userData',
         async () => {
-            const { data } = await api.get('/get-days-data', token);
+            const { data } = await api.get('/get-days-data', authHeader);
             return data;
         },
         {

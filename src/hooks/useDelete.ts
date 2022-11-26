@@ -11,19 +11,19 @@ type DeleteRequest = {
 };
 
 export function useDelete() {
-    const { token } = useAuth();
+    const { authHeader } = useAuth();
     const queryClient = useQueryClient();
     const toast = useToast();
 
     return useMutation({
         mutationFn: (body: DeleteRequest) => {
             if (body.type === 'day') {
-                return api.delete(`/delete-counted-day/${body.id}`, token);
+                return api.delete(`/delete-counted-day/${body.id}`, authHeader);
             }
             if (body.type === 'meal') {
-                return api.delete(`/delete-meal/${body.id}`, token);
+                return api.delete(`/delete-meal/${body.id}`, authHeader);
             }
-            return api.delete(`/delete-ingredient/${body.id}`, token);
+            return api.delete(`/delete-ingredient/${body.id}`, authHeader);
         },
         onSuccess: () => {
             toast({

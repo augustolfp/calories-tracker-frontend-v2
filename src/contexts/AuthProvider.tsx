@@ -3,7 +3,7 @@ import { api } from '../lib/axios';
 import { AuthContext } from './AuthContext';
 
 type AuthContext = {
-    token: {};
+    authHeader: {};
     userId: number;
     userName: string;
     login: Function;
@@ -13,7 +13,7 @@ type AuthContext = {
 };
 
 export function AuthProvider({ children }: { children: JSX.Element }) {
-    const [token, setToken] = useState({});
+    const [authHeader, setAuthHeader] = useState({});
     const [userId, setUserId] = useState(-1);
     const [userName, setUserName] = useState('');
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -23,7 +23,7 @@ export function AuthProvider({ children }: { children: JSX.Element }) {
         setLoading(true);
         try {
             const response = await api.post('/sign-in', { email, password });
-            setToken({
+            setAuthHeader({
                 headers: {
                     Authorization: `Bearer ${response.data.token}`,
                 },
@@ -60,7 +60,7 @@ export function AuthProvider({ children }: { children: JSX.Element }) {
     return (
         <AuthContext.Provider
             value={{
-                token,
+                authHeader,
                 userName,
                 userId,
                 signIn,

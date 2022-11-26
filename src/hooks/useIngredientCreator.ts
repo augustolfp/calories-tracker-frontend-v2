@@ -6,13 +6,13 @@ import { useToast } from '@chakra-ui/react';
 import { AxiosError } from 'axios';
 
 export function useIngredientCreator() {
-    const { token } = useAuth();
+    const { authHeader } = useAuth();
     const queryClient = useQueryClient();
     const toast = useToast();
 
     return useMutation({
         mutationFn: (ingBody: IngBody) => {
-            return api.post('/add-ingredients', ingBody, token);
+            return api.post('/add-ingredients', ingBody, authHeader);
         },
         onSuccess: () => {
             toast({

@@ -6,13 +6,13 @@ import { useToast } from '@chakra-ui/react';
 import { AxiosError } from 'axios';
 
 export function useDayCreator() {
-    const { token } = useAuth();
+    const { authHeader } = useAuth();
     const queryClient = useQueryClient();
     const toast = useToast();
 
     return useMutation({
         mutationFn: (dayBody: DayBody) => {
-            return api.post('/add-counted-day', dayBody, token);
+            return api.post('/add-counted-day', dayBody, authHeader);
         },
         onSuccess: () => {
             toast({
