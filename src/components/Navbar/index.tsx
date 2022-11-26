@@ -1,11 +1,22 @@
 import { useAuth } from '../../hooks/useAuth';
-import { Box, Flex, Image, Icon } from '@chakra-ui/react';
+import { Box, Flex, Image, Icon, Button } from '@chakra-ui/react';
 import titleIcon from '../../../public/titleIcon.svg';
 import { GoMarkGithub } from 'react-icons/go';
 import { Link } from 'react-router-dom';
 
+import {
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
+    MenuItemOption,
+    MenuGroup,
+    MenuOptionGroup,
+    MenuDivider,
+} from '@chakra-ui/react';
+
 export default function NavBar() {
-    const { isLoggedIn, userName } = useAuth();
+    const { isLoggedIn, userName, signOut } = useAuth();
 
     return (
         <Flex
@@ -31,19 +42,23 @@ export default function NavBar() {
                 </a>
 
                 {isLoggedIn ? (
-                    <Flex
-                        justify="center"
-                        align="center"
-                        w={[5, 7, 10]}
-                        h={[5, 7, 10]}
-                        borderRadius="full"
-                        bg="white"
-                        fontSize={[10, 15, 20]}
-                        fontWeight="600"
-                        color="pageGreen.500"
-                    >
-                        {userName[0]}
-                    </Flex>
+                    <Menu>
+                        <MenuButton
+                            as={Button}
+                            w={[5, 7, 10]}
+                            h={[5, 7, 10]}
+                            borderRadius="full"
+                            bg="white"
+                            fontSize={[10, 15, 20]}
+                            fontWeight="600"
+                            color="pageGreen.500"
+                        >
+                            {userName[0]}
+                        </MenuButton>
+                        <MenuList>
+                            <MenuItem onClick={() => signOut()}>Sair</MenuItem>
+                        </MenuList>
+                    </Menu>
                 ) : null}
             </Flex>
         </Flex>

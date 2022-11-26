@@ -45,7 +45,6 @@ export function AuthProvider({ children }: { children: JSX.Element }) {
             }
         };
         validateToken();
-        console.log('opa');
     }, [api]);
 
     const setToken = (token: string) => {
@@ -88,7 +87,11 @@ export function AuthProvider({ children }: { children: JSX.Element }) {
     }
 
     async function signOut() {
-        return;
+        setToken('');
+        setAuthHeader({});
+        setUserName('');
+        setUserId(-1);
+        setIsLoggedIn(false);
     }
 
     return (
