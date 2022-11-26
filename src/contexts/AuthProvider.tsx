@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { api } from '../lib/axios';
 import { AuthContext } from './AuthContext';
+import { useToast } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 
 type AuthContext = {
     authHeader: {};
@@ -13,6 +15,8 @@ type AuthContext = {
 };
 
 export function AuthProvider({ children }: { children: JSX.Element }) {
+    const navigate = useNavigate();
+    const toast = useToast();
     const [authHeader, setAuthHeader] = useState({});
     const [userId, setUserId] = useState(-1);
     const [userName, setUserName] = useState('');
@@ -80,9 +84,23 @@ export function AuthProvider({ children }: { children: JSX.Element }) {
                 password,
             });
             setLoading(false);
+            toast({
+                title: 'Boa!',
+                description: 'Usuário cadastrado com sucesso!',
+                status: 'success',
+                duration: 3000,
+                isClosable: true,
+            });
+            navigate('/');
         } catch (err) {
             setLoading(false);
-            throw Error('SignUp failed');
+            toast({
+                title: 'Ocorreu um erro :(',
+                description: 'Algo de errado não está certo.',
+                status: 'error',
+                duration: 3000,
+                isClosable: true,
+            });
         }
     }
 

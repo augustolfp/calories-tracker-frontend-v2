@@ -8,16 +8,10 @@ export default function SignUpPage() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [errMsg, setErrMsg] = useState('');
 
     async function handleNewUser(e: any) {
         e.preventDefault();
-        try {
-            await signUp(name, email, password);
-            setErrMsg('');
-        } catch (err) {
-            setErrMsg('Ocorreu um erro!');
-        }
+        signUp(name, email, password);
     }
 
     return (
@@ -31,8 +25,7 @@ export default function SignUpPage() {
                 setPassword={setPassword}
                 loading={loading}
                 handleNewUser={handleNewUser}
-                setErrMsg={setErrMsg}
-            ></SignUpForm>
+            />
         </CredentialsPageLayout>
     );
 }

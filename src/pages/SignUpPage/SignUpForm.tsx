@@ -18,8 +18,6 @@ type Props = {
     setPassword: any;
     loading: boolean;
     handleNewUser: any;
-    setErrMsg: any;
-    children?: JSX.Element | JSX.Element[];
 };
 
 export default function SignUpForm(props: Props) {
@@ -47,7 +45,6 @@ export default function SignUpForm(props: Props) {
                             value={props.name}
                             onChange={(e) => {
                                 props.setName(e.target.value);
-                                props.setErrMsg('');
                             }}
                             placeholder="nome"
                             disabled={props.loading}
@@ -65,7 +62,6 @@ export default function SignUpForm(props: Props) {
                             value={props.email}
                             onChange={(e) => {
                                 props.setEmail(e.target.value);
-                                props.setErrMsg('');
                             }}
                             placeholder="email"
                             disabled={props.loading}
@@ -83,7 +79,6 @@ export default function SignUpForm(props: Props) {
                             value={props.password}
                             onChange={(e) => {
                                 props.setPassword(e.target.value);
-                                props.setErrMsg('');
                             }}
                             placeholder="senha"
                             disabled={props.loading}
