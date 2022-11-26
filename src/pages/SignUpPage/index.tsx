@@ -4,7 +4,7 @@ import { useState } from 'react';
 import SignUpForm from './SignUpForm';
 
 export default function SignUpPage() {
-    const { newUser, loading } = useAuth();
+    const { signUp, loading } = useAuth();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -13,7 +13,7 @@ export default function SignUpPage() {
     async function handleNewUser(e: any) {
         e.preventDefault();
         try {
-            await newUser(name, email, password);
+            await signUp(name, email, password);
             setErrMsg('');
         } catch (err) {
             setErrMsg('Ocorreu um erro!');

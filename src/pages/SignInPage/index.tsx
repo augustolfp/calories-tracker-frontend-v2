@@ -5,7 +5,7 @@ import SignInStatus from './SignInStatus';
 import CredentialsPageLayout from '../../components/CredentialsPageLayout';
 
 export default function SignInPage() {
-    const { login, loading, isLoggedIn } = useAuth();
+    const { signIn, loading, isLoggedIn } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errMsg, setErrMsg] = useState('');
@@ -13,7 +13,7 @@ export default function SignInPage() {
     async function handleLogin(e: any) {
         e.preventDefault();
         try {
-            await login(email, password);
+            await signIn(email, password);
             setErrMsg('');
         } catch (err) {
             setErrMsg('Login falhou!');

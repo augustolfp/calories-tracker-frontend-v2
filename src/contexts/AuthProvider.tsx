@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { useState } from 'react';
 import { api } from '../lib/axios';
 import { AuthContext } from './AuthContext';
 
@@ -19,7 +19,7 @@ export function AuthProvider({ children }: { children: JSX.Element }) {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [loading, setLoading] = useState(false);
 
-    async function login(email: string, password: string) {
+    async function signIn(email: string, password: string) {
         setLoading(true);
         try {
             const response = await api.post('/sign-in', { email, password });
@@ -38,7 +38,7 @@ export function AuthProvider({ children }: { children: JSX.Element }) {
         }
     }
 
-    async function newUser(name: string, email: string, password: string) {
+    async function signUp(name: string, email: string, password: string) {
         setLoading(true);
         try {
             const response = await api.post('/sign-up', {
@@ -53,14 +53,19 @@ export function AuthProvider({ children }: { children: JSX.Element }) {
         }
     }
 
+    async function signOut() {
+        return;
+    }
+
     return (
         <AuthContext.Provider
             value={{
                 token,
                 userName,
                 userId,
-                login,
-                newUser,
+                signIn,
+                signUp,
+                signOut,
                 isLoggedIn,
                 loading,
             }}

@@ -1,14 +1,14 @@
-import { createContext, useState } from 'react';
-import { api } from '../lib/axios';
+import { createContext } from 'react';
 
-type AuthContext = {
+type AuthContextType = {
     token: {};
     userId: number;
     userName: string;
-    login: Function;
-    newUser: Function;
+    signIn: Function;
+    signUp: Function;
+    signOut: Function;
     isLoggedIn: boolean;
     loading: boolean;
 };
 
-export const AuthContext = createContext({} as AuthContext);
+export const AuthContext = createContext({} as AuthContextType);
