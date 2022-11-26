@@ -7,6 +7,7 @@ import {
     Box,
     VStack,
 } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 type Props = {
     name: string;
@@ -102,6 +103,11 @@ export default function SignUpForm(props: Props) {
                     </Button>
                 </VStack>
             </form>
+            <Link to="/">
+                <Box textStyle="h3" fontSize="sm" textAlign="center" mt={4}>
+                    Já tem uma conta? Faça login!
+                </Box>
+            </Link>
         </Box>
     );
 }
