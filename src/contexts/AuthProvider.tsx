@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { api } from '../lib/axios';
 import { AuthContext } from './AuthContext';
 
@@ -19,6 +19,39 @@ export function AuthProvider({ children }: { children: JSX.Element }) {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [loading, setLoading] = useState(false);
 
+    useEffect(() => {
+        const validateToken = async () => {
+            const storageData = localStorage.getItem('authToken');
+            if (storageData) {
+                try {
+                    const response = await api.get('/validate', {
+                        headers: {
+                            Authorization: `Bearer ${storageData}`,
+                        },
+                    });
+                    setAuthHeader({
+                        headers: {
+                            Authorization: `Bearer ${storageData}`,
+                        },
+                    });
+                    setUserId(response.data.id);
+                    setUserName(response.data.name);
+                    setIsLoggedIn(true);
+                } catch (err) {
+                    setIsLoggedIn(false);
+                }
+            } else {
+                setIsLoggedIn(false);
+            }
+        };
+        validateToken();
+        console.log('opa');
+    }, [api]);
+
+    const setToken = (token: string) => {
+        localStorage.setItem('authToken', token);
+    };
+
     async function signIn(email: string, password: string) {
         setLoading(true);
         try {
@@ -28,6 +61,7 @@ export function AuthProvider({ children }: { children: JSX.Element }) {
                     Authorization: `Bearer ${response.data.token}`,
                 },
             });
+            setToken(response.data.token);
             setUserId(Number(response.data.id));
             setUserName(response.data.name);
             setIsLoggedIn(true);
