@@ -85,21 +85,55 @@ export default function DayForm() {
                         <FormLabel color="white" fontWeight="700">
                             Data
                         </FormLabel>
-                        <SingleDatepicker
-                            configs={{
-                                dayNames: 'Dom Seg Ter Qua Qui Sex Sab'.split(
-                                    ' '
-                                ),
-                                monthNames:
-                                    'Jan Fev Mar Abr Mai Jun Jul Ago Set Out Nov Dez'.split(
-                                        ' '
-                                    ),
-                                dateFormat: 'dd-MM-yyyy',
-                            }}
-                            name="date-input"
-                            date={date}
-                            onDateChange={setDate}
-                        />
+                        <Box color="pageGreen.500">
+                            <SingleDatepicker
+                                propsConfigs={{
+                                    dateNavBtnProps: {
+                                        color: 'pageGreen.500',
+                                        colorScheme: 'green',
+                                        variant: 'outline',
+                                    },
+                                    dayOfMonthBtnProps: {
+                                        defaultBtnProps: {
+                                            color: 'pageGreen.500',
+                                            borderColor: 'pageGreen.500',
+                                            _hover: {
+                                                background: 'gray.300',
+                                            },
+                                        },
+                                        isInRangeBtnProps: {
+                                            color: 'yellow',
+                                        },
+                                        selectedBtnProps: {
+                                            background: 'pageGreen.500',
+                                            color: 'white',
+                                        },
+                                        todayBtnProps: {
+                                            background: 'teal.400',
+                                        },
+                                    },
+                                    inputProps: {
+                                        color: 'white',
+                                        fontWeight: '700',
+                                        size: 'sm',
+                                    },
+                                }}
+                                configs={{
+                                    dayNames:
+                                        'Dom Seg Ter Qua Qui Sex Sab'.split(
+                                            ' '
+                                        ),
+                                    monthNames:
+                                        'Jan Fev Mar Abr Mai Jun Jul Ago Set Out Nov Dez'.split(
+                                            ' '
+                                        ),
+                                    dateFormat: 'dd-MM-yyyy',
+                                }}
+                                name="date-input"
+                                date={date}
+                                onDateChange={setDate}
+                            />
+                        </Box>
                     </FormControl>
                 </GridItem>
                 <GridItem
