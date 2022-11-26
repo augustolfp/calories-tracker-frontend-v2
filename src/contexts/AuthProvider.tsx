@@ -92,6 +92,7 @@ export function AuthProvider({ children }: { children: JSX.Element }) {
         setUserName('');
         setUserId(-1);
         setIsLoggedIn(false);
+        window.location.reload(false);
     }
 
     return (
