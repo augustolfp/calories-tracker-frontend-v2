@@ -1,6 +1,7 @@
 import { useData } from '../../hooks/useData';
 import { useDelete } from '../../hooks/useDelete';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { DeleteIcon } from '@chakra-ui/icons';
 import {
     Wrap,
     WrapItem,
@@ -14,28 +15,40 @@ import DayForm from '../../components/DayForm';
 import formatDate from '../../utils/formatDate';
 
 export default function DashBoard() {
+    const navigate = useNavigate();
     const { isLoading, isFetching, isError, data, status } = useData();
     const { mutate: deleteDay } = useDelete();
 
     if (isLoading) {
         return (
-            <Container maxW="80vw" centerContent py="40px">
-                <CircularProgress isIndeterminate size={12} color="purple" />
+            <Container centerContent py="40px">
+                <CircularProgress
+                    isIndeterminate
+                    size={12}
+                    color="pageGreen.500"
+                />
             </Container>
         );
     }
 
     if (isError) {
-        return <Box>Ocorreu um erro!</Box>;
+        return (
+            <Container centerContent py="40px">
+                <Box as="h1" textStyle="h3">
+                    Ocorreu um erro. Por favor, recarregue a página.
+                </Box>
+            </Container>
+        );
     }
 
     return (
-        <Container maxW="80vw" centerContent py="40px">
+        <Container maxW="1200px" centerContent py="40px">
             <Wrap spacing="30px" justify="center">
                 <WrapItem
                     layerStyle="card"
                     flexDirection="column"
-                    w={['374px', '466px']}
+                    justifyContent="space-between"
+                    w={['100%', '400px']}
                 >
                     <Box as="h1" textStyle="h1" fontWeight="600" mb={6}>
                         Novo dia
@@ -49,17 +62,23 @@ export default function DashBoard() {
                             position="relative"
                             flexDirection="column"
                             layerStyle="card"
+                            w={['100%', '400px']}
+                            h={[null, '442px']}
                             key={index}
                         >
                             <Button
                                 position="absolute"
                                 right={8}
                                 top={8}
+                                minW={0}
+                                p={3}
+                                m={0}
+                                borderRadius="full"
                                 onClick={() =>
                                     deleteDay({ type: 'day', id: day.id })
                                 }
                             >
-                                x
+                                <DeleteIcon h={4} w={4} />
                             </Button>
                             <Box mb={6}>
                                 <Box as="h1" textStyle="h1" fontWeight="600">
@@ -69,9 +88,13 @@ export default function DashBoard() {
                                     {formattedDate.fullDate}
                                 </Box>
                             </Box>
-                            <Link to={`/day/${day.id}`}>
+                            <Box
+                                w="full"
+                                h="full"
+                                onClick={() => navigate(`/day/${day.id}`)}
+                            >
                                 <DayResumeCard {...day} />
-                            </Link>
+                            </Box>
                         </WrapItem>
                     );
                 })}

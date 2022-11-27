@@ -17,11 +17,13 @@ type Props = {
 export default function DayResumeCard(props: Props) {
     return (
         <Grid
+            h={[null, '100%']}
             templateAreas={`"calories proteins fats"
         "calories proteins carbs"`}
-            gridTemplateRows={['90px 90px', '112px 112px']}
-            gridTemplateColumns={['96px 96px 96px', '120px 120px 120px']}
-            gridGap={['10px', '20px']}
+            gridTemplateRows="1fr 1fr"
+            gridTemplateColumns="1fr 1fr 1fr"
+            gridGap={['8px', '12px']}
+            justifyContent="stretch"
         >
             <GridItem
                 dir="column"

@@ -49,7 +49,7 @@ export default function DayForm() {
                                 "button button"`}
                 gridTemplateColumns="1fr 1fr"
                 gridTemplateRows="1.5fr 1fr 1fr 1fr"
-                gridGap={['10px', '20px']}
+                gridGap={['8px', '12px']}
             >
                 <GridItem
                     area="notes"
@@ -211,7 +211,12 @@ export default function DayForm() {
                     </FormControl>
                 </GridItem>
                 <GridItem area="button">
-                    <Button w="full" type="submit" disabled={isLoading}>
+                    <Button
+                        w="full"
+                        h="full"
+                        type="submit"
+                        disabled={isLoading}
+                    >
                         {isLoading ? (
                             <CircularProgress
                                 isIndeterminate
