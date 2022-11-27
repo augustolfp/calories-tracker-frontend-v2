@@ -1,4 +1,4 @@
-import bananaIcon from '../../../public/icon.svg';
+import bananaIcon from '../../assets/icons/icon.svg';
 import { Flex, Image, Container } from '@chakra-ui/react';
 
 type Props = {

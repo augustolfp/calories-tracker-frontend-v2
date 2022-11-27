@@ -1,6 +1,6 @@
 import { useAuth } from '../../hooks/useAuth';
 import { Box, Flex, Image, Icon, Button } from '@chakra-ui/react';
-import titleIcon from '../../../public/titleIcon.svg';
+import titleIcon from '../../assets/icons/titleIcon.svg';
 import { GoMarkGithub } from 'react-icons/go';
 import { Link } from 'react-router-dom';
 
