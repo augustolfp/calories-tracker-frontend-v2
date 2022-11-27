@@ -42,7 +42,9 @@ export default function Header(props: Props) {
                         : 'Anotações: nenhuma'}
                 </Box>
             </Box>
-            <DayResumeCard {...props.day} />
+            <Box w={['full', 'full', '400px']} h={[null, '240px', '280px']}>
+                <DayResumeCard {...props.day} />
+            </Box>
         </Flex>
     );
 }
