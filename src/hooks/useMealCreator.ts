@@ -25,6 +25,7 @@ export function useMealCreator() {
                 status: 'success',
                 duration: 4000,
                 isClosable: true,
+                position: 'bottom-right',
             });
             return queryClient.invalidateQueries('userData');
         },
@@ -39,6 +40,7 @@ export function useMealCreator() {
                 status: 'error',
                 duration: 4000,
                 isClosable: true,
+                position: 'bottom-right',
             });
         },
     });

@@ -75,6 +75,7 @@ export function AuthProvider({ children }: { children: JSX.Element }) {
                 status: 'success',
                 duration: 3000,
                 isClosable: true,
+                position: 'bottom-right',
             });
             navigate('/dashboard');
         } catch (err) {
@@ -85,6 +86,7 @@ export function AuthProvider({ children }: { children: JSX.Element }) {
                 status: 'error',
                 duration: 3000,
                 isClosable: true,
+                position: 'bottom-right',
             });
         }
     }
