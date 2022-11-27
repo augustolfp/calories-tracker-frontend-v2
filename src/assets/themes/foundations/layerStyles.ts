@@ -6,11 +6,13 @@ export const layerStyles = {
         boxShadow: 'lg',
     },
     credentialsCard: {
-        p: 8,
+        py: 4,
+        px: 8,
         borderWidth: 1,
         borderRadius: 4,
         boxShadow: 'lg',
-        width: ['274px', '360px'],
+        w: 'full',
+        h: 'full',
     },
     nutrient: {
         display: 'flex',

@@ -5,6 +5,7 @@ import {
     FormLabel,
     CircularProgress,
     Box,
+    Flex,
     VStack,
 } from '@chakra-ui/react';
 import RedirectButton from './RedirectButton';
@@ -24,7 +25,7 @@ import { Link } from 'react-router-dom';
 
 export default function SignInForm(props: Props) {
     return (
-        <Box layerStyle="credentialsCard">
+        <Flex layerStyle="credentialsCard" direction="column" justify="center">
             <Box
                 as="h2"
                 textStyle="h2"
@@ -112,6 +113,6 @@ export default function SignInForm(props: Props) {
                     </Link>
                 </>
             )}
-        </Box>
+        </Flex>
     );
 }

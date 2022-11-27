@@ -7,16 +7,24 @@ type Props = {
 
 export default function CredentialsPageLayout(props: Props) {
     return (
-        <Container maxW="container.xl">
+        <Container
+            maxW="1200px"
+            height="100vh"
+            centerContent
+            justifyContent="center"
+        >
             <Flex
-                height="100vh"
-                py={20}
-                direction={['column', 'row']}
-                alignItems="center"
-                justifyContent="center"
+                h={[null, null, '500px']}
+                w={['100vw', '70vw', '100vw']}
+                maxW="920px"
+                justify="center"
+                align="center"
+                p={['8px', '14px']}
+                direction={['column', 'column', 'row']}
+                gap={6}
             >
                 <Image
-                    boxSize={[116, 400]}
+                    boxSize={['70%', '70%', '70%']}
                     src={bananaIcon}
                     alt="banana logo"
                 />

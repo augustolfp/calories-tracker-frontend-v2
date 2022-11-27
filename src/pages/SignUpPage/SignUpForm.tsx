@@ -23,13 +23,7 @@ type Props = {
 export default function SignUpForm(props: Props) {
     return (
         <Box layerStyle="credentialsCard">
-            <Box
-                as="h2"
-                textStyle="h2"
-                textAlign="center"
-                m={4}
-                fontWeight="600"
-            >
+            <Box as="h2" textStyle="h2" textAlign="center" fontWeight="600">
                 Cadastro
             </Box>
             <form onSubmit={props.handleNewUser}>
