@@ -16,7 +16,6 @@ type Props = {
     setPassword: any;
     loading: boolean;
     handleLogin: any;
-    setErrMsg: any;
     isLoggedIn: boolean;
     children?: JSX.Element | JSX.Element[];
 };
@@ -37,10 +36,15 @@ export default function SignInForm(props: Props) {
             </Box>
             {props.children}
             {props.isLoggedIn ? (
-                <RedirectButton
-                    url="/dashboard"
-                    text="Ir para minha dashboard"
-                />
+                <>
+                    <Box as="h4" textStyle="h4" textAlign="center">
+                        Você já está logado!
+                    </Box>
+                    <RedirectButton
+                        url="/dashboard"
+                        text="Ir para minha dashboard"
+                    />
+                </>
             ) : (
                 <>
                     <form onSubmit={props.handleLogin}>
@@ -56,7 +60,6 @@ export default function SignInForm(props: Props) {
                                     value={props.email}
                                     onChange={(e) => {
                                         props.setEmail(e.target.value);
-                                        props.setErrMsg('');
                                     }}
                                     placeholder="email"
                                     disabled={props.loading}
@@ -74,7 +77,6 @@ export default function SignInForm(props: Props) {
                                     value={props.password}
                                     onChange={(e) => {
                                         props.setPassword(e.target.value);
-                                        props.setErrMsg('');
                                     }}
                                     placeholder="senha"
                                     disabled={props.loading}

@@ -69,9 +69,23 @@ export function AuthProvider({ children }: { children: JSX.Element }) {
             setUserName(response.data.name);
             setIsLoggedIn(true);
             setLoading(false);
+            toast({
+                title: 'Boa!',
+                description: 'Login bem-sucedido!',
+                status: 'success',
+                duration: 3000,
+                isClosable: true,
+            });
+            navigate('/dashboard');
         } catch (err) {
             setLoading(false);
-            throw Error('Login failed');
+            toast({
+                title: 'Ocorreu um erro :(',
+                description: 'Login falhou.',
+                status: 'error',
+                duration: 3000,
+                isClosable: true,
+            });
         }
     }
 
