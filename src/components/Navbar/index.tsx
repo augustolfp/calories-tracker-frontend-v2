@@ -1,5 +1,5 @@
 import { useAuth } from '../../hooks/useAuth';
-import { Box, Flex, Image, Icon, Button } from '@chakra-ui/react';
+import { Box, Flex, Image, Icon, Button, Center } from '@chakra-ui/react';
 import titleIcon from '../../assets/icons/titleIcon.svg';
 import { GoMarkGithub } from 'react-icons/go';
 import { Link } from 'react-router-dom';
@@ -28,32 +28,37 @@ export default function NavBar() {
             <Link to="/dashboard">
                 <Image src={titleIcon} w={['80px', '120px', '160px']} />
             </Link>
-            <Flex gap={[2, 4]}>
+            <Flex gap={4} align="center">
                 <a
                     href="https://github.com/augustolfp/calories-tracker-frontend-v2"
                     target="_blank"
                 >
-                    <Icon
-                        as={GoMarkGithub}
-                        color="white"
-                        w={[5, 7, 10]}
-                        h={[5, 7, 10]}
-                    />
+                    <Center>
+                        <Icon
+                            as={GoMarkGithub}
+                            color="white"
+                            w={['24px', '32px', '40px']}
+                            h={['24px', '32px', '40px']}
+                        />
+                    </Center>
                 </a>
 
                 {isLoggedIn ? (
-                    <Menu>
+                    <Menu variant="signOutVariant">
                         <MenuButton
                             as={Button}
-                            w={[5, 7, 10]}
-                            h={[5, 7, 10]}
-                            borderRadius="full"
+                            p="0px"
+                            m="0px"
+                            minW={0}
+                            fontSize={[14, 20, 24]}
+                            w={['24px', '32px', '40px']}
+                            h={['24px', '32px', '40px']}
                             bg="white"
-                            fontSize={[10, 15, 20]}
+                            borderRadius="full"
                             fontWeight="600"
                             color="pageGreen.500"
                         >
-                            {userName[0]}
+                            <Center>{userName[0]}</Center>
                         </MenuButton>
                         <MenuList>
                             <MenuItem onClick={() => signOut()}>Sair</MenuItem>

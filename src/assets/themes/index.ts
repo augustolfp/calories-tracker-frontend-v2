@@ -9,6 +9,7 @@ import { breakpoints } from './foundations/breakpoints';
 import { styles } from './styles';
 import { colors } from './foundations/colors';
 import { NumberInput } from './components/numberInput';
+import { Menu } from './components/menu';
 
 const customTheme = {
     components: {
@@ -16,6 +17,7 @@ const customTheme = {
         Input,
         Tabs,
         NumberInput,
+        Menu,
     },
     config: {},
     styles,
