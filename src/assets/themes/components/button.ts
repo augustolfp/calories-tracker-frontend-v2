@@ -29,6 +29,12 @@ export const Button = defineStyleConfig({
             bg: '#3db9a2',
             color: 'white',
         },
+        deleteMeal: {
+            bg: 'transparent',
+            color: 'pageGreen.500',
+            top: '50%',
+            right: '4px',
+        },
     },
 
     defaultProps: {

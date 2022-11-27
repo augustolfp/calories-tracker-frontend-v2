@@ -1,4 +1,5 @@
-import { Tab, Box } from '@chakra-ui/react';
+import { Tab, Box, Button } from '@chakra-ui/react';
+import { DeleteIcon } from '@chakra-ui/icons';
 import { DayMeal } from '../../types';
 import { useDelete } from './../../hooks/useDelete';
 
@@ -16,10 +17,15 @@ export default function MealTab(props: Props) {
             <Box layerStyle="mealTabSummarySubTitle">
                 {props.meal.mealDescription ? props.meal.mealDescription : null}
             </Box>
-            <Box
+            <Button
+                variant="deleteMeal"
                 position="absolute"
-                top="8px"
-                right="8px"
+                minW={0}
+                p={0}
+                m={0}
+                borderRadius="full"
+                top="4px"
+                right="4px"
                 onClick={() =>
                     deleteMeal({
                         type: 'meal',
@@ -27,8 +33,8 @@ export default function MealTab(props: Props) {
                     })
                 }
             >
-                x
-            </Box>
+                <DeleteIcon h="20px" w="20px" />
+            </Button>
         </Tab>
     );
 }
