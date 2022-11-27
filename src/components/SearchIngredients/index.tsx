@@ -11,7 +11,7 @@ type Props = {
 };
 
 export default function SearchIngredients(props: Props) {
-    const { token } = useAuth();
+    const { authHeader } = useAuth();
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
     const [selectedResult, setSelectedResult] = useState<SearchResult | null>(
@@ -20,7 +20,7 @@ export default function SearchIngredients(props: Props) {
 
     useEffect(() => {
         if (searchTerm !== '') {
-            const search = api.get(`/search/${searchTerm}`, token);
+            const search = api.get(`/search/${searchTerm}`, authHeader);
 
             search.then((res) => {
                 setSearchResults(res.data.results);
