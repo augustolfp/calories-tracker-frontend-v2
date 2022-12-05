@@ -1,6 +1,7 @@
+/// <reference types="vite-plugin-svgr/client" />
 import { useAuth } from '../../hooks/useAuth';
 import { Box, Flex, Image, Icon, Button, Center } from '@chakra-ui/react';
-import titleIcon from '../../assets/icons/titleIcon.svg';
+import { ReactComponent as TitleIcon } from '../../assets/icons/titleIcon.svg';
 import { GoMarkGithub } from 'react-icons/go';
 import { Link } from 'react-router-dom';
 
@@ -26,7 +27,7 @@ export default function NavBar() {
             align="center"
         >
             <Link to="/dashboard">
-                <Image src={titleIcon} w={['80px', '120px', '160px']} />
+                <TitleIcon />
             </Link>
             <Flex gap={4} align="center">
                 <a
