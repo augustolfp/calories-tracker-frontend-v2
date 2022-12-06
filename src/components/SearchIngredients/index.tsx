@@ -34,9 +34,13 @@ export default function SearchIngredients(props: Props) {
                 Pesquise na tabela
             </Box>
             <Grid
-                templateAreas={`"searchInterface dataPanel"`}
-                gridTemplateRows="296px"
-                gridTemplateColumns="2fr 1fr"
+                templateAreas={[
+                    `"searchInterface" "dataPanel"`,
+                    null,
+                    `"searchInterface dataPanel"`,
+                ]}
+                gridTemplateRows={['1fr 1fr', null, '296px']}
+                gridTemplateColumns={['1fr', null, '2fr 1fr']}
                 gridGap="10px"
             >
                 <GridItem area={'searchInterface'}>

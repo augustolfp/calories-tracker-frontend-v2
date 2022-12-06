@@ -63,6 +63,7 @@ export default function HandleSelectedResult(props: Props) {
             <NumberInput
                 layerStyle="colorfulCard"
                 bg={props.selectedResult ? 'pageGreen.500' : 'pageGreen.400'}
+                w="full"
                 value={amount}
                 precision={2}
                 step={50}
