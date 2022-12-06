@@ -1,10 +1,12 @@
 /// <reference types="vite-plugin-svgr/client" />
 import { ReactComponent as BananaIcon } from '../../assets/icons/icon.svg';
-import { Flex, Image, Container } from '@chakra-ui/react';
+import { Flex, Image, Container, chakra } from '@chakra-ui/react';
 
 type Props = {
     children: any;
 };
+
+const ChakraBananaIcon = chakra(BananaIcon);
 
 export default function CredentialsPageLayout(props: Props) {
     return (
@@ -13,6 +15,7 @@ export default function CredentialsPageLayout(props: Props) {
             height="100vh"
             centerContent
             justifyContent="center"
+            mt="120px"
         >
             <Flex
                 h={[null, null, '500px']}
@@ -24,7 +27,7 @@ export default function CredentialsPageLayout(props: Props) {
                 direction={['column', 'column', 'row']}
                 gap={6}
             >
-                <BananaIcon />
+                <ChakraBananaIcon w="70%" />
                 {props.children}
             </Flex>
         </Container>

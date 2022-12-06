@@ -1,6 +1,14 @@
 /// <reference types="vite-plugin-svgr/client" />
 import { useAuth } from '../../hooks/useAuth';
-import { Box, Flex, Image, Icon, Button, Center } from '@chakra-ui/react';
+import {
+    Box,
+    Flex,
+    Image,
+    Icon,
+    Button,
+    Center,
+    chakra,
+} from '@chakra-ui/react';
 import { ReactComponent as TitleIcon } from '../../assets/icons/titleIcon.svg';
 import { GoMarkGithub } from 'react-icons/go';
 import { Link } from 'react-router-dom';
@@ -16,6 +24,8 @@ import {
     MenuDivider,
 } from '@chakra-ui/react';
 
+const ChakraTitleIcon = chakra(TitleIcon);
+
 export default function NavBar() {
     const { isLoggedIn, userName, signOut } = useAuth();
 
@@ -27,7 +37,7 @@ export default function NavBar() {
             align="center"
         >
             <Link to="/dashboard">
-                <TitleIcon />
+                <ChakraTitleIcon w={['80px', '120px', '160px']} />
             </Link>
             <Flex gap={4} align="center">
                 <a
