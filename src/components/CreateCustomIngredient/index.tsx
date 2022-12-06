@@ -114,6 +114,7 @@ export default function CreateCustomIngredient(props: Props) {
                 <GridItem area={'quantity'}>
                     <FormControl isRequired>
                         <FormLabel
+                            fontSize={['10px', '12px', '16px']}
                             color="white"
                             fontWeight="700"
                             position="absolute"
@@ -148,6 +149,7 @@ export default function CreateCustomIngredient(props: Props) {
                 <GridItem area={'carbs'}>
                     <FormControl isRequired>
                         <FormLabel
+                            fontSize={['10px', '12px', '16px']}
                             color="white"
                             fontWeight="700"
                             position="absolute"
@@ -182,6 +184,7 @@ export default function CreateCustomIngredient(props: Props) {
                 <GridItem area={'fats'}>
                     <FormControl isRequired>
                         <FormLabel
+                            fontSize={['10px', '12px', '16px']}
                             color="white"
                             fontWeight="700"
                             position="absolute"
@@ -216,6 +219,7 @@ export default function CreateCustomIngredient(props: Props) {
                 <GridItem area={'proteins'}>
                     <FormControl isRequired>
                         <FormLabel
+                            fontSize={['10px', '12px', '16px']}
                             color="white"
                             fontWeight="700"
                             position="absolute"
@@ -254,6 +258,7 @@ export default function CreateCustomIngredient(props: Props) {
                         display="flex"
                         alignItems="center"
                         h="60px"
+                        fontSize={['10px', '12px', '16px']}
                     >
                         <Flex
                             direction="column"
