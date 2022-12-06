@@ -87,16 +87,19 @@ export default function DayForm() {
                         </FormLabel>
                         <Box color="pageGreen.500">
                             <SingleDatepicker
+                                usePortal={true}
                                 propsConfigs={{
                                     dateNavBtnProps: {
                                         color: 'pageGreen.500',
                                         colorScheme: 'green',
                                         variant: 'outline',
+                                        w: '20px',
                                     },
                                     dayOfMonthBtnProps: {
                                         defaultBtnProps: {
                                             color: 'pageGreen.500',
                                             borderColor: 'pageGreen.500',
+                                            w: '20px',
                                             _hover: {
                                                 background: 'gray.300',
                                             },
@@ -109,7 +112,9 @@ export default function DayForm() {
                                             color: 'white',
                                         },
                                         todayBtnProps: {
-                                            background: 'teal.400',
+                                            color: 'white',
+                                            background: 'green.200',
+                                            borderColor: 'green.200',
                                         },
                                     },
                                     inputProps: {
