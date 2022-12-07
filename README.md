@@ -48,6 +48,11 @@ Esse projeto nasceu para cumprir uma série de objetivos:
 
 # Interface
 
+Veja o vídeo abaixo:
+
+https://user-images.githubusercontent.com/101742282/206240979-849d1cd4-40d2-4a64-94b8-7209347bcfe8.mp4
+
+
 <br />
 
 # Como utilizar
