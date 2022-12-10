@@ -10,8 +10,9 @@ import {
 import IngredientDash from './IngredientDash';
 import { MealIngredient } from '../../types';
 import IngredientForm from '../IngredientForm';
-import { useDelete } from '../../hooks/useDelete';
 import ClampLines from 'react-clamp-lines';
+import ConfirmDeleteDialog from '../ConfirmDeleteDialog/ConfirmDeleteDialog';
+import { DeleteIcon } from '@chakra-ui/icons';
 
 type Props = {
     ingredients: MealIngredient[];
@@ -19,8 +20,6 @@ type Props = {
 };
 
 export default function IngredientsTab(props: Props) {
-    const { mutate: deleteIngredient } = useDelete();
-
     return (
         <Tabs variant="ingredientVariant">
             <TabList>
@@ -49,16 +48,20 @@ export default function IngredientsTab(props: Props) {
                             <IngredientDash {...ing} />
                             <Box
                                 position="absolute"
-                                top="4px"
-                                right="4px"
-                                onClick={() =>
-                                    deleteIngredient({
-                                        type: 'ingredient',
-                                        id: ing.id,
-                                    })
-                                }
+                                right={2}
+                                top={2}
+                                minW={0}
+                                p={0}
+                                m={0}
+                                borderRadius="full"
+                                bg="pageGreen.500"
                             >
-                                x
+                                <ConfirmDeleteDialog
+                                    type="ingredient"
+                                    id={ing.id}
+                                >
+                                    <DeleteIcon h={3} w={3} color="white" />
+                                </ConfirmDeleteDialog>
                             </Box>
                         </TabPanel>
                     ))}
