@@ -1,8 +1,4 @@
 export const layerStyles = {
-    dashboardCardsContainer: {
-        mt: '30px',
-        mb: '30px',
-    },
     card: {
         p: 8,
         borderWidth: 1,
@@ -13,6 +9,17 @@ export const layerStyles = {
         w: ['100%', '400px'],
         h: [null, '442px'],
     },
+
+    colorfulCard: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 4,
+        boxShadow: 'lg',
+        fontWeight: '900',
+        color: 'white',
+    },
+
     credentialsCard: {
         py: 4,
         px: 8,
@@ -22,6 +29,12 @@ export const layerStyles = {
         w: 'full',
         h: 'full',
     },
+
+    dashboardCardsContainer: {
+        mt: '30px',
+        mb: '30px',
+    },
+
     deleteDayBox: {
         position: 'absolute',
         right: 8,
@@ -32,6 +45,35 @@ export const layerStyles = {
         borderRadius: 'full',
         bg: 'pageGreen.500',
     },
+
+    fracDenominator: {
+        borderTop: 'solid',
+        clear: 'left',
+        float: 'left',
+    },
+
+    mealTabSummarySubTitle: {
+        color: 'gray.500',
+        fontSize: ['10px', '12px', '16px', '20px'],
+        fontWeight: '700',
+        textAlign: 'left',
+    },
+
+    mealTabSummaryTitle: {
+        color: 'pageGreen.500',
+        fontSize: ['14px', '16px', '20px', '25px'],
+        fontWeight: '700',
+        textAlign: 'left',
+    },
+
+    navBar: {
+        bg: '#3db9a2',
+        height: ['42px', '64px', '84px'],
+        py: '0px',
+        px: ['10px', '20px', '30px'],
+        boxShadow: 'lg',
+    },
+
     nutrient: {
         display: 'flex',
         flexDirection: 'column',
@@ -42,53 +84,9 @@ export const layerStyles = {
         fontWeight: '900',
         color: 'white',
     },
-    colorfulCard: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 4,
-        boxShadow: 'lg',
-        fontWeight: '900',
-        color: 'white',
-    },
-    fracNumerator: {
-        float: 'left',
-    },
-    fracDenominator: {
-        borderTop: 'solid',
-        clear: 'left',
-        float: 'left',
-    },
-    navBar: {
-        bg: '#3db9a2',
-        height: ['42px', '64px', '84px'],
-        py: '0px',
-        px: ['10px', '20px', '30px'],
-        boxShadow: 'lg',
-    },
-    tabContentTitle: {
-        color: 'pageGreen.500',
-        fontSize: ['28px', '28px', '35px', '50px'],
-        fontWeight: '700',
-    },
-    tabContentSubTitle: {
-        color: 'pageGreen.400',
-        fontSize: ['14px', '14px', '18px', '25px'],
-        fontWeight: '700',
-        mb: '20px',
-    },
-    mealTabSummaryTitle: {
-        color: 'pageGreen.500',
-        fontSize: ['14px', '16px', '20px', '25px'],
-        fontWeight: '700',
-        textAlign: 'left',
-    },
-    mealTabSummarySubTitle: {
-        color: 'gray.500',
-        fontSize: ['10px', '12px', '16px', '20px'],
-        fontWeight: '700',
-        textAlign: 'left',
-    },
+
+    nutrientNumber: {},
+
     searchInterface: {
         position: 'relative',
         h: 'full',
@@ -96,7 +94,21 @@ export const layerStyles = {
         borderWidth: '3px',
         borderColor: 'pageGreen.500',
     },
+
     searchResultList: {
         m: '20px 5px 5px 5px',
+    },
+
+    tabContentSubTitle: {
+        color: 'pageGreen.400',
+        fontSize: ['14px', '14px', '18px', '25px'],
+        fontWeight: '700',
+        mb: '20px',
+    },
+
+    tabContentTitle: {
+        color: 'pageGreen.500',
+        fontSize: ['28px', '28px', '35px', '50px'],
+        fontWeight: '700',
     },
 };
