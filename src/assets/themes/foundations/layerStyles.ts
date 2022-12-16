@@ -30,6 +30,15 @@ export const layerStyles = {
         h: 'full',
     },
 
+    dayPageContainer: {
+        w: 'clamp(340px, 100vw, 1200px)',
+        minH: [
+            'calc(100vh - 42px)',
+            'calc(100vh - 64px)',
+            'calc(100vh - 84px)',
+        ], //navBar height
+    },
+
     dayPageH1: {
         color: 'pageGreen.500',
         fontSize: ['40px', '50px', '44px', '72px'],

@@ -23,25 +23,17 @@ const mealVariant = definePartsStyle({
         position: 'relative',
         w: ['50%', '50%', '250px', '300px'],
         h: ['60px', '80px', '100px', '110px'],
-        m: '0',
-        borderStyle: 'none',
+        color: 'pageGreen.500',
         bg: '#f0f0f0',
-        color: '#3db9a2',
         _selected: {
             bg: 'white',
-            m: ['0', '0'],
             borderStyle: 'solid',
             borderWidth: '3px',
-            borderColor: '#3db9a2',
+            borderColor: 'pageGreen.500',
         },
     },
-    tablist: {
-        borderStyle: 'none',
-        bg: '#f0f0f0',
-    },
-    tabpanels: {
-        p: ['4px', '6px', '8px', '12px'],
-    },
+    tablist: {},
+    tabpanels: {},
     tabpanel: {},
 });
 
@@ -63,11 +55,12 @@ const ingredientVariant = definePartsStyle({
         },
     },
     tablist: {},
-    tabpanels: {
-        p: '0',
-    },
+    tabpanels: {},
     tabpanel: {
         position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
     },
 });
 

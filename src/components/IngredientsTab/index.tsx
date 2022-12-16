@@ -40,7 +40,9 @@ export default function IngredientsTab(props: Props) {
             </TabList>
             <TabPanels>
                 <TabPanel>
-                    <IngredientForm mealId={props.mealId} />
+                    <Flex direction="column" align="center">
+                        <IngredientForm mealId={props.mealId} />
+                    </Flex>
                 </TabPanel>
                 {props.ingredients[0] &&
                     props.ingredients.map((ing, index) => (

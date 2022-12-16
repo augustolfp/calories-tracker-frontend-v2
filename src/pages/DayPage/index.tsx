@@ -26,7 +26,7 @@ export default function DayPage() {
     }
 
     return (
-        <>
+        <Box layerStyle="dayPageContainer">
             {dayData && formattedDate ? (
                 <>
                     <Header
@@ -37,6 +37,6 @@ export default function DayPage() {
                     <MealsTab meals={dayData.dayMeals} dayId={Number(id)} />
                 </>
             ) : null}
-        </>
+        </Box>
     );
 }
