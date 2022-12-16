@@ -1,5 +1,5 @@
 import { useData } from '../../hooks/useData';
-import { Container, Box } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import { useParams } from 'react-router-dom';
 import MealsTab from '../../components/MealsTab';
 import formatDate from '../../utils/formatDate';
@@ -26,7 +26,7 @@ export default function DayPage() {
     }
 
     return (
-        <Container maxW="1200px" h="100vh" centerContent py="40px" gap="40px">
+        <>
             {dayData && formattedDate ? (
                 <>
                     <Header
@@ -34,11 +34,9 @@ export default function DayPage() {
                         fullDate={formattedDate.fullDate}
                         weekDay={formattedDate.weekDay}
                     />
-                    <Box w="full">
-                        <MealsTab meals={dayData.dayMeals} dayId={Number(id)} />
-                    </Box>
+                    <MealsTab meals={dayData.dayMeals} dayId={Number(id)} />
                 </>
             ) : null}
-        </Container>
+        </>
     );
 }

@@ -91,6 +91,8 @@ export const layerStyles = {
         float: 'left',
     },
 
+    mealResumeGrid: {},
+
     mealTabSummarySubTitle: {
         color: 'gray.500',
         fontSize: ['10px', '12px', '16px', '20px'],
