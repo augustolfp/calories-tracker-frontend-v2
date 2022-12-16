@@ -10,7 +10,7 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthProvider';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, Container } from '@chakra-ui/react';
 import theme from './assets/themes';
 import NavBar from './components/Navbar';
 
@@ -22,8 +22,10 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             <AuthProvider>
                 <QueryClientProvider client={queryClient}>
                     <ChakraProvider theme={theme}>
-                        <NavBar />
-                        <App />
+                        <Container centerContent variant="centerVariant">
+                            <NavBar />
+                            <App />
+                        </Container>
                     </ChakraProvider>
                 </QueryClientProvider>
             </AuthProvider>

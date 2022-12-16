@@ -35,6 +35,9 @@ export default function NavBar() {
             layerStyle="navBar"
             justify="space-between"
             align="center"
+            w="full"
+            position="absolute"
+            top="0"
         >
             <Link to="/dashboard">
                 <ChakraTitleIcon w={['80px', '120px', '160px']} />

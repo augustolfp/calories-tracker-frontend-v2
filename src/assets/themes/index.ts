@@ -10,6 +10,7 @@ import { styles } from './styles';
 import { colors } from './foundations/colors';
 import { NumberInput } from './components/numberInput';
 import { Menu } from './components/menu';
+import { Container } from './components/container';
 
 const customTheme = {
     components: {
@@ -18,6 +19,7 @@ const customTheme = {
         Tabs,
         NumberInput,
         Menu,
+        Container,
     },
     config: {},
     styles,
