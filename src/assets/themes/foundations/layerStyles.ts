@@ -30,6 +30,33 @@ export const layerStyles = {
         h: 'full',
     },
 
+    dayPageH1: {
+        color: 'pageGreen.500',
+        fontSize: ['40px', '50px', '44px', '72px'],
+        fontWeight: '700',
+    },
+
+    dayPageH2: {
+        color: 'pageGreen.400',
+        fontSize: ['40px', '50px', '44px', '72px'],
+        fontWeight: '700',
+    },
+
+    dayPageH3: {
+        color: 'pageGreen.400',
+        fontSize: ['12px', '16px', '20px'],
+        fontWeight: '600',
+    },
+
+    dayPageHeadersContainer: {
+        display: 'flex',
+        flexDirection: ['column', 'column', 'row'],
+        w: 'full',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: '20px',
+    },
+
     dashboardCardsContainer: {
         mt: '30px',
         mb: '30px',

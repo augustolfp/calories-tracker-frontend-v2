@@ -18,6 +18,7 @@ export default function DayResumeCard(props: Props) {
     return (
         <Grid
             h={[null, '100%']}
+            maxW="400px"
             templateAreas={`"calories proteins fats"
         "calories proteins carbs"`}
             gridTemplateRows="1fr 1fr"
