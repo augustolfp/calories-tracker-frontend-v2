@@ -4,7 +4,10 @@ const baseStyle = {
     maxW: '100vw',
     minH: '100vh',
     m: '0px',
-    p: '0px',
+    pt: ['42px', '64px', '84px'],
+    pr: '0px',
+    pb: '0px',
+    pl: '0px',
 };
 
 const centerVariant = {

@@ -1,9 +1,17 @@
 export const layerStyles = {
+    dashboardCardsContainer: {
+        mt: '30px',
+        mb: '30px',
+    },
     card: {
         p: 8,
         borderWidth: 1,
         borderRadius: 4,
         boxShadow: 'lg',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        w: ['100%', '400px'],
+        h: [null, '442px'],
     },
     credentialsCard: {
         py: 4,
@@ -13,6 +21,16 @@ export const layerStyles = {
         boxShadow: 'lg',
         w: 'full',
         h: 'full',
+    },
+    deleteDayBox: {
+        position: 'absolute',
+        right: 8,
+        top: 8,
+        minW: 0,
+        p: 0,
+        m: 0,
+        borderRadius: 'full',
+        bg: 'pageGreen.500',
     },
     nutrient: {
         display: 'flex',
