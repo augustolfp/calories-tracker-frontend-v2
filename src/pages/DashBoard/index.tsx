@@ -1,5 +1,4 @@
 import { useData } from '../../hooks/useData';
-import { useDelete } from '../../hooks/useDelete';
 import { useNavigate } from 'react-router-dom';
 import { DeleteIcon } from '@chakra-ui/icons';
 import {
@@ -8,16 +7,15 @@ import {
     Container,
     CircularProgress,
     Box,
-    Button,
 } from '@chakra-ui/react';
 import DayResumeCard from '../../components/DayResumeCard';
 import DayForm from '../../components/DayForm';
 import formatDate from '../../utils/formatDate';
+import ConfirmDeleteDialog from '../../components/ConfirmDeleteDialog/ConfirmDeleteDialog';
 
 export default function DashBoard() {
     const navigate = useNavigate();
     const { isLoading, isFetching, isError, data, status } = useData();
-    const { mutate: deleteDay } = useDelete();
 
     if (isLoading) {
         return (
@@ -66,20 +64,20 @@ export default function DashBoard() {
                             h={[null, '442px']}
                             key={index}
                         >
-                            <Button
+                            <Box
                                 position="absolute"
                                 right={8}
                                 top={8}
                                 minW={0}
-                                p={3}
+                                p={0}
                                 m={0}
                                 borderRadius="full"
-                                onClick={() =>
-                                    deleteDay({ type: 'day', id: day.id })
-                                }
+                                bg="pageGreen.500"
                             >
-                                <DeleteIcon h={4} w={4} />
-                            </Button>
+                                <ConfirmDeleteDialog type="day" id={day.id}>
+                                    <DeleteIcon h={4} w={4} color="white" />
+                                </ConfirmDeleteDialog>
+                            </Box>
                             <Box mb={6}>
                                 <Box as="h1" textStyle="h1" fontWeight="600">
                                     {formattedDate.weekDay}
