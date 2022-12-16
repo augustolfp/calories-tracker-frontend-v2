@@ -62,6 +62,18 @@ export const layerStyles = {
         mb: '30px',
     },
 
+    dayResumeCardGrid: {
+        display: 'grid',
+        h: [null, '100%'],
+        maxW: '400px',
+        gridTemplateAreas: `"calories proteins fats"
+        "calories proteins carbs"`,
+        gridTemplateRows: '1fr 1fr',
+        gridTemplateColumns: '1fr 1fr 1fr',
+        gridGap: ['8px', '12px'],
+        justifyContent: 'stretch',
+    },
+
     deleteDayBox: {
         position: 'absolute',
         right: 8,
@@ -112,7 +124,12 @@ export const layerStyles = {
         color: 'white',
     },
 
-    nutrientNumber: {},
+    nutrientNumber: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
 
     searchInterface: {
         position: 'relative',

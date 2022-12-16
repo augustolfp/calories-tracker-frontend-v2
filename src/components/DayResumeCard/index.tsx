@@ -16,20 +16,10 @@ type Props = {
 
 export default function DayResumeCard(props: Props) {
     return (
-        <Grid
-            h={[null, '100%']}
-            maxW="400px"
-            templateAreas={`"calories proteins fats"
-        "calories proteins carbs"`}
-            gridTemplateRows="1fr 1fr"
-            gridTemplateColumns="1fr 1fr 1fr"
-            gridGap={['8px', '12px']}
-            justifyContent="stretch"
-        >
+        <Box layerStyle="dayResumeCardGrid">
             <GridItem
-                dir="column"
                 layerStyle="nutrient"
-                bg="#e07a60"
+                bg="kcalsColor.500"
                 area={'calories'}
             >
                 <Box>kCals</Box>
@@ -45,28 +35,17 @@ export default function DayResumeCard(props: Props) {
                     <Box>kCal</Box>
                 </Center>
             </GridItem>
-            <GridItem
-                dir="column"
-                layerStyle="nutrient"
-                bg="#e5ab7e"
-                area={'fats'}
-            >
+            <GridItem layerStyle="nutrient" bg="fatsColor.500" area={'fats'}>
                 <Box>Gorduras</Box>
                 <Center h="full">{props.fats} g</Center>
             </GridItem>
-            <GridItem
-                dir="column"
-                layerStyle="nutrient"
-                bg="#f687b3"
-                area={'carbs'}
-            >
+            <GridItem layerStyle="nutrient" bg="carbsColor.500" area={'carbs'}>
                 <Box>Carbos</Box>
                 <Center h="full">{props.carbs} g</Center>
             </GridItem>
             <GridItem
-                dir="column"
                 layerStyle="nutrient"
-                bg="#c4869d"
+                bg="proteinsColor.500"
                 area={'proteins'}
             >
                 <Box>Proteinas</Box>
@@ -82,6 +61,6 @@ export default function DayResumeCard(props: Props) {
                     <Box>g</Box>
                 </Center>
             </GridItem>
-        </Grid>
+        </Box>
     );
 }

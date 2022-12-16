@@ -7,12 +7,7 @@ type Props = {
 
 export default function FractionDisplay(props: Props) {
     return (
-        <Flex
-            direction="column"
-            justify="center"
-            align="center"
-            layerStyle="nutrientNumber"
-        >
+        <Flex layerStyle="nutrientNumber">
             <Box>{props.numerator}</Box>
             <Box layerStyle="fracDenominator">{props.denominator}</Box>
         </Flex>
