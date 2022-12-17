@@ -27,20 +27,13 @@ export default function MealsTab(props: Props) {
             variant="mealVariant"
         >
             <TabList>
-                <Flex
-                    direction={['row', 'row', 'column']}
-                    wrap={['wrap-reverse', 'wrap-reverse', 'nowrap']}
-                >
-                    <Tab>
-                        <Box layerStyle="mealTabSummaryTitle">
-                            Nova Refeição
-                        </Box>
-                    </Tab>
-                    {props.meals &&
-                        props.meals.map((meal, index) => (
-                            <MealTab meal={meal} key={index} />
-                        ))}
-                </Flex>
+                <Tab>
+                    <Box layerStyle="mealTabSummaryTitle">Nova Refeição</Box>
+                </Tab>
+                {props.meals &&
+                    props.meals.map((meal, index) => (
+                        <MealTab meal={meal} key={index} />
+                    ))}
             </TabList>
             <TabPanels>
                 <TabPanel>

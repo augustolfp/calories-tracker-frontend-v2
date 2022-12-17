@@ -4,7 +4,6 @@ import { createMultiStyleConfigHelpers } from '@chakra-ui/react';
 const { definePartsStyle, defineMultiStyleConfig } =
     createMultiStyleConfigHelpers(tabsAnatomy.keys);
 
-// define the base component styles
 const baseStyle = definePartsStyle({
     tab: {
         fontWeight: 'semibold',
@@ -32,22 +31,21 @@ const mealVariant = definePartsStyle({
             borderColor: 'pageGreen.500',
         },
     },
-    tablist: {},
+    tablist: {
+        display: 'flex',
+        flexDirection: ['row', 'row', 'column'],
+        flexWrap: ['wrap-reverse', 'wrap-reverse', 'nowrap'],
+    },
     tabpanels: {},
-    tabpanel: {},
+    tabpanel: {
+        p: ['0px', null, '0px 8px'],
+    },
 });
 
 const ingredientVariant = definePartsStyle({
-    root: {
-        w: 'full',
-    },
-    tabs: {
-        size: 'sm',
-    },
+    root: {},
+    tabs: {},
     tab: {
-        borderBottom: 'solid 3px #3db9a2',
-        w: ['50%', '50%', '33%'],
-        m: '0',
         color: 'pageGreen.500',
         _selected: {
             fontWeight: '900',

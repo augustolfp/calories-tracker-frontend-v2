@@ -37,6 +37,7 @@ export const layerStyles = {
             'calc(100vh - 64px)',
             'calc(100vh - 84px)',
         ], //navBar height
+        p: '8px',
     },
 
     dayPageH1: {
