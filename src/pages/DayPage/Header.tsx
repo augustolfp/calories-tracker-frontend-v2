@@ -1,4 +1,4 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, SimpleGrid } from '@chakra-ui/react';
 import DayResumeCard from '../../components/DayResumeCard';
 import { Day } from '../../types';
 
@@ -10,7 +10,11 @@ type Props = {
 
 export default function Header(props: Props) {
     return (
-        <Box layerStyle="dayPageHeadersContainer">
+        <SimpleGrid
+            columns={[1, 1, 2]}
+            spacing="20px"
+            layerStyle="dayPageHeadersContainer"
+        >
             <Box>
                 <Box layerStyle="dayPageH1">{props.weekDay}</Box>
                 <Box layerStyle="dayPageH2">{props.fullDate}</Box>
@@ -20,7 +24,9 @@ export default function Header(props: Props) {
                         : 'Anotações: nenhuma'}
                 </Box>
             </Box>
-            <DayResumeCard {...props.day} />
-        </Box>
+            <Box h="100%" w="100%">
+                <DayResumeCard {...props.day} />
+            </Box>
+        </SimpleGrid>
     );
 }

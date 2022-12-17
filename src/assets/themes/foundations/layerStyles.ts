@@ -59,12 +59,9 @@ export const layerStyles = {
     },
 
     dayPageHeadersContainer: {
-        display: 'flex',
-        flexDirection: ['column', 'column', 'row'],
-        w: 'full',
         justifyContent: 'center',
         alignItems: 'center',
-        gap: '20px',
+        mb: '20px',
     },
 
     dashboardCardsContainer: {
@@ -75,7 +72,6 @@ export const layerStyles = {
     dayResumeCardGrid: {
         display: 'grid',
         h: [null, '100%'],
-        maxW: '400px',
         gridTemplateAreas: `"calories proteins fats"
         "calories proteins carbs"`,
         gridTemplateRows: '1fr 1fr',
@@ -166,5 +162,6 @@ export const layerStyles = {
         color: 'pageGreen.500',
         fontSize: ['28px', '28px', '35px', '50px'],
         fontWeight: '700',
+        lineHeight: '70%',
     },
 };

@@ -6,7 +6,6 @@ import {
     Tab,
     TabPanel,
     Box,
-    Flex,
     useMediaQuery,
 } from '@chakra-ui/react';
 import MealForm from '../MealForm';
@@ -43,7 +42,7 @@ export default function MealsTab(props: Props) {
                 {props.meals &&
                     props.meals.map((meal, index) => (
                         <TabPanel key={index}>
-                            <Box layerStyle="tabContentTitle" lineHeight="70%">
+                            <Box layerStyle="tabContentTitle">
                                 {meal.mealName}
                             </Box>
                             <Box layerStyle="tabContentSubTitle">

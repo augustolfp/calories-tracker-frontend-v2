@@ -36,7 +36,9 @@ const mealVariant = definePartsStyle({
         flexDirection: ['row', 'row', 'column'],
         flexWrap: ['wrap-reverse', 'wrap-reverse', 'nowrap'],
     },
-    tabpanels: {},
+    tabpanels: {
+        pt: ['8px', '12px', '6px'],
+    },
     tabpanel: {
         p: ['0px', null, '0px 8px'],
     },
