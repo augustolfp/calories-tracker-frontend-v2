@@ -104,10 +104,26 @@ export const layerStyles = {
         bg: 'pageGreen.500',
     },
 
+    deleteIngBox: {
+        position: 'absolute',
+        right: 2,
+        top: 2,
+        minW: 0,
+        p: 0,
+        m: 0,
+        borderRadius: 'full',
+        bg: 'pageGreen.500',
+    },
+
     fracDenominator: {
         borderTop: 'solid',
         clear: 'left',
         float: 'left',
+    },
+
+    ingFormContainer: {
+        display: 'flex',
+        flexDirection: ['column', 'column', 'column', 'row'],
     },
 
     mealResumeGrid: {},

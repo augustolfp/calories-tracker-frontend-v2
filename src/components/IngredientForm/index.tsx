@@ -1,6 +1,6 @@
 import SearchIngredients from '../SearchIngredients';
 import CreateCustomIngredient from '../CreateCustomIngredient';
-import { Flex } from '@chakra-ui/react';
+import { Flex, Box } from '@chakra-ui/react';
 
 type Props = {
     mealId: number;
@@ -8,12 +8,12 @@ type Props = {
 
 export default function IngredientForm(props: Props) {
     return (
-        <>
+        <Box layerStyle="ingFormContainer">
             <SearchIngredients mealId={props.mealId} />
-            <Flex w="full" justify="center" textStyle="h2">
+            <Flex justify="center" align="center" textStyle="h2">
                 Ou
             </Flex>
             <CreateCustomIngredient mealId={props.mealId} />
-        </>
+        </Box>
     );
 }

@@ -41,20 +41,24 @@ const mealVariant = definePartsStyle({
     },
     tabpanel: {
         p: ['0px', null, '0px 8px'],
+        h: 'full',
     },
 });
 
 const ingredientVariant = definePartsStyle({
     root: {},
-    tabs: {},
     tab: {
         color: 'pageGreen.500',
+        w: ['50%', '50%', '50%', '50%'],
         _selected: {
             fontWeight: '900',
             borderBottom: 'solid 6px #3db9a2',
         },
     },
-    tablist: {},
+    tablist: {
+        display: 'flex',
+        flexWrap: 'wrap-reverse',
+    },
     tabpanels: {},
     tabpanel: {
         position: 'relative',
