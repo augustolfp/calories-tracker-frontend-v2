@@ -55,7 +55,7 @@ export default function CreateCustomIngredient(props: Props) {
     }
 
     return (
-        <Box layerStyle="card">
+        <Box layerStyle="ingCreatorCard">
             <Box as="h3" textStyle="h3" fontWeight="600">
                 Crie um ingrediente
             </Box>

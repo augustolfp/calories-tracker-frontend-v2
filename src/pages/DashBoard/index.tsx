@@ -31,7 +31,7 @@ export default function DashBoard() {
             spacing="30px"
             justify="center"
         >
-            <WrapItem layerStyle="card">
+            <WrapItem layerStyle="dashBoardCard">
                 <Box as="h1" textStyle="h1" fontWeight="600" mb={6}>
                     Novo dia
                 </Box>
@@ -40,7 +40,11 @@ export default function DashBoard() {
             {data?.map((day, index) => {
                 const formattedDate = formatDate(day.day);
                 return (
-                    <WrapItem position="relative" layerStyle="card" key={index}>
+                    <WrapItem
+                        position="relative"
+                        layerStyle="dashBoardCard"
+                        key={index}
+                    >
                         <Box layerStyle="deleteDayBox">
                             <ConfirmDeleteDialog type="day" id={day.id}>
                                 <DeleteIcon h={4} w={4} color="white" />

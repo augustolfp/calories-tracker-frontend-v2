@@ -1,15 +1,4 @@
 export const layerStyles = {
-    card: {
-        p: 8,
-        borderWidth: 1,
-        borderRadius: 4,
-        boxShadow: 'lg',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        w: ['100%', '400px'],
-        h: [null, '442px'],
-    },
-
     colorfulCard: {
         display: 'flex',
         flexDirection: 'column',
@@ -31,6 +20,22 @@ export const layerStyles = {
         boxShadow: 'lg',
         w: 'full',
         h: 'full',
+    },
+
+    dashBoardCard: {
+        p: 8,
+        borderWidth: 1,
+        borderRadius: 4,
+        boxShadow: 'lg',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        w: 'clamp(340px, 100%, 400px)',
+        h: [null, '442px'],
+    },
+
+    dashboardCardsContainer: {
+        mt: '30px',
+        mb: '30px',
     },
 
     dayFormCard: {
@@ -77,11 +82,6 @@ export const layerStyles = {
         mb: '20px',
     },
 
-    dashboardCardsContainer: {
-        mt: '30px',
-        mb: '30px',
-    },
-
     dayResumeCardGrid: {
         display: 'grid',
         h: [null, '100%'],
@@ -119,6 +119,16 @@ export const layerStyles = {
         borderTop: 'solid',
         clear: 'left',
         float: 'left',
+    },
+
+    ingCreatorCard: {
+        p: 4,
+        borderWidth: 1,
+        borderRadius: 4,
+        boxShadow: 'lg',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        w: '100%',
     },
 
     ingFormContainer: {

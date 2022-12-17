@@ -61,6 +61,7 @@ const ingredientVariant = definePartsStyle({
     },
     tabpanels: {},
     tabpanel: {
+        p: '8px 0 0 0',
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',

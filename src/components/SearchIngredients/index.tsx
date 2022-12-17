@@ -29,7 +29,7 @@ export default function SearchIngredients(props: Props) {
     }, [searchTerm]);
 
     return (
-        <Box layerStyle="card">
+        <Box layerStyle="ingCreatorCard">
             <Box as="h3" textStyle="h3" fontWeight="600" w="full">
                 Pesquise na tabela
             </Box>
