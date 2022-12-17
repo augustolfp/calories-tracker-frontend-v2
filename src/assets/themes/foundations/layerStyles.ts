@@ -12,12 +12,15 @@ export const layerStyles = {
 
     colorfulCard: {
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 4,
         boxShadow: 'lg',
         fontWeight: '900',
         color: 'white',
+        py: '8px',
+        px: '4px',
     },
 
     credentialsCard: {
@@ -28,6 +31,16 @@ export const layerStyles = {
         boxShadow: 'lg',
         w: 'full',
         h: 'full',
+    },
+
+    dayFormCard: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 4,
+        boxShadow: 'lg',
+        fontWeight: '900',
+        color: 'white',
     },
 
     dayPageContainer: {

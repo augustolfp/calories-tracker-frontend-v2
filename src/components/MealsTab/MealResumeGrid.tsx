@@ -9,16 +9,20 @@ export default function MealResumeGrid(props: DayMeal) {
             layerStyle="mealResumeGrid"
         >
             <Box layerStyle="colorfulCard" bg="kcalsColor.500">
-                Calorias: {props.kcals} kCal
+                <Box>Calorias:</Box>
+                <Box>{props.kcals} kCal</Box>
             </Box>
             <Box layerStyle="colorfulCard" bg="proteinsColor.500">
-                Proteinas: {props.proteins} g
+                <Box>Proteinas:</Box>
+                <Box> {props.proteins} g</Box>
             </Box>
             <Box layerStyle="colorfulCard" bg="fatsColor.500">
-                Gorduras: {props.fats} g
+                <Box>Gorduras:</Box>
+                <Box>{props.fats} g</Box>
             </Box>
             <Box layerStyle="colorfulCard" bg="carbsColor.500">
-                Carboidratos: {props.carbs} g
+                <Box>Carboidratos:</Box>
+                <Box>{props.carbs} g</Box>
             </Box>
         </SimpleGrid>
     );

@@ -53,7 +53,7 @@ export default function DayForm() {
             >
                 <GridItem
                     area="notes"
-                    layerStyle="colorfulCard"
+                    layerStyle="dayFormCard"
                     bg="pageGreen.500"
                     px="20px"
                 >
@@ -76,7 +76,7 @@ export default function DayForm() {
                 </GridItem>
                 <GridItem
                     area="date"
-                    layerStyle="colorfulCard"
+                    layerStyle="dayFormCard"
                     bg="pageGreen.500"
                     py="10px"
                     px="20px"
@@ -143,7 +143,7 @@ export default function DayForm() {
                 </GridItem>
                 <GridItem
                     area="kcals"
-                    layerStyle="colorfulCard"
+                    layerStyle="dayFormCard"
                     bg="kcalsColor.500"
                     px="20px"
                 >
@@ -180,7 +180,7 @@ export default function DayForm() {
                 </GridItem>
                 <GridItem
                     area="proteins"
-                    layerStyle="colorfulCard"
+                    layerStyle="dayFormCard"
                     bg="proteinsColor.500"
                     px="20px"
                 >
