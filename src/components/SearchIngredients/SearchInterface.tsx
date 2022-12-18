@@ -1,7 +1,6 @@
-import { Box } from '@chakra-ui/react';
+import { Box, ListItem } from '@chakra-ui/react';
 import DebouncedInput from './DebouncedInput';
 import { SearchResult } from '../../types';
-import ResultCard from './ResultCard';
 
 import { List } from '@chakra-ui/react';
 
@@ -13,7 +12,7 @@ type Props = {
 
 export default function SearchInterface(props: Props) {
     return (
-        <Box layerStyle="searchInterface" position="relative" overflow="auto">
+        <Box layerStyle="searchInterface">
             <DebouncedInput
                 searchTerm={props.searchTerm}
                 setSearchTerm={props.setSearchTerm}
@@ -22,12 +21,12 @@ export default function SearchInterface(props: Props) {
                 {props.searchResults &&
                     props.searchResults.map((result, index) => {
                         return (
-                            <Box key={index}>
-                                <ResultCard
-                                    id={result.id}
-                                    description={result.description}
-                                />
-                            </Box>
+                            <ListItem
+                                key={index}
+                                layerStyle="searchResultListItem"
+                            >
+                                {result.description}
+                            </ListItem>
                         );
                     })}
             </List>

@@ -180,6 +180,7 @@ export const layerStyles = {
 
     searchInterface: {
         position: 'relative',
+        overflow: 'auto',
         h: 'full',
         borderStyle: 'none solid solid solid',
         borderWidth: '3px',
@@ -188,6 +189,15 @@ export const layerStyles = {
 
     searchResultList: {
         m: '20px 5px 5px 5px',
+    },
+
+    searchResultListItem: {
+        fontSize: '14px',
+        w: '90%',
+        borderStyle: 'none none solid none',
+        borderWidth: '1px',
+        borderColor: 'pageGreen.400',
+        color: 'pageGreen.500',
     },
 
     tabContentSubTitle: {
