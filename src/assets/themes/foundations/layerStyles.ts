@@ -126,8 +126,6 @@ export const layerStyles = {
         borderWidth: 1,
         borderRadius: 4,
         boxShadow: 'lg',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
         w: '100%',
     },
 
@@ -180,10 +178,31 @@ export const layerStyles = {
 
     searchInterface: {
         position: 'relative',
-        h: 'full',
         borderStyle: 'none solid solid solid',
         borderWidth: '3px',
         borderColor: 'pageGreen.500',
+        h: '200px',
+        overflowY: 'scroll',
+        mb: '10px',
+    },
+
+    searchResultItem: {
+        fontSize: '14px',
+        w: '90%',
+        borderStyle: 'none none solid none',
+        borderWidth: '1px',
+        borderColor: 'pageGreen.400',
+        color: 'pageGreen.500',
+    },
+
+    searchResultSelectedItem: {
+        fontSize: '14px',
+        w: '90%',
+        fontWeight: '900',
+        borderStyle: 'none none solid none',
+        borderWidth: '1px',
+        borderColor: 'pageGreen.400',
+        color: 'pageGreen.500',
     },
 
     searchResultList: {
