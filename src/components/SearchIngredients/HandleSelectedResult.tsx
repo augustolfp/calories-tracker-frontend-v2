@@ -1,4 +1,4 @@
-import { Box, VStack, Button } from '@chakra-ui/react';
+import { Box, VStack, Button, SimpleGrid } from '@chakra-ui/react';
 import { SearchResult } from '../../types';
 import { useState } from 'react';
 import {
@@ -78,42 +78,54 @@ export default function HandleSelectedResult(props: Props) {
                     <NumberDecrementStepper />
                 </NumberInputStepper>
             </NumberInput>
-            <Box
-                layerStyle="colorfulCard"
-                p="10px 0"
-                w="full"
-                bg={
-                    props.selectedResult
-                        ? 'proteinsColor.500'
-                        : 'proteinsColor.400'
-                }
-            >
-                Prot: {proteins}g
-            </Box>
-            <Box
-                layerStyle="colorfulCard"
-                p="10px 0"
-                w="full"
-                bg={props.selectedResult ? 'carbsColor.500' : 'carbsColor.400'}
-            >
-                Carb: {carbs}g
-            </Box>
-            <Box
-                layerStyle="colorfulCard"
-                p="10px 0"
-                w="full"
-                bg={props.selectedResult ? 'fatsColor.500' : 'fatsColor.400'}
-            >
-                Gord: {fats}g
-            </Box>
-            <Box
-                layerStyle="colorfulCard"
-                p="10px 0"
-                w="full"
-                bg={props.selectedResult ? 'kcalsColor.500' : 'kcalsColor.400'}
-            >
-                kCal: {kcals}g
-            </Box>
+            <SimpleGrid columns={2} spacing="10px" w="full">
+                <Box
+                    layerStyle="colorfulCard"
+                    p="10px 0"
+                    w="full"
+                    bg={
+                        props.selectedResult
+                            ? 'kcalsColor.500'
+                            : 'kcalsColor.400'
+                    }
+                >
+                    kCal: {kcals}
+                </Box>
+                <Box
+                    layerStyle="colorfulCard"
+                    p="10px 0"
+                    w="full"
+                    bg={
+                        props.selectedResult
+                            ? 'proteinsColor.500'
+                            : 'proteinsColor.400'
+                    }
+                >
+                    Prot: {proteins}g
+                </Box>
+                <Box
+                    layerStyle="colorfulCard"
+                    p="10px 0"
+                    w="full"
+                    bg={
+                        props.selectedResult ? 'fatsColor.500' : 'fatsColor.400'
+                    }
+                >
+                    Gord: {fats}g
+                </Box>
+                <Box
+                    layerStyle="colorfulCard"
+                    p="10px 0"
+                    w="full"
+                    bg={
+                        props.selectedResult
+                            ? 'carbsColor.500'
+                            : 'carbsColor.400'
+                    }
+                >
+                    Carb: {carbs}g
+                </Box>
+            </SimpleGrid>
             <Button
                 w="full"
                 disabled={props.selectedResult ? false : true}

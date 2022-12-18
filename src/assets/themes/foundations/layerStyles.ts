@@ -126,8 +126,6 @@ export const layerStyles = {
         borderWidth: 1,
         borderRadius: 4,
         boxShadow: 'lg',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
         w: '100%',
     },
 
@@ -180,11 +178,12 @@ export const layerStyles = {
 
     searchInterface: {
         position: 'relative',
-        overflow: 'auto',
-        h: 'full',
         borderStyle: 'none solid solid solid',
         borderWidth: '3px',
         borderColor: 'pageGreen.500',
+        h: '200px',
+        overflowY: 'scroll',
+        mb: '10px',
     },
 
     searchResultItem: {
