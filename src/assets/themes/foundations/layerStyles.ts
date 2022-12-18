@@ -187,17 +187,27 @@ export const layerStyles = {
         borderColor: 'pageGreen.500',
     },
 
-    searchResultList: {
-        m: '20px 5px 5px 5px',
-    },
-
-    searchResultListItem: {
+    searchResultItem: {
         fontSize: '14px',
         w: '90%',
         borderStyle: 'none none solid none',
         borderWidth: '1px',
         borderColor: 'pageGreen.400',
         color: 'pageGreen.500',
+    },
+
+    searchResultSelectedItem: {
+        fontSize: '14px',
+        w: '90%',
+        fontWeight: '900',
+        borderStyle: 'none none solid none',
+        borderWidth: '1px',
+        borderColor: 'pageGreen.400',
+        color: 'pageGreen.500',
+    },
+
+    searchResultList: {
+        m: '20px 5px 5px 5px',
     },
 
     tabContentSubTitle: {

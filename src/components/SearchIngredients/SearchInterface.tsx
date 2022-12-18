@@ -8,6 +8,8 @@ type Props = {
     searchTerm: string;
     setSearchTerm: any;
     searchResults: SearchResult[];
+    selectedResultId: number | null;
+    setSelectedResult: any;
 };
 
 export default function SearchInterface(props: Props) {
@@ -23,7 +25,12 @@ export default function SearchInterface(props: Props) {
                         return (
                             <ListItem
                                 key={index}
-                                layerStyle="searchResultListItem"
+                                onClick={() => props.setSelectedResult(result)}
+                                layerStyle={
+                                    result.id === props.selectedResultId
+                                        ? 'searchResultSelectedItem'
+                                        : 'searchResultItem'
+                                }
                             >
                                 {result.description}
                             </ListItem>
