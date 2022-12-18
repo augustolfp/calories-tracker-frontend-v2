@@ -1,32 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Box, Grid, GridItem } from '@chakra-ui/react';
-import { useAuth } from '../../hooks/useAuth';
-import { api } from '../../lib/axios';
 import HandleSelectedResult from './HandleSelectedResult';
-import { SearchResult } from '../../types';
 import SearchInterface from './SearchInterface';
+import { useSearch } from '../../hooks/useSearch';
+import { SearchResult } from '../../types';
 
 type Props = {
     mealId: number;
 };
 
 export default function SearchIngredients(props: Props) {
-    const { authHeader } = useAuth();
-    const [searchTerm, setSearchTerm] = useState('');
-    const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
-    const [selectedResult, setSelectedResult] = useState<SearchResult | null>(
-        null
-    );
-
-    useEffect(() => {
-        if (searchTerm !== '') {
-            const search = api.get(`/search/${searchTerm}`, authHeader);
-
-            search.then((res) => {
-                setSearchResults(res.data.results);
-            });
-        }
-    }, [searchTerm]);
+    const { searchTerm, setSearchTerm, searchResults } = useSearch();
 
     return (
         <Box layerStyle="ingCreatorCard">
@@ -48,20 +32,10 @@ export default function SearchIngredients(props: Props) {
                         searchTerm={searchTerm}
                         setSearchTerm={setSearchTerm}
                         searchResults={searchResults}
-                        setSearchResults={setSearchResults}
-                        selectedResult={selectedResult}
-                        setSelectedResult={setSelectedResult}
                     />
                 </GridItem>
                 <GridItem area={'dataPanel'}>
-                    <Box>
-                        <HandleSelectedResult
-                            selectedResult={
-                                selectedResult ? selectedResult : null
-                            }
-                            mealId={props.mealId}
-                        />
-                    </Box>
+                    <Box></Box>
                 </GridItem>
             </Grid>
         </Box>

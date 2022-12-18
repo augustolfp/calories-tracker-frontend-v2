@@ -9,9 +9,6 @@ type Props = {
     searchTerm: string;
     setSearchTerm: any;
     searchResults: SearchResult[];
-    setSearchResults: any;
-    selectedResult: SearchResult | null;
-    setSelectedResult: any;
 };
 
 export default function SearchInterface(props: Props) {
@@ -25,14 +22,10 @@ export default function SearchInterface(props: Props) {
                 {props.searchResults &&
                     props.searchResults.map((result, index) => {
                         return (
-                            <Box
-                                key={index}
-                                onClick={() => props.setSelectedResult(result)}
-                            >
+                            <Box key={index}>
                                 <ResultCard
                                     id={result.id}
                                     description={result.description}
-                                    selectedResult={props.selectedResult}
                                 />
                             </Box>
                         );
