@@ -129,8 +129,23 @@ export const layerStyles = {
         w: '100%',
     },
 
+    ingCreatorInputContainer: {
+        p: 0,
+        m: 0,
+        borderRadius: 4,
+
+        div: {
+            color: 'white',
+            fontSize: ['10px', '12px', '16px'],
+            fontWeight: '900',
+            textAlign: 'center',
+            p: '6px 4px',
+        },
+    },
+
     ingFormContainer: {
         display: 'flex',
+        w: 'full',
         flexDirection: ['column', 'column', 'column', 'row'],
     },
 
@@ -181,8 +196,6 @@ export const layerStyles = {
         borderStyle: 'none solid solid solid',
         borderWidth: '3px',
         borderColor: 'pageGreen.500',
-        h: '200px',
-        overflowY: 'scroll',
         mb: '10px',
     },
 
@@ -206,7 +219,9 @@ export const layerStyles = {
     },
 
     searchResultList: {
-        m: '20px 5px 5px 5px',
+        h: '180px',
+        overflowY: 'auto',
+        marginLeft: '10px',
     },
 
     tabContentSubTitle: {
