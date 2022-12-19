@@ -219,7 +219,7 @@ export const layerStyles = {
     },
 
     searchResultList: {
-        h: '180px',
+        h: '270px',
         overflowY: 'auto',
         marginLeft: '10px',
     },
@@ -228,7 +228,8 @@ export const layerStyles = {
         color: 'pageGreen.400',
         fontSize: ['14px', '14px', '18px', '25px'],
         fontWeight: '700',
-        mb: '20px',
+        mb: '16px',
+        mt: '30px',
     },
 
     tabContentTitle: {
