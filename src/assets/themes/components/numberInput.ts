@@ -5,8 +5,16 @@ const { definePartsStyle, defineMultiStyleConfig } =
     createMultiStyleConfigHelpers(numberInputAnatomy.keys);
 
 const baseStyle = definePartsStyle({
+    root: {
+        borderRadius: 4,
+        w: 'full',
+    },
     field: {
         fontWeight: '700',
+        color: 'white',
+        bg: 'transparent',
+    },
+    stepperGroup: {
         color: 'white',
     },
 });
@@ -37,8 +45,22 @@ const ingredientVariant = definePartsStyle({
     stepper: {},
 });
 
+const searchTableVariant = definePartsStyle({
+    root: {},
+    field: { marginLeft: '15%' },
+    stepperGroup: {
+        display: 'flex',
+        flexDirection: 'row',
+        w: '50%',
+    },
+    stepper: {
+        borderStyle: 'none none none solid',
+    },
+});
+
 const variants = {
     ingredientVariant,
+    searchTableVariant,
 };
 
 export const NumberInput = defineMultiStyleConfig({

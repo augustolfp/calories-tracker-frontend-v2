@@ -61,7 +61,7 @@ export default function HandleSelectedResult(props: Props) {
     return (
         <VStack>
             <NumberInput
-                layerStyle="colorfulCard"
+                variant="searchTableVariant"
                 bg={props.selectedResult ? 'pageGreen.500' : 'pageGreen.400'}
                 w="full"
                 value={amount}
