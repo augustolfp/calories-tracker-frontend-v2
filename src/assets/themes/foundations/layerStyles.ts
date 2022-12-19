@@ -181,8 +181,6 @@ export const layerStyles = {
         borderStyle: 'none solid solid solid',
         borderWidth: '3px',
         borderColor: 'pageGreen.500',
-        h: '200px',
-        overflowY: 'scroll',
         mb: '10px',
     },
 
@@ -206,7 +204,9 @@ export const layerStyles = {
     },
 
     searchResultList: {
-        m: '20px 5px 5px 5px',
+        h: '180px',
+        overflowY: 'auto',
+        marginLeft: '10px',
     },
 
     tabContentSubTitle: {
