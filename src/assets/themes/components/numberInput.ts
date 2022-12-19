@@ -6,7 +6,6 @@ const { definePartsStyle, defineMultiStyleConfig } =
 
 const baseStyle = definePartsStyle({
     root: {
-        borderRadius: 4,
         w: 'full',
     },
     field: {
@@ -31,22 +30,29 @@ const sizes = {
 
 const ingredientVariant = definePartsStyle({
     root: {
-        h: '60px',
-        layerStyle: 'colorfulCard',
+        borderStyle: 'solid none none none',
+        borderColor: 'white',
+        borderWidth: '2px',
     },
     field: {
-        mb: '-20px',
-        textAlign: 'center',
-        bg: 'transparent',
+        marginLeft: '15%',
     },
     stepperGroup: {
-        h: '60px',
+        display: 'flex',
+        flexDirection: 'row',
+        w: '50%',
     },
-    stepper: {},
+    stepper: {
+        borderStyle: 'none none none solid',
+        borderColor: 'white',
+        borderWidth: '2px',
+    },
 });
 
 const searchTableVariant = definePartsStyle({
-    root: {},
+    root: {
+        borderRadius: 4,
+    },
     field: { marginLeft: '15%' },
     stepperGroup: {
         display: 'flex',
@@ -55,6 +61,8 @@ const searchTableVariant = definePartsStyle({
     },
     stepper: {
         borderStyle: 'none none none solid',
+        borderColor: 'white',
+        borderWidth: '2px',
     },
 });
 
