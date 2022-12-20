@@ -23,15 +23,11 @@ type Props = {
 export default function SignUpForm(props: Props) {
     return (
         <Box layerStyle="credentialsCard">
-            <Box as="h2" textStyle="h2" textAlign="center" fontWeight="600">
-                Cadastro
-            </Box>
+            <Box as="h2">Cadastro</Box>
             <form onSubmit={props.handleNewUser}>
                 <VStack spacing={8}>
                     <FormControl isRequired>
-                        <FormLabel as="h3" textStyle="h3">
-                            Nome
-                        </FormLabel>
+                        <FormLabel as="h3">Nome</FormLabel>
                         <Input
                             variant="credentialsVariant"
                             type="text"
@@ -46,9 +42,7 @@ export default function SignUpForm(props: Props) {
                         />
                     </FormControl>
                     <FormControl isRequired>
-                        <FormLabel as="h3" textStyle="h3">
-                            Email
-                        </FormLabel>
+                        <FormLabel as="h3">Email</FormLabel>
                         <Input
                             variant="credentialsVariant"
                             type="email"
@@ -63,21 +57,19 @@ export default function SignUpForm(props: Props) {
                         />
                     </FormControl>
                     <FormControl isRequired>
-                        <FormLabel as="h3" textStyle="h3">
-                            Senha
-                        </FormLabel>
+                        <FormLabel as="h3">Senha</FormLabel>
                         <PasswordInput
                             password={props.password}
                             setPassword={props.setPassword}
                             loading={props.loading}
                         />
                     </FormControl>
-                    <Button type="submit" w="full" disabled={props.loading}>
+                    <Button type="submit" disabled={props.loading}>
                         {props.loading ? (
                             <CircularProgress
                                 isIndeterminate
-                                size={8}
-                                color="purple"
+                                size="20px"
+                                color="pageGreen.500"
                             />
                         ) : (
                             'Cadastrar'
@@ -86,9 +78,7 @@ export default function SignUpForm(props: Props) {
                 </VStack>
             </form>
             <Link to="/">
-                <Box textStyle="h3" fontSize="sm" textAlign="center" mt={4}>
-                    Já tem uma conta? Faça login!
-                </Box>
+                <Box as="h5">Já tem uma conta? Faça login!</Box>
             </Link>
         </Box>
     );
