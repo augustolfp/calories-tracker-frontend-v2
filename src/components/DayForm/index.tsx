@@ -29,6 +29,10 @@ export default function DayForm() {
     const [caloriesTarget, setCaloriesTarget] = useState(2000);
     const [proteinsTarget, setProteinsTarget] = useState(100);
 
+    function clearInputs() {
+        setNotes('');
+    }
+
     async function handleNewDay(e: any) {
         e.preventDefault();
         const body = {
@@ -37,7 +41,7 @@ export default function DayForm() {
             caloriesTarget: Number(caloriesTarget),
             proteinsTarget: Number(proteinsTarget),
         };
-        newDay(body);
+        newDay(body, { onSuccess: () => clearInputs() });
     }
 
     return (
