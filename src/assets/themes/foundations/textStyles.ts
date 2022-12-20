@@ -1,6 +1,6 @@
 export const textStyles = {
     h1: {
-        fontSize: '42px',
+        fontSize: '30px',
         color: '#3db9a2',
     },
     h2: {

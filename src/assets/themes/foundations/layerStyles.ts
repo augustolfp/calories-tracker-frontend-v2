@@ -66,6 +66,7 @@ export const layerStyles = {
     },
 
     dashBoardCard: {
+        position: 'relative',
         p: 8,
         borderWidth: 1,
         borderRadius: 4,
@@ -74,6 +75,16 @@ export const layerStyles = {
         justifyContent: 'space-between',
         w: 'clamp(340px, 100%, 400px)',
         h: [null, '442px'],
+
+        h1: {
+            textStyle: 'h1',
+            fontWeight: '900',
+        },
+
+        h4: {
+            textStyle: 'h4',
+            fontWeight: '600',
+        },
     },
 
     dashboardCardsContainer: {
