@@ -22,6 +22,22 @@ export const layerStyles = {
         h: 'full',
     },
 
+    credentialsLayout: {
+        h: [null, null, '500px'],
+        w: '100vw',
+        maxW: '920px',
+        justifyContent: 'center',
+        alignItems: 'center',
+        p: ['8px', '14px'],
+        flexDirection: ['column', 'column', 'row'],
+        gap: 6,
+
+        svg: {
+            w: ['50%', null, '70%'],
+            h: ['50%', null, '70%'],
+        },
+    },
+
     dashBoardCard: {
         p: 8,
         borderWidth: 1,

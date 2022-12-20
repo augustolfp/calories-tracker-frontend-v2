@@ -10,17 +10,8 @@ const ChakraBananaIcon = chakra(BananaIcon);
 
 export default function CredentialsPageLayout(props: Props) {
     return (
-        <Flex
-            h={[null, null, '500px']}
-            w={['100vw', '70vw', '100vw']}
-            maxW="920px"
-            justify="center"
-            align="center"
-            p={['8px', '14px']}
-            direction={['column', 'column', 'row']}
-            gap={6}
-        >
-            <ChakraBananaIcon w="70%" />
+        <Flex layerStyle="credentialsLayout">
+            <ChakraBananaIcon />
             {props.children}
         </Flex>
     );
