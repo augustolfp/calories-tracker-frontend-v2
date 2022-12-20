@@ -300,5 +300,6 @@ export const layerStyles = {
         fontSize: ['28px', '28px', '35px', '50px'],
         fontWeight: '700',
         lineHeight: '70%',
+        mb: '20px',
     },
 };
