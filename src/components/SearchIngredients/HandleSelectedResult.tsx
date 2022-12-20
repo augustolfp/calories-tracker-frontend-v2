@@ -12,6 +12,8 @@ import { useIngredientCreator } from '../../hooks/useIngredientCreator';
 
 type Props = {
     selectedResult: SearchResult | null;
+    setSelectedResult: any;
+    setSearchTerm: any;
     mealId: number;
 };
 
@@ -19,6 +21,12 @@ export default function HandleSelectedResult(props: Props) {
     const [amount, setAmount] = useState(
         props.selectedResult?.baseQty ? props.selectedResult.baseQty : 100
     );
+
+    function clearInputs() {
+        props.setSelectedResult(null);
+        props.setSearchTerm('');
+        setAmount(100);
+    }
 
     function calcProportions(nutrient?: number) {
         if (props.selectedResult && nutrient) {
@@ -54,7 +62,7 @@ export default function HandleSelectedResult(props: Props) {
                 proteins,
                 kcals,
             };
-            addIngredient(body);
+            addIngredient(body, { onSuccess: () => clearInputs() });
         }
     }
 

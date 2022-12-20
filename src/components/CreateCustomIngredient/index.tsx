@@ -32,6 +32,14 @@ export default function CreateCustomIngredient(props: Props) {
     const parseGramsToNumber = (val: string) => Number(val.replace(/ g$/, ''));
     const { mutate: addIngredient, isLoading } = useIngredientCreator();
 
+    function clearInputs() {
+        setName('');
+        setWeight(0);
+        setCarbs(0);
+        setFats(0);
+        setProteins(0);
+    }
+
     async function handleIngredientCreation(e: any) {
         e.preventDefault();
         const body = {
@@ -43,7 +51,7 @@ export default function CreateCustomIngredient(props: Props) {
             proteins: proteins,
             kcals,
         };
-        addIngredient(body);
+        addIngredient(body, { onSuccess: () => clearInputs() });
     }
 
     return (

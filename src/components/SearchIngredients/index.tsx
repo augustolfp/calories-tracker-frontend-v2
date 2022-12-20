@@ -27,6 +27,8 @@ export default function SearchIngredients(props: Props) {
             />
             <HandleSelectedResult
                 selectedResult={selectedResult ? selectedResult : null}
+                setSelectedResult={setSelectedResult}
+                setSearchTerm={setSearchTerm}
                 mealId={props.mealId}
             />
         </Box>

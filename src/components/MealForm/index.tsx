@@ -18,6 +18,11 @@ export default function MealForm(props: Props) {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
 
+    function clearInputs() {
+        setName('');
+        setDescription('');
+    }
+
     async function handleMealCreation(e: any) {
         e.preventDefault();
         const body = {
@@ -25,7 +30,7 @@ export default function MealForm(props: Props) {
             description,
             countedDayId: Number(props.countedDayId),
         };
-        addMeal(body);
+        addMeal(body, { onSuccess: () => clearInputs() });
     }
 
     return (

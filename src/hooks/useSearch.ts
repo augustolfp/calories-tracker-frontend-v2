@@ -15,6 +15,8 @@ export function useSearch() {
             search.then((res) => {
                 setSearchResults(res.data.results);
             });
+        } else {
+            setSearchResults([]);
         }
     }, [searchTerm]);
 
