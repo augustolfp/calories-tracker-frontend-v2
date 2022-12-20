@@ -1,5 +1,7 @@
 import {
     Input,
+    InputGroup,
+    InputRightElement,
     Button,
     FormControl,
     FormLabel,
@@ -8,7 +10,9 @@ import {
     Flex,
     VStack,
 } from '@chakra-ui/react';
+import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import RedirectButton from './RedirectButton';
+import { useState } from 'react';
 
 type Props = {
     email: string;
@@ -24,6 +28,8 @@ type Props = {
 import { Link } from 'react-router-dom';
 
 export default function SignInForm(props: Props) {
+    const [show, setShow] = useState(false);
+    const handleClick = () => setShow(!show);
     return (
         <Flex layerStyle="credentialsCard" direction="column" justify="center">
             <Box
@@ -71,18 +77,40 @@ export default function SignInForm(props: Props) {
                                 <FormLabel as="h3" textStyle="h3">
                                     Senha
                                 </FormLabel>
-                                <Input
-                                    type="password"
-                                    name="password"
-                                    focusBorderColor="#3db9a2"
-                                    value={props.password}
-                                    onChange={(e) => {
-                                        props.setPassword(e.target.value);
-                                    }}
-                                    placeholder="senha"
-                                    disabled={props.loading}
-                                    required
-                                />
+                                <InputGroup>
+                                    <Input
+                                        type={show ? 'text' : 'password'}
+                                        name="password"
+                                        focusBorderColor="#3db9a2"
+                                        value={props.password}
+                                        onChange={(e) => {
+                                            props.setPassword(e.target.value);
+                                        }}
+                                        placeholder="senha"
+                                        disabled={props.loading}
+                                        required
+                                    />
+                                    <InputRightElement>
+                                        <Button
+                                            variant="unstyled"
+                                            onClick={handleClick}
+                                        >
+                                            {show ? (
+                                                <ViewOffIcon
+                                                    w="full"
+                                                    h="full"
+                                                    color="pageGreen.500"
+                                                />
+                                            ) : (
+                                                <ViewIcon
+                                                    w="full"
+                                                    h="full"
+                                                    color="pageGreen.500"
+                                                />
+                                            )}
+                                        </Button>
+                                    </InputRightElement>
+                                </InputGroup>
                             </FormControl>
                             <Button
                                 type="submit"
