@@ -24,7 +24,7 @@ export default function ConfirmDeleteDialog(props: Props) {
     const { mutate: deleteDay } = useDelete();
     return (
         <>
-            <Box role="button" m={0} p={0} onClick={onOpen}>
+            <Box role="button" layerStyle="deleteIconBox" onClick={onOpen}>
                 {props.children}
             </Box>
             <AlertDialog

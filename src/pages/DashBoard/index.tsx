@@ -41,9 +41,9 @@ export default function DashBoard() {
                 const formattedDate = formatDate(day.day);
                 return (
                     <WrapItem layerStyle="dashBoardCard" key={index}>
-                        <Box layerStyle="deleteDayBox">
+                        <Box layerStyle="dayDeleteIconContainer">
                             <ConfirmDeleteDialog type="day" id={day.id}>
-                                <DeleteIcon h={4} w={4} color="white" />
+                                <DeleteIcon h="30px" w="30px" />
                             </ConfirmDeleteDialog>
                         </Box>
                         <Box mb={6}>

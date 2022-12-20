@@ -28,12 +28,12 @@ export default function IngredientsTab(props: Props) {
                     props.ingredients.map((ing, index) => (
                         <TabPanel key={index}>
                             <IngredientDash {...ing} />
-                            <Box layerStyle="deleteIngBox">
+                            <Box layerStyle="ingDeleteIconContainer">
                                 <ConfirmDeleteDialog
                                     type="ingredient"
                                     id={ing.id}
                                 >
-                                    <DeleteIcon h={3} w={3} color="white" />
+                                    <DeleteIcon h="30px" w="30px" />
                                 </ConfirmDeleteDialog>
                             </Box>
                         </TabPanel>

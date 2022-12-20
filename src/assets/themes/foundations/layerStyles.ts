@@ -92,6 +92,13 @@ export const layerStyles = {
         mb: '30px',
     },
 
+    dayDeleteIconContainer: {
+        position: 'absolute',
+        top: 8,
+        right: 8,
+        color: 'pageGreen.500',
+    },
+
     dayFormCard: {
         display: 'flex',
         justifyContent: 'center',
@@ -147,26 +154,11 @@ export const layerStyles = {
         justifyContent: 'stretch',
     },
 
-    deleteDayBox: {
-        position: 'absolute',
-        right: 8,
-        top: 8,
-        minW: 0,
-        p: 0,
+    deleteIconBox: {
+        right: 0,
+        top: 0,
         m: 0,
-        borderRadius: 'full',
-        bg: 'pageGreen.500',
-    },
-
-    deleteIngBox: {
-        position: 'absolute',
-        right: 2,
-        top: 2,
-        minW: 0,
         p: 0,
-        m: 0,
-        borderRadius: 'full',
-        bg: 'pageGreen.500',
     },
 
     fracDenominator: {
@@ -197,6 +189,13 @@ export const layerStyles = {
         },
     },
 
+    ingDeleteIconContainer: {
+        position: 'absolute',
+        top: '6px',
+        right: '6px',
+        color: 'pageGreen.500',
+    },
+
     ingFormContainer: {
         display: 'flex',
         w: 'full',
@@ -217,6 +216,12 @@ export const layerStyles = {
         fontSize: ['14px', '16px', '20px', '25px'],
         fontWeight: '700',
         textAlign: 'left',
+    },
+
+    mealTabDeleteIconContainer: {
+        position: 'absolute',
+        top: '6px',
+        right: '6px',
     },
 
     navBar: {

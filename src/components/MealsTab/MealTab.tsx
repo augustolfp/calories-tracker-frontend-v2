@@ -16,15 +16,7 @@ export default function MealTab(props: Props) {
             <Box layerStyle="mealTabSummarySubTitle">
                 {props.meal.mealDescription ? props.meal.mealDescription : null}
             </Box>
-            <Box
-                position="absolute"
-                minW={0}
-                p={0}
-                m={0}
-                borderRadius="full"
-                top="4px"
-                right="4px"
-            >
+            <Box layerStyle="mealTabDeleteIconContainer">
                 <ConfirmDeleteDialog type="meal" id={props.meal.mealId}>
                     <DeleteIcon />
                 </ConfirmDeleteDialog>
