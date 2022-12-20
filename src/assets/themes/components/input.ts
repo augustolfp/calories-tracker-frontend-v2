@@ -22,8 +22,22 @@ const credentialsVariant = definePartsStyle({
     addon: {},
 });
 
+const ingredientVariant = definePartsStyle({
+    field: {
+        color: 'white',
+        bg: 'transparent',
+        _placeholder: {
+            color: 'white',
+        },
+        mb: '10px',
+        fontWeight: '700',
+    },
+    addon: {},
+});
+
 const variants = {
     credentialsVariant,
+    ingredientVariant,
 };
 
 export const Input = defineMultiStyleConfig({

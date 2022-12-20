@@ -17,9 +17,7 @@ export default function SearchIngredients(props: Props) {
 
     return (
         <Box layerStyle="ingCreatorCard">
-            <Box as="h3" textStyle="h3" fontWeight="600">
-                Pesquise na tabela
-            </Box>
+            <Box as="h2">Pesquise na tabela</Box>
             <SearchInterface
                 searchTerm={searchTerm}
                 setSearchTerm={setSearchTerm}

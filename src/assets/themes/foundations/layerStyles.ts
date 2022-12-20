@@ -173,6 +173,10 @@ export const layerStyles = {
         borderRadius: 4,
         boxShadow: 'lg',
         w: '100%',
+
+        h2: {
+            textStyle: 'h2',
+        },
     },
 
     ingCreatorInputContainer: {

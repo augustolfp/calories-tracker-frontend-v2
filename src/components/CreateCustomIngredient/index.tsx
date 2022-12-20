@@ -1,8 +1,6 @@
 import {
     Input,
     Button,
-    FormControl,
-    FormLabel,
     CircularProgress,
     Box,
     Flex,
@@ -50,20 +48,14 @@ export default function CreateCustomIngredient(props: Props) {
 
     return (
         <Box layerStyle="ingCreatorCard">
-            <Box as="h3" textStyle="h3" fontWeight="600">
-                Crie um ingrediente
-            </Box>
+            <Box as="h2">Crie um ingrediente</Box>
             <SimpleGrid columns={1} spacing="10px">
-                <FormControl
-                    layerStyle="colorfulCard"
-                    bg="pageGreen.500"
-                    isRequired
-                >
-                    <FormLabel fontWeight="700">Nome</FormLabel>
+                <Box layerStyle="ingCreatorInputContainer" bg="pageGreen.500">
+                    <Box fontWeight="700">Nome</Box>
                     <Input
                         type="text"
                         name="ingName"
-                        variant="unstyled"
+                        variant="ingredientVariant"
                         value={name}
                         onChange={(e) => {
                             setName(e.target.value);
@@ -72,7 +64,7 @@ export default function CreateCustomIngredient(props: Props) {
                         disabled={isLoading}
                         required
                     />
-                </FormControl>
+                </Box>
                 <Box layerStyle="ingCreatorInputContainer" bg="pageGreen.500">
                     <Box fontWeight="700">Quantidade [g]</Box>
                     <NumberInput
