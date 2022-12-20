@@ -59,25 +59,30 @@ export default function HandleSelectedResult(props: Props) {
     }
 
     return (
-        <VStack>
-            <NumberInput
-                variant="searchTableVariant"
+        <VStack align="stretch">
+            <Box
+                layerStyle="ingCreatorInputContainer"
                 bg={props.selectedResult ? 'pageGreen.500' : 'pageGreen.400'}
-                w="full"
-                value={amount}
-                precision={2}
-                step={50}
-                onChange={(value) => {
-                    setAmount(Number(value));
-                }}
-                isDisabled={props.selectedResult ? false : true}
             >
-                <NumberInputField />
-                <NumberInputStepper>
-                    <NumberIncrementStepper />
-                    <NumberDecrementStepper />
-                </NumberInputStepper>
-            </NumberInput>
+                <Box fontWeight="700">Quantidade [g]</Box>
+                <NumberInput
+                    variant="ingredientVariant"
+                    value={amount}
+                    step={50}
+                    precision={2}
+                    onChange={(value) => {
+                        setAmount(Number(value));
+                    }}
+                    isDisabled={props.selectedResult ? false : true}
+                >
+                    <NumberInputField />
+                    <NumberInputStepper>
+                        <NumberIncrementStepper />
+                        <NumberDecrementStepper />
+                    </NumberInputStepper>
+                </NumberInput>
+            </Box>
+
             <SimpleGrid columns={2} spacing="10px" w="full">
                 <Box
                     layerStyle="colorfulCard"

@@ -6,15 +6,28 @@ const { definePartsStyle, defineMultiStyleConfig } =
 
 const baseStyle = definePartsStyle({
     root: {
-        w: 'full',
+        display: 'flex',
+        borderStyle: 'solid none none none',
+        borderColor: 'white',
+        borderWidth: '2px',
     },
     field: {
+        w: '50%',
+        textAlign: 'center',
         fontWeight: '700',
         color: 'white',
         bg: 'transparent',
     },
     stepperGroup: {
         color: 'white',
+        display: 'flex',
+        flexDirection: 'row',
+        w: '50%',
+    },
+    stepper: {
+        borderStyle: 'none none none solid',
+        borderColor: 'white',
+        borderWidth: '2px',
     },
 });
 
@@ -28,43 +41,9 @@ const sizes = {
     xl: definePartsStyle({ field: xl, stepper: xl, addon: xl }),
 };
 
-const ingredientVariant = definePartsStyle({
-    root: {
-        borderStyle: 'solid none none none',
-        borderColor: 'white',
-        borderWidth: '2px',
-    },
-    field: {
-        marginLeft: '15%',
-    },
-    stepperGroup: {
-        display: 'flex',
-        flexDirection: 'row',
-        w: '50%',
-    },
-    stepper: {
-        borderStyle: 'none none none solid',
-        borderColor: 'white',
-        borderWidth: '2px',
-    },
-});
+const ingredientVariant = definePartsStyle({});
 
-const searchTableVariant = definePartsStyle({
-    root: {
-        borderRadius: 4,
-    },
-    field: { marginLeft: '15%' },
-    stepperGroup: {
-        display: 'flex',
-        flexDirection: 'row',
-        w: '50%',
-    },
-    stepper: {
-        borderStyle: 'none none none solid',
-        borderColor: 'white',
-        borderWidth: '2px',
-    },
-});
+const searchTableVariant = definePartsStyle({});
 
 const variants = {
     ingredientVariant,
