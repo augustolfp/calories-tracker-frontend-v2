@@ -15,9 +15,9 @@ export default function PasswordInput(props: Props) {
     return (
         <InputGroup>
             <Input
+                variant="credentialsVariant"
                 type={show ? 'text' : 'password'}
                 name="password"
-                focusBorderColor="pageGreen.500"
                 value={props.password}
                 onChange={(e) => {
                     props.setPassword(e.target.value);

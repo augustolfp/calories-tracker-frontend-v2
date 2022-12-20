@@ -1,32 +1,33 @@
-import { defineStyleConfig } from '@chakra-ui/react';
+import { inputAnatomy } from '@chakra-ui/anatomy';
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react';
 
-export const Input = defineStyleConfig({
-    baseStyle: {
-        borderRadius: 4,
-    },
+const { definePartsStyle, defineMultiStyleConfig } =
+    createMultiStyleConfigHelpers(inputAnatomy.keys);
 
-    sizes: {
-        sm: {
-            fontSize: 'sm',
-            px: 4, // <-- px is short for paddingLeft and paddingRight
-            py: 3, // <-- py is short for paddingTop and paddingBottom
-        },
-        md: {
-            fontSize: 'md',
-            px: 6, // <-- these values are tokens from the design system
-            py: 4, // <-- these values are tokens from the design system
-        },
-    },
+const baseStyle = definePartsStyle({
+    field: {},
+});
 
-    variants: {
-        outline: {
-            bg: 'white',
-            color: '#3db9a2',
+const sizes = {};
+
+const credentialsVariant = definePartsStyle({
+    field: {
+        color: 'pageGreen.500',
+        borderStyle: 'solid',
+        borderWidth: '2px',
+        _focus: {
+            borderColor: 'pageGreen.500',
         },
     },
+    addon: {},
+});
 
-    defaultProps: {
-        size: 'md',
-        variant: 'outline',
-    },
+const variants = {
+    credentialsVariant,
+};
+
+export const Input = defineMultiStyleConfig({
+    baseStyle,
+    sizes,
+    variants,
 });

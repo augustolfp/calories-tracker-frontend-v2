@@ -33,9 +33,9 @@ export default function SignUpForm(props: Props) {
                             Nome
                         </FormLabel>
                         <Input
+                            variant="credentialsVariant"
                             type="text"
                             name="name"
-                            focusBorderColor="#3db9a2"
                             value={props.name}
                             onChange={(e) => {
                                 props.setName(e.target.value);
@@ -50,9 +50,9 @@ export default function SignUpForm(props: Props) {
                             Email
                         </FormLabel>
                         <Input
+                            variant="credentialsVariant"
                             type="email"
                             name="email"
-                            focusBorderColor="#3db9a2"
                             value={props.email}
                             onChange={(e) => {
                                 props.setEmail(e.target.value);

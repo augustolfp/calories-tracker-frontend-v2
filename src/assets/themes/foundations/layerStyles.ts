@@ -13,6 +13,8 @@ export const layerStyles = {
     },
 
     credentialsCard: {
+        flexDirection: 'column',
+        justifyCOntent: 'center',
         py: 4,
         px: 8,
         borderWidth: 1,
@@ -20,6 +22,18 @@ export const layerStyles = {
         boxShadow: 'lg',
         w: 'full',
         h: 'full',
+
+        h2: {
+            textStyle: 'h2',
+            textAlign: 'center',
+            m: 4,
+            fontWeight: '600',
+        },
+
+        h4: {
+            textStyle: 'h4',
+            textAlign: 'center',
+        },
     },
 
     credentialsLayout: {

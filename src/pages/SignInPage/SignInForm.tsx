@@ -25,21 +25,11 @@ import { Link } from 'react-router-dom';
 
 export default function SignInForm(props: Props) {
     return (
-        <Flex layerStyle="credentialsCard" direction="column" justify="center">
-            <Box
-                as="h2"
-                textStyle="h2"
-                textAlign="center"
-                m={4}
-                fontWeight="600"
-            >
-                Login
-            </Box>
+        <Flex layerStyle="credentialsCard">
+            <Box as="h2">Login</Box>
             {props.isLoggedIn ? (
                 <>
-                    <Box as="h4" textStyle="h4" textAlign="center">
-                        Você já está logado!
-                    </Box>
+                    <Box as="h4">Você já está logado!</Box>
                     <RedirectButton
                         url="/dashboard"
                         text="Ir para minha dashboard"
@@ -54,9 +44,9 @@ export default function SignInForm(props: Props) {
                                     Email
                                 </FormLabel>
                                 <Input
+                                    variant="credentialsVariant"
                                     type="email"
                                     name="email"
-                                    focusBorderColor="#3db9a2"
                                     value={props.email}
                                     onChange={(e) => {
                                         props.setEmail(e.target.value);
