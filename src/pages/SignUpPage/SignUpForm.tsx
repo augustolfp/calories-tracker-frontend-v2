@@ -1,7 +1,5 @@
 import {
     Input,
-    InputGroup,
-    InputRightElement,
     Button,
     FormControl,
     FormLabel,
@@ -10,8 +8,7 @@ import {
     VStack,
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
-import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+import PasswordInput from '../../components/PasswordInput/PasswordInput';
 type Props = {
     name: string;
     setName: any;
@@ -24,8 +21,6 @@ type Props = {
 };
 
 export default function SignUpForm(props: Props) {
-    const [show, setShow] = useState(false);
-    const handleClick = () => setShow(!show);
     return (
         <Box layerStyle="credentialsCard">
             <Box as="h2" textStyle="h2" textAlign="center" fontWeight="600">
@@ -71,40 +66,11 @@ export default function SignUpForm(props: Props) {
                         <FormLabel as="h3" textStyle="h3">
                             Senha
                         </FormLabel>
-                        <InputGroup>
-                            <Input
-                                type={show ? 'text' : 'password'}
-                                name="password"
-                                focusBorderColor="#3db9a2"
-                                value={props.password}
-                                onChange={(e) => {
-                                    props.setPassword(e.target.value);
-                                }}
-                                placeholder="senha"
-                                disabled={props.loading}
-                                required
-                            />
-                            <InputRightElement>
-                                <Button
-                                    variant="unstyled"
-                                    onClick={handleClick}
-                                >
-                                    {show ? (
-                                        <ViewOffIcon
-                                            w="full"
-                                            h="full"
-                                            color="pageGreen.500"
-                                        />
-                                    ) : (
-                                        <ViewIcon
-                                            w="full"
-                                            h="full"
-                                            color="pageGreen.500"
-                                        />
-                                    )}
-                                </Button>
-                            </InputRightElement>
-                        </InputGroup>
+                        <PasswordInput
+                            password={props.password}
+                            setPassword={props.setPassword}
+                            loading={props.loading}
+                        />
                     </FormControl>
                     <Button type="submit" w="full" disabled={props.loading}>
                         {props.loading ? (

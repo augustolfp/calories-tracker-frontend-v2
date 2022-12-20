@@ -23,7 +23,7 @@ export default function SignInPage() {
                 loading={loading}
                 handleLogin={handleLogin}
                 isLoggedIn={isLoggedIn}
-            ></SignInForm>
+            />
         </CredentialsPageLayout>
     );
 }

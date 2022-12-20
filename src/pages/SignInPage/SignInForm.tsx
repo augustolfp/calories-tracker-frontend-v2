@@ -1,7 +1,5 @@
 import {
     Input,
-    InputGroup,
-    InputRightElement,
     Button,
     FormControl,
     FormLabel,
@@ -10,9 +8,8 @@ import {
     Flex,
     VStack,
 } from '@chakra-ui/react';
-import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import RedirectButton from './RedirectButton';
-import { useState } from 'react';
+import PasswordInput from '../../components/PasswordInput/PasswordInput';
 
 type Props = {
     email: string;
@@ -22,14 +19,11 @@ type Props = {
     loading: boolean;
     handleLogin: any;
     isLoggedIn: boolean;
-    children?: JSX.Element | JSX.Element[];
 };
 
 import { Link } from 'react-router-dom';
 
 export default function SignInForm(props: Props) {
-    const [show, setShow] = useState(false);
-    const handleClick = () => setShow(!show);
     return (
         <Flex layerStyle="credentialsCard" direction="column" justify="center">
             <Box
@@ -41,7 +35,6 @@ export default function SignInForm(props: Props) {
             >
                 Login
             </Box>
-            {props.children}
             {props.isLoggedIn ? (
                 <>
                     <Box as="h4" textStyle="h4" textAlign="center">
@@ -77,40 +70,11 @@ export default function SignInForm(props: Props) {
                                 <FormLabel as="h3" textStyle="h3">
                                     Senha
                                 </FormLabel>
-                                <InputGroup>
-                                    <Input
-                                        type={show ? 'text' : 'password'}
-                                        name="password"
-                                        focusBorderColor="#3db9a2"
-                                        value={props.password}
-                                        onChange={(e) => {
-                                            props.setPassword(e.target.value);
-                                        }}
-                                        placeholder="senha"
-                                        disabled={props.loading}
-                                        required
-                                    />
-                                    <InputRightElement>
-                                        <Button
-                                            variant="unstyled"
-                                            onClick={handleClick}
-                                        >
-                                            {show ? (
-                                                <ViewOffIcon
-                                                    w="full"
-                                                    h="full"
-                                                    color="pageGreen.500"
-                                                />
-                                            ) : (
-                                                <ViewIcon
-                                                    w="full"
-                                                    h="full"
-                                                    color="pageGreen.500"
-                                                />
-                                            )}
-                                        </Button>
-                                    </InputRightElement>
-                                </InputGroup>
+                                <PasswordInput
+                                    password={props.password}
+                                    setPassword={props.setPassword}
+                                    loading={props.loading}
+                                />
                             </FormControl>
                             <Button
                                 type="submit"
