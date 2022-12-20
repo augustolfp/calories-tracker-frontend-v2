@@ -6,6 +6,7 @@ import {
     AlertDialogContent,
     AlertDialogOverlay,
     Button,
+    Box,
 } from '@chakra-ui/react';
 import { useDisclosure } from '@chakra-ui/react';
 import React from 'react';
@@ -23,9 +24,9 @@ export default function ConfirmDeleteDialog(props: Props) {
     const { mutate: deleteDay } = useDelete();
     return (
         <>
-            <Button variant="ghost" m={0} p={0} onClick={onOpen}>
+            <Box role="button" m={0} p={0} onClick={onOpen}>
                 {props.children}
-            </Button>
+            </Box>
             <AlertDialog
                 isOpen={isOpen}
                 leastDestructiveRef={cancelRef}
