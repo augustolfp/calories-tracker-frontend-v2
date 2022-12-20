@@ -68,6 +68,7 @@ export default function CreateCustomIngredient(props: Props) {
                 <Box layerStyle="ingCreatorInputContainer" bg="pageGreen.500">
                     <Box fontWeight="700">Quantidade [g]</Box>
                     <NumberInput
+                        focusInputOnChange={false}
                         variant="ingredientVariant"
                         value={weight}
                         step={5}
@@ -87,6 +88,7 @@ export default function CreateCustomIngredient(props: Props) {
                 <Box layerStyle="ingCreatorInputContainer" bg="carbsColor.500">
                     <Box fontWeight="700">Carboidratos [g]</Box>
                     <NumberInput
+                        focusInputOnChange={false}
                         variant="ingredientVariant"
                         value={carbs}
                         step={5}
@@ -106,6 +108,7 @@ export default function CreateCustomIngredient(props: Props) {
                 <Box layerStyle="ingCreatorInputContainer" bg="fatsColor.500">
                     <Box fontWeight="700">Gorduras [g]</Box>
                     <NumberInput
+                        focusInputOnChange={false}
                         variant="ingredientVariant"
                         value={fats}
                         step={5}
@@ -128,6 +131,7 @@ export default function CreateCustomIngredient(props: Props) {
                 >
                     <Box fontWeight="700">Proteinas [g]</Box>
                     <NumberInput
+                        focusInputOnChange={false}
                         variant="ingredientVariant"
                         value={proteins}
                         step={5}

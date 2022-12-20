@@ -66,6 +66,7 @@ export default function HandleSelectedResult(props: Props) {
             >
                 <Box fontWeight="700">Quantidade [g]</Box>
                 <NumberInput
+                    focusInputOnChange={false}
                     variant="ingredientVariant"
                     value={amount}
                     step={50}
