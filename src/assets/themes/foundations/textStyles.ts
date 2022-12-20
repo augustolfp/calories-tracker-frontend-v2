@@ -8,7 +8,7 @@ export const textStyles = {
         color: '#3db9a2',
     },
     h3: {
-        fontSize: '29px',
+        fontSize: '16px',
         color: '#3db9a2',
     },
     h4: {

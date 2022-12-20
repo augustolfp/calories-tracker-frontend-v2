@@ -23,6 +23,10 @@ export const layerStyles = {
         w: 'full',
         h: 'full',
 
+        button: {
+            w: 'full',
+        },
+
         h2: {
             textStyle: 'h2',
             textAlign: 'center',
@@ -30,14 +34,28 @@ export const layerStyles = {
             fontWeight: '600',
         },
 
+        h3: {
+            textStyle: 'h3',
+        },
+
         h4: {
             textStyle: 'h4',
             textAlign: 'center',
         },
+
+        h5: {
+            textStyle: 'h3',
+            fontSize: 'sm',
+            textAlign: 'center',
+            mt: 4,
+        },
+
+        svg: {
+            color: 'pageGreen.500',
+        },
     },
 
     credentialsLayout: {
-        h: [null, null, '500px'],
         w: '100vw',
         maxW: '920px',
         justifyContent: 'center',
@@ -45,11 +63,6 @@ export const layerStyles = {
         p: ['8px', '14px'],
         flexDirection: ['column', 'column', 'row'],
         gap: 6,
-
-        svg: {
-            w: ['50%', null, '70%'],
-            h: ['50%', null, '70%'],
-        },
     },
 
     dashBoardCard: {

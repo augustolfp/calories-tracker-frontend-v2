@@ -40,9 +40,7 @@ export default function SignInForm(props: Props) {
                     <form onSubmit={props.handleLogin}>
                         <VStack spacing={8}>
                             <FormControl isRequired>
-                                <FormLabel as="h3" textStyle="h3">
-                                    Email
-                                </FormLabel>
+                                <FormLabel as="h3">Email</FormLabel>
                                 <Input
                                     variant="credentialsVariant"
                                     type="email"
@@ -57,25 +55,19 @@ export default function SignInForm(props: Props) {
                                 />
                             </FormControl>
                             <FormControl isRequired>
-                                <FormLabel as="h3" textStyle="h3">
-                                    Senha
-                                </FormLabel>
+                                <FormLabel as="h3">Senha</FormLabel>
                                 <PasswordInput
                                     password={props.password}
                                     setPassword={props.setPassword}
                                     loading={props.loading}
                                 />
                             </FormControl>
-                            <Button
-                                type="submit"
-                                w="full"
-                                disabled={props.loading}
-                            >
+                            <Button type="submit" disabled={props.loading}>
                                 {props.loading ? (
                                     <CircularProgress
                                         isIndeterminate
-                                        size={8}
-                                        color="purple"
+                                        size="20px"
+                                        color="pageGreen.500"
                                     />
                                 ) : (
                                     'Entrar'
@@ -84,14 +76,7 @@ export default function SignInForm(props: Props) {
                         </VStack>
                     </form>
                     <Link to="/sign-up">
-                        <Box
-                            textStyle="h3"
-                            fontSize="sm"
-                            textAlign="center"
-                            mt={4}
-                        >
-                            Ainda não tem uma conta? Cadastre-se!
-                        </Box>
+                        <Box as="h5">Ainda não tem uma conta? Cadastre-se!</Box>
                     </Link>
                 </>
             )}

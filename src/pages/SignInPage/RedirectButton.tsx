@@ -9,7 +9,7 @@ type Props = {
 export default function RedirectButton(props: Props) {
     return (
         <Link to={props.url}>
-            <Button variant="solid" width="full" mt={6}>
+            <Button variant="solid" mt={6}>
                 {props.text}
             </Button>
         </Link>

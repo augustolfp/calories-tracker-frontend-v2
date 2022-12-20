@@ -29,9 +29,9 @@ export default function PasswordInput(props: Props) {
             <InputRightElement>
                 <Button variant="unstyled" onClick={handleClick}>
                     {show ? (
-                        <ViewOffIcon w="full" h="full" color="pageGreen.500" />
+                        <ViewOffIcon w="70%" h="70%" />
                     ) : (
-                        <ViewIcon w="full" h="full" color="pageGreen.500" />
+                        <ViewIcon w="70%" h="70%" />
                     )}
                 </Button>
             </InputRightElement>
