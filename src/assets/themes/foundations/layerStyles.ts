@@ -260,6 +260,7 @@ export const layerStyles = {
         borderWidth: '3px',
         borderColor: 'pageGreen.500',
         mb: '10px',
+        h: '330px',
     },
 
     searchResultItem: {
@@ -282,9 +283,23 @@ export const layerStyles = {
     },
 
     searchResultList: {
-        h: '270px',
-        overflowY: 'auto',
+        overflowY: 'scroll',
         marginLeft: '10px',
+        h: '288px',
+    },
+
+    searchResultErrorBox: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        h: '288px',
+        w: 'full',
+
+        div: {
+            fontWeight: 700,
+            color: 'pageGreen.500',
+        },
     },
 
     tabContentSubTitle: {

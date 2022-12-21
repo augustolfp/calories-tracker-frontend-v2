@@ -10,7 +10,8 @@ type Props = {
 };
 
 export default function SearchIngredients(props: Props) {
-    const { searchTerm, setSearchTerm, searchResults } = useSearch();
+    const { searchTerm, setSearchTerm, searchResults, isLoading, isError } =
+        useSearch();
     const [selectedResult, setSelectedResult] = useState<SearchResult | null>(
         null
     );
@@ -18,13 +19,17 @@ export default function SearchIngredients(props: Props) {
     return (
         <Box layerStyle="ingCreatorCard">
             <Box as="h2">Pesquise na tabela</Box>
-            <SearchInterface
-                searchTerm={searchTerm}
-                setSearchTerm={setSearchTerm}
-                searchResults={searchResults}
-                selectedResultId={selectedResult ? selectedResult.id : null}
-                setSelectedResult={setSelectedResult}
-            />
+            <Box>
+                <SearchInterface
+                    searchTerm={searchTerm}
+                    setSearchTerm={setSearchTerm}
+                    searchResults={searchResults}
+                    selectedResultId={selectedResult ? selectedResult.id : null}
+                    setSelectedResult={setSelectedResult}
+                    isLoading={isLoading}
+                    isError={isError}
+                />
+            </Box>
             <HandleSelectedResult
                 selectedResult={selectedResult ? selectedResult : null}
                 setSelectedResult={setSelectedResult}
