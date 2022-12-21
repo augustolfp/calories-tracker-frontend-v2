@@ -1,4 +1,4 @@
-import { Box, ListItem } from '@chakra-ui/react';
+import { Box, ListItem, CircularProgress } from '@chakra-ui/react';
 import DebouncedInput from './DebouncedInput';
 import { SearchResult } from '../../types';
 
@@ -10,18 +10,44 @@ type Props = {
     searchResults: SearchResult[];
     selectedResultId: number | null;
     setSelectedResult: any;
+    isLoading: boolean;
+    isError: boolean;
 };
 
 export default function SearchInterface(props: Props) {
-    return (
-        <Box layerStyle="searchInterface">
-            <DebouncedInput
-                searchTerm={props.searchTerm}
-                setSearchTerm={props.setSearchTerm}
-            />
-            <List layerStyle="searchResultList">
-                {props.searchResults &&
-                    props.searchResults.map((result, index) => {
+    function ReturnResults() {
+        if (props.isError) {
+            return (
+                <Box layerStyle="searchResultErrorBox">
+                    <Box>Pesquisa falhou :(</Box>
+                    <Box>Recarregue a página!</Box>
+                </Box>
+            );
+        }
+        if (props.isLoading) {
+            return (
+                <Box layerStyle="searchResultErrorBox">
+                    <CircularProgress
+                        isIndeterminate
+                        size="60px"
+                        color="pageGreen.500"
+                    />
+                </Box>
+            );
+        } else if (
+            props.searchResults &&
+            props.searchResults.length === 0 &&
+            props.searchTerm.length > 2
+        ) {
+            return (
+                <Box layerStyle="searchResultErrorBox">
+                    <Box>Nenhum resultado encontrado :(</Box>
+                </Box>
+            );
+        } else if (props.searchResults) {
+            return (
+                <List layerStyle="searchResultList">
+                    {props.searchResults.map((result, index) => {
                         return (
                             <ListItem
                                 key={index}
@@ -36,7 +62,19 @@ export default function SearchInterface(props: Props) {
                             </ListItem>
                         );
                     })}
-            </List>
+                </List>
+            );
+        }
+        return null;
+    }
+
+    return (
+        <Box layerStyle="searchInterface">
+            <DebouncedInput
+                searchTerm={props.searchTerm}
+                setSearchTerm={props.setSearchTerm}
+            />
+            <ReturnResults />
         </Box>
     );
 }
