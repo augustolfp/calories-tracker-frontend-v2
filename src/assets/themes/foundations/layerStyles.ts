@@ -283,7 +283,7 @@ export const layerStyles = {
     },
 
     searchResultList: {
-        overflowY: 'scroll',
+        overflowY: 'auto',
         marginLeft: '10px',
         h: '288px',
     },
