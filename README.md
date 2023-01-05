@@ -47,6 +47,9 @@ Esse projeto nasceu para cumprir uma série de objetivos:
 <br />
 
 # Interface
+Veja o vídeo abaixo:
+
+https://user-images.githubusercontent.com/101742282/209388516-a064cf20-4073-4705-a275-95f2eecca100.mp4
 
 <br />
 
