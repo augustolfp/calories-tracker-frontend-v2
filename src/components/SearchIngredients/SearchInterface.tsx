@@ -7,7 +7,7 @@ import { List } from '@chakra-ui/react';
 type Props = {
     searchTerm: string;
     setSearchTerm: any;
-    searchResults: SearchResult[];
+    tacoResults: SearchResult[];
     selectedResultId: number | null;
     setSelectedResult: any;
     isLoading: boolean;
@@ -35,8 +35,8 @@ export default function SearchInterface(props: Props) {
                 </Box>
             );
         } else if (
-            props.searchResults &&
-            props.searchResults.length === 0 &&
+            props.tacoResults &&
+            props.tacoResults.length === 0 &&
             props.searchTerm.length > 2
         ) {
             return (
@@ -44,10 +44,10 @@ export default function SearchInterface(props: Props) {
                     <Box>Nenhum resultado encontrado :(</Box>
                 </Box>
             );
-        } else if (props.searchResults) {
+        } else if (props.tacoResults) {
             return (
                 <List layerStyle="searchResultList">
-                    {props.searchResults.map((result, index) => {
+                    {props.tacoResults.map((result, index) => {
                         return (
                             <ListItem
                                 key={index}

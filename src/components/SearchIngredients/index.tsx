@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function SearchIngredients(props: Props) {
-    const { searchTerm, setSearchTerm, searchResults, isLoading, isError } =
+    const { searchTerm, setSearchTerm, tacoResults, isLoading, isError } =
         useSearch();
     const [selectedResult, setSelectedResult] = useState<SearchResult | null>(
         null
@@ -23,7 +23,7 @@ export default function SearchIngredients(props: Props) {
                 <SearchInterface
                     searchTerm={searchTerm}
                     setSearchTerm={setSearchTerm}
-                    searchResults={searchResults}
+                    tacoResults={tacoResults}
                     selectedResultId={selectedResult ? selectedResult.id : null}
                     setSelectedResult={setSelectedResult}
                     isLoading={isLoading}
