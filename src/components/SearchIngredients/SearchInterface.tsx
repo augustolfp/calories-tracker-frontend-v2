@@ -8,7 +8,8 @@ type Props = {
     searchTerm: string;
     setSearchTerm: any;
     tacoResults: SearchResult[];
-    selectedResultId: number | null;
+    favoritesResults: SearchResult[];
+    selectedResultId: number | string | null;
     setSelectedResult: any;
     isLoading: boolean;
     isError: boolean;
@@ -35,8 +36,8 @@ export default function SearchInterface(props: Props) {
                 </Box>
             );
         } else if (
-            props.tacoResults &&
-            props.tacoResults.length === 0 &&
+            (props.tacoResults || props.favoritesResults) &&
+            props.tacoResults.length + props.favoritesResults.length === 0 &&
             props.searchTerm.length > 2
         ) {
             return (
@@ -44,18 +45,33 @@ export default function SearchInterface(props: Props) {
                     <Box>Nenhum resultado encontrado :(</Box>
                 </Box>
             );
-        } else if (props.tacoResults) {
+        } else if (props.tacoResults || props.favoritesResults) {
             return (
                 <List layerStyle="searchResultList">
-                    {props.tacoResults.map((result, index) => {
+                    {props.favoritesResults.map((result) => {
                         return (
                             <ListItem
-                                key={index}
+                                key={result.id}
                                 onClick={() => props.setSelectedResult(result)}
                                 layerStyle={
                                     result.id === props.selectedResultId
-                                        ? 'searchResultSelectedItem'
-                                        : 'searchResultItem'
+                                        ? 'searchResultSelectedFavoriteItem'
+                                        : 'searchResultFavoriteItem'
+                                }
+                            >
+                                {result.description}
+                            </ListItem>
+                        );
+                    })}
+                    {props.tacoResults.map((result) => {
+                        return (
+                            <ListItem
+                                key={result.id}
+                                onClick={() => props.setSelectedResult(result)}
+                                layerStyle={
+                                    result.id === props.selectedResultId
+                                        ? 'searchResultSelectedTacoItem'
+                                        : 'searchResultTacoItem'
                                 }
                             >
                                 {result.description}

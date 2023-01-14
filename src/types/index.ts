@@ -50,7 +50,7 @@ export type DayBody = Pick<
 >;
 
 export type SearchResult = {
-    id: number;
+    id: number | string;
     description: string;
     baseQty: number;
     proteins: number;
