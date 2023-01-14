@@ -15,6 +15,7 @@ import {
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useIngredientCreator } from '../../hooks/useIngredientCreator';
+import { useFavoriteIngredientCreator } from '../../hooks/useFavoriteIngredientCreator';
 
 type Props = {
     mealId: number;
@@ -31,6 +32,8 @@ export default function CreateCustomIngredient(props: Props) {
     const formatNumToGrams = (val: number) => `${val} g`;
     const parseGramsToNumber = (val: string) => Number(val.replace(/ g$/, ''));
     const { mutate: addIngredient, isLoading } = useIngredientCreator();
+    const { mutate: addFavIngredient, isLoading: isFavLoading } =
+        useFavoriteIngredientCreator();
 
     function clearInputs() {
         setName('');
@@ -52,6 +55,19 @@ export default function CreateCustomIngredient(props: Props) {
             kcals,
         };
         addIngredient(body, { onSuccess: () => clearInputs() });
+    }
+
+    async function handleFavIngCreation(e: any) {
+        e.preventDefault();
+        const body = {
+            name,
+            weight: weight,
+            carbs: carbs,
+            fats: fats,
+            proteins: proteins,
+            kcals,
+        };
+        addFavIngredient(body, { onSuccess: () => clearInputs() });
     }
 
     return (
@@ -190,6 +206,25 @@ export default function CreateCustomIngredient(props: Props) {
                             />
                         ) : (
                             'Criar'
+                        )}
+                    </Button>
+                    <Button
+                        h="full"
+                        variant="solid"
+                        width="full"
+                        mb={6}
+                        type="submit"
+                        disabled={isLoading}
+                        onClick={handleFavIngCreation}
+                    >
+                        {isLoading ? (
+                            <CircularProgress
+                                isIndeterminate
+                                size={8}
+                                color="purple"
+                            />
+                        ) : (
+                            'Favoritar'
                         )}
                     </Button>
                 </SimpleGrid>
