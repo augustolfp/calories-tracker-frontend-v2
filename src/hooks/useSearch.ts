@@ -8,7 +8,10 @@ export function useSearch() {
     const [searchTerm, setSearchTerm] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
-    const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
+    const [tacoResults, setTacoResults] = useState<SearchResult[]>([]);
+    const [favoritesResults, setFavoritesResults] = useState<SearchResult[]>(
+        []
+    );
 
     useEffect(() => {
         setIsError(false);
@@ -19,16 +22,25 @@ export function useSearch() {
 
             search.then((res) => {
                 setIsLoading(false);
-                setSearchResults(res.data.results);
+                setTacoResults(res.data.tacoResults);
+                setFavoritesResults(res.data.favoriteIngResults);
             });
             search.catch((err) => {
                 setIsLoading(false);
                 setIsError(true);
             });
         } else {
-            setSearchResults([]);
+            setTacoResults([]);
+            setFavoritesResults([]);
         }
     }, [searchTerm]);
 
-    return { searchTerm, setSearchTerm, searchResults, isLoading, isError };
+    return {
+        searchTerm,
+        setSearchTerm,
+        tacoResults,
+        favoritesResults,
+        isLoading,
+        isError,
+    };
 }

@@ -263,7 +263,26 @@ export const layerStyles = {
         h: '330px',
     },
 
-    searchResultItem: {
+    searchResultFavoriteItem: {
+        fontSize: '14px',
+        w: '90%',
+        borderStyle: 'none none solid none',
+        borderWidth: '1px',
+        borderColor: 'pageGreen.400',
+        color: 'pink.500',
+    },
+
+    searchResultSelectedFavoriteItem: {
+        fontSize: '14px',
+        w: '90%',
+        fontWeight: '900',
+        borderStyle: 'none none solid none',
+        borderWidth: '1px',
+        borderColor: 'pageGreen.400',
+        color: 'pink.500',
+    },
+
+    searchResultTacoItem: {
         fontSize: '14px',
         w: '90%',
         borderStyle: 'none none solid none',
@@ -272,7 +291,7 @@ export const layerStyles = {
         color: 'pageGreen.500',
     },
 
-    searchResultSelectedItem: {
+    searchResultSelectedTacoItem: {
         fontSize: '14px',
         w: '90%',
         fontWeight: '900',

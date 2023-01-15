@@ -17,6 +17,8 @@ export type MealIngredient = {
 
 export type IngBody = Omit<MealIngredient, 'id'>;
 
+export type FavoriteIngBody = Omit<MealIngredient, 'id' | 'mealId'>;
+
 export type DayMeal = {
     mealId: number;
     countedDayId: number;
@@ -50,7 +52,7 @@ export type DayBody = Pick<
 >;
 
 export type SearchResult = {
-    id: number;
+    id: number | string;
     description: string;
     baseQty: number;
     proteins: number;
