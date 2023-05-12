@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react';
 import RedirectButton from './RedirectButton';
 import PasswordInput from '../../components/PasswordInput/PasswordInput';
+import qs from 'query-string';
 
 type Props = {
     email: string;
@@ -24,6 +25,24 @@ type Props = {
 import { Link } from 'react-router-dom';
 
 export default function SignInForm(props: Props) {
+    const client_id = import.meta.env.VITE_CLIENT_ID;
+    const redirect_uri = import.meta.env.VITE_REDIRECT_URI;
+    const github_auth_url = import.meta.env.VITE_GITHUB_AUTH_URL;
+
+    function githubLogin() {
+        const params = {
+            response_type: 'code',
+            scope: 'user',
+            client_id: client_id,
+            redirect_uri: redirect_uri,
+            state: 'test-Augusto',
+        };
+
+        const queryStrings = qs.stringify(params);
+        const authorizationURL = `${github_auth_url}?${queryStrings}`;
+        window.location.href = authorizationURL;
+    }
+
     return (
         <Flex layerStyle="credentialsCard">
             <Box as="h2">Login</Box>
@@ -75,6 +94,9 @@ export default function SignInForm(props: Props) {
                             </Button>
                         </VStack>
                     </form>
+                    <Button onClick={githubLogin} my={2}>
+                        Faça login com o Github
+                    </Button>
                     <Link to="/sign-up">
                         <Box as="h5">Ainda não tem uma conta? Cadastre-se!</Box>
                     </Link>
