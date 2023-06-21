@@ -8,7 +8,7 @@
     <img src="./src/assets/icons/icon.svg" alt="Logo" width="50%">
     <br />
     <br />
-    <a href="https://dietinha.cf" ><strong>Deploy</strong></a>
+    <a href="https://dietinha.vercel.app" ><strong>Deploy</strong></a>
     <br />
     <a href="https://github.com/augustolfp/calories-tracker-backend"><strong>Repositório do Back end</strong></a>
 </div>
